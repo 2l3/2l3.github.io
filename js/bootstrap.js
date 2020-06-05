@@ -4,10 +4,6 @@
  * Licensed under the MIT license
  */
 
-import Darkmode from 'darkmode-js';
-
-new Darkmode().showWidget();
-
 if (typeof jQuery === 'undefined') {
   throw new Error('Bootstrap\'s JavaScript requires jQuery')
 }
