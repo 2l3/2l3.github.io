@@ -1,3 +1,4 @@
+$(function(){
 var qrcode = new QRCode("qrcode");
 
 function makeCode () {		
@@ -23,3 +24,5 @@ $("#text").
 			makeCode();
 		}
 	});
+  
+  });
