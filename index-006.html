@@ -37,6 +37,9 @@
 						<ul class="links">
 							<li><a id="trigger-overlay"><i class="icon-menu icons"></i></a>
 							</li>
+						<input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on">
+						<label for="dark-mode" class="sr">Dark Mode</label>
+						<div class="curtain"></div>
 							<li class="shop_cart"><a href="shop-cart.html"><i class="icon-bag icons"></i><span>2</span></a>
 							</li>
 						</ul>
@@ -44,9 +47,109 @@
 				</div>
 			</div>
 		</div>
-		<!-- /. HEADER ENDS
+		<!-- /. الوضع الليلي
 			========================================================================= -->
-		<!-- NAVIGATION STARTS
+		<style type="text/css">
+    * {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--dur: 0.3s;
+	font-size: calc(10px + (80 - 40)*(40vw - 620px)/(2560 - 320));
+}
+body, input {
+	color: hsl(0,0%,10%);
+	font: 1em/1.5 sans-serif;
+}
+form, .toggle:before, .toggle:after {
+	background: hsl(0,0%,90%);
+}
+form, .toggle {
+	position: relative;
+}
+form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.curtain, .sr, .toggle:before, .toggle:after {
+	position: absolute;
+}
+.curtain, .toggle:before, .toggle:after {
+	transition: transform var(--dur);
+}
+.curtain, .toggle:before, .toggle:checked:after  {
+	transition-timing-function: ease-out;
+}
+.curtain, .sr {
+	top: 0;
+	left: 0;
+}
+.curtain {
+	background: hsl(0,0%,100%);
+	mix-blend-mode: difference;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	transform: scaleX(0);
+	transform-origin: 0 50%;
+}
+.sr, .toggle {
+	overflow: hidden;
+}
+.sr {
+	clip: rect(1px,1px,1px,1px);
+	color: transparent;
+	width: 1px;
+	height: 1px;
+}
+.toggle {
+	background: currentColor;
+	border-radius: 0.75em;
+	cursor: pointer;
+	width: 3em;
+	height: 1.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.toggle:before, .toggle:after {
+	border-radius: 50%;
+	content: "";
+	display: block;
+	top: 0.25em;
+	left: 0.25em;
+	width: 1em;
+	height: 1em;
+}
+.toggle:before, .toggle:checked:after {
+	transition-delay: 0s;
+}
+.toggle:checked:before, .toggle:after {
+	transition-delay: calc(var(--dur) * 0.75);
+	transition-timing-function: cubic-bezier(0.3,1.6,0.5,0.7);
+}
+.toggle:before {
+	transform: translateX(-1.5em);
+}
+.toggle:checked:before {
+	transform: translateX(1.5em);
+}
+.toggle:checked:after {
+	transform: translateX(3em);
+}
+.toggle:checked ~ .curtain {
+	transform: scaleX(1);
+}
+.toggle:focus {
+	outline: transparent;
+}
+  </style>
+		<!-- الوضع الليلي 
 			========================================================================= -->				
 		<div class="overlay overlay-genie" data-steps="m 701.56545,809.01175 35.16718,0 0,19.68384 -35.16718,0 z;m 698.9986,728.03569 41.23353,0 -3.41953,77.8735 -34.98557,0 z;m 687.08153,513.78234 53.1506,0 C 738.0505,683.9161 737.86917,503.34193 737.27015,806 l -35.90067,0 c -7.82727,-276.34892 -2.06916,-72.79261 -14.28795,-292.21766 z;m 403.87105,257.94772 566.31246,2.93091 C 923.38284,513.78233 738.73561,372.23931 737.27015,806 l -35.90067,0 C 701.32034,404.49318 455.17312,480.07689 403.87105,257.94772 z;M 51.871052,165.94772 1362.1835,168.87863 C 1171.3828,653.78233 738.73561,372.23931 737.27015,806 l -35.90067,0 C 701.32034,404.49318 31.173122,513.78234 51.871052,165.94772 z;m 52,26 1364,4 c -12.8007,666.9037 -273.2644,483.78234 -322.7299,776 l -633.90062,0 C 359.32034,432.49318 -6.6979288,733.83462 52,26 z;m 0,0 1439.999975,0 0,805.99999 -1439.999975,0 z">
 			<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1440 806" preserveAspectRatio="none">
