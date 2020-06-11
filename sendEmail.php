@@ -6,7 +6,6 @@ if ($_POST) {
     $subject = "";
     $comments = "";
     $recipient="im03th@hotmail.com"; // Your email comes here
-	$headers .= "To: $email\r\n";
 
     if (isset($_POST['name'])) {
         $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
