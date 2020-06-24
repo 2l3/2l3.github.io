@@ -100,5 +100,8 @@
     #pp-nav li .active span {
         background-color: $yellow-color!important;
     }
+    #pp-nav li:hover span {
+        background-color: $yellow-color !important;
+    }
 }
 

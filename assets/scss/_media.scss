@@ -37,28 +37,6 @@
 	.modal-dialog {
 		max-width: 100%;
     }
-    .testimonial .owl-item.active{
-        margin-right: 7.5rem !important;
-    }
-    .testimonial .owl-carousel .owl-stage-outer{
-        height: auto;
-        max-height: 320px;
-    }
-    .testimonial .owl-stage{
-        height: auto;
-        max-height: 320px;
-    }
-    .testimonial .owl-dots{
-        margin-top: 0 !important;
-    }
-    .testimonial .display-table, .display-content {
-        display: block;
-    }
-}
-@media (min-width: 992px)and (max-width: 1080px){
-    .testimonial .owl-dots{
-        margin-right: 6rem;
-    }
 }
 @media (max-width: 991px){
     header {
@@ -75,7 +53,7 @@
     }
     .hero-03{
         text-align: center;
-        overflow: hidden;
+        overflow-x: hidden;
     }
     .hero-03 p{
         
@@ -145,32 +123,9 @@
     .display-table, .display-content {
         display: block;
     }
-    .testimonial .display-table, .testimonial .display-content {
-        display: block;
-    }
     .testimonial .testimonial-item {
-        padding: 16px;
-    }
-    .testimonial .owl-carousel .owl-stage-outer{
-        height: auto;
-        max-height: 335px;
-    }
-    .testimonial .owl-stage{
-        height: auto;
-        max-height: 335px;
-    }
-    .testimonial p{
-        margin: 0 !important;
-    }
-    .testimonial span{
-        margin-top: 5px !important;
-    }
-    .testimonial .owl-carousel .owl-dots {
-        margin-top: 1rem !important;
-    }
-    .testimonial .owl-carousel .owl-item {
-        padding-top: 1rem;
-    }
+        padding: 15px;
+      }
     #message.toast {
         top: 18px;
         left: inherit;
