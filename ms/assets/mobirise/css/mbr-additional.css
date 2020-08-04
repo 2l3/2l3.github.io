@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+
+
+#ext_menu-0 .navbar-toggler {
+  color: #000;
+}
+#ext_menu-0 .navbar-nav .btn {
+  font-size: 13px;
+}
+#msg-box4-1 .lead P {
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+}
+#msg-box4-1 .mbr-section-title B {
+  font-size: 48px;
+}
+#msg-box4-1 small B {
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+}
+#content4-2 B {
+  color: #d9534f;
+}
+#content4-2 P {
+  font-size: 15px;
+}
+#msg-box2-e H2 {
+  text-align: right;
+}
+#content4-c H4 {
+  text-align: right;
+}
+#msg-box3-b .mbr-header .mbr-header__text {
+  text-align: center;
+}
+#msg-box3-b .mbr-header .mbr-header__subtext {
+  text-align: center;
+}
+#features1-h H4 {
+  font-family: 'Open Sans', sans-serif;
+}
+#msg-box3-8 .mbr-header .mbr-header__text {
+  text-align: center;
+}
+#msg-box3-8 .mbr-header .mbr-header__subtext {
+  text-align: center;
+}
+#pricing-table1-4 DIV {
+  color: #000000;
+}
+#msg-box2-g H2 {
+  text-align: center;
+}
