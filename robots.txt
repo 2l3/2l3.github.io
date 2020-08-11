@@ -1,0 +1,9 @@
+User-agent: Mediapartners-Google
+
+Disallow:
+
+User-agent: *
+
+Allow: /
+
+Sitemap: https://im03th.com/sitemap.xml
