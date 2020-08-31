@@ -6,10 +6,10 @@
 #gcaMainButton {
 	background-image: url("https://im03th.com/whats/whatsapp.svg");
 	background-color:transparent;
-	width:65px;
-	height:65px;
+	width:50px;
+	height:50px;
 	background-size: contain;
-    border-radius: 50px;
+    border-radius: 20px;
     cursor: pointer;
     position: fixed;
     right:20px;
