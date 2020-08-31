@@ -1,0 +1,226 @@
+#gcaMain {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	
+}	
+
+#gcaMainButton {
+	background-image: url("https://getchat.app/assets/img/whatsapp.svg");
+	background-color:transparent;
+	width:65px;
+	height:65px;
+	background-size: contain;
+    border-radius: 50px;
+    cursor: pointer;
+    position: fixed;
+    right:20px;
+	bottom:20px;
+	z-index: 2147483647;
+	box-shadow: 1px 2px 8px rgba(70,70,70,.25);
+}
+
+.gcaLeft {
+    left: 20px !important;
+}
+
+#gcaMainCard {
+	
+	z-index: 2147483647;
+	background-color:#e5ddd5;
+	width:300px;
+	bottom:100px;
+	right:20px;
+	box-shadow: 1px 2px 8px rgba(70,70,70,.25);
+	position: fixed;
+	border-radius:8px;
+	visibility: hidden;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	opacity: 0;
+
+}
+.gcaHide {
+	visibility: hidden;
+  	filter: alpha(opacity=50);
+  	opacity: 5;
+}
+
+
+#gcaMainCard.gcaDisplay {
+	visibility: visible;
+  	filter: alpha(opacity=50);
+  	opacity: 5;
+}
+
+#gcaMainCardInner {
+	height: auto;
+}
+
+#gcaMainCardInnerTop {
+    background-color: #1ebea5;
+    width: 100%;
+	display: flex;
+	justify-content: space-between;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    
+}
+#gcaMainCardInnerTopContent {
+	padding:7px;    
+	color:#FFF;
+	margin-left:5px;
+	font-size:14px;
+}
+#gcaMainHoverInnerCloseButton {
+    color: #ccc;
+    font: 12px/100% arial, sans-serif;
+    position: absolute;
+    right: 6px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    top: 3px;
+	z-index:2147483647;
+    cursor: pointer;
+}
+#gcaMainHoverInnerCloseButton:after {
+    content: 'âœ–';
+}
+#gcaMainCardInnerTopContentCloseButton {
+  color: #757575;
+  font: 15px/100% arial, sans-serif;
+  position: absolute;
+  right: 8px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+  cursor:pointer;
+}
+#gcaMainCardInnerTopContentCloseButton:after {
+	content: 'âœ–'; /* UTF-8 symbol */
+
+
+}
+
+#gcaMainCardInner {
+    height: 100%;
+}
+#gcaMainCardInnerBody {
+
+}
+#gcaMainCardInnerChatBox {
+    
+    top: 110px;
+    height: 74px;
+    width: 100%;
+    z-index: 2147483647;
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+#gcaMainCardInnerChatBoxTextArea {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 230px;
+    margin: 10px;
+    padding: 5px;
+    height: 40px;
+    box-sizing: border-box;
+    min-height: 40px;
+    font-size: initial;
+    line-height: initial;
+    display: initial;
+    overflow:hidden;
+}
+#gcaMainCardInnerChatBoxTextArea:focus {
+    outline: none;
+}
+#gcaMainCardInnerChatBoxSend {
+    position: absolute;
+    right: 14px;
+    bottom: 27px;
+    width: 30px;
+    height: 30px;
+    background-image: url(https://getchat.app/assets/img/send.png);
+    background-size: cover;
+}
+
+#gcaMainCardInnerBody {
+
+}
+
+#gcaMainCardInnerBodyMessage {
+    background-color: #FFF;
+    
+    top: 10px;
+    margin: 15px;
+    padding: 9px;
+    border-radius: 0 5px 5px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.15);
+	font-size:14px;
+	visibility: hidden;
+	-webkit-transition: opacity 0.7s ease-in-out;
+	-moz-transition: opacity 0.7s ease-in-out;
+	-ms-transition: opacity 0.7s ease-in-out;
+	-o-transition: opacity 0.7s ease-in-out;
+	transition: opacity 0.7s ease-in-out;
+	opacity: 0;
+}
+
+.gcaDisplay #gcaMainCardInnerBodyMessage {
+
+	visibility: visible;
+
+  	filter: alpha(opacity=50);
+  	opacity: 5;
+}
+
+
+
+#gcaMainCardPoweredBy {
+    position: absolute;
+    bottom: 3px;
+    left: 11px;
+    font-size: 11px;
+}
+
+#gcaMainCardPoweredBy a,
+#gcaMainCardPoweredBy a:link,
+#gcaMainCardPoweredBy a:visited,
+#gcaMainCardPoweredBy a:active {
+	color: #337ab7;
+}
+
+
+
+
+
+#gcaMainHover {
+	background-color:#FFF;
+	bottom:100px;
+	right:20px;
+	box-shadow: 1px 2px 8px rgba(70,70,70,.25);
+	position: fixed;
+	border-radius:8px;
+	visibility: hidden;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	max-width:300px;
+	opacity: 0;
+}
+#gcaMainHover.gcaDisplay {
+	visibility: visible;
+	filter: alpha(opacity=50);
+	opacity: 5;
+  z-index: 2147483647;
+}
+#gcaMainHoverInner {
+    padding: 15px;
+    font-weight:bold;
+    font-size:14px;
+}
