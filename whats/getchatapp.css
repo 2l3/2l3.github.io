@@ -85,7 +85,7 @@
     cursor: pointer;
 }
 #gcaMainHoverInnerCloseButton:after {
-    content: 'âœ–';
+    content: "\0078";
 }
 #gcaMainCardInnerTopContentCloseButton {
   color: #757575;
@@ -98,7 +98,7 @@
   cursor:pointer;
 }
 #gcaMainCardInnerTopContentCloseButton:after {
-	content: 'âœ–'; /* UTF-8 symbol */
+	content: "\0078";
 
 
 }
