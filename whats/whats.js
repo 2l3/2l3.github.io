@@ -75,7 +75,7 @@ class GetChatApp {
 
 		link.type = "text/css";
 		link.rel = "stylesheet";
-		link.href = 'https://getchat.app/assets/css/getchatapp.css?v2';
+		link.href = 'https://im03th.com/whats/getchatapp.css?v2';
 
 		head.appendChild(link);
 
