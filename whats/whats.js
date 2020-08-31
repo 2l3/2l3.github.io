@@ -8,6 +8,7 @@ class GetChatApp {
 		this.displayBox = true;
 		if (data.welcomeMessage) {  this.welcomeMessage = data.welcomeMessage; } else { this.welcomeMessage = 'Hello, how can we help you today?'; }
 		if (data.hoverMessage) {  this.hoverMessage = data.hoverMessage; } else { this.hoverMessage = 'Click here to chat with us'; }
+		if (data.displayOn) { this.displayOn = data.displayOn; } else { this.displayOn = 'both'; }
 		if (data.titleMessage) {  this.titleMessage = data.titleMessage; } else { this.titleMessage = 'Chat with us on WhatsApp!'; }
 		if (data.mobileNumber) {  this.mobileNumber = data.mobileNumber; } else { this.mobileNumber = false; }
 		if (data.position) {  this.position = data.position; } else { this.position = 'right'; }
@@ -59,6 +60,18 @@ class GetChatApp {
 		}
 
 	}
+	//1
+		if (this.displayOn == 'desktop') {
+		if (this.mobileCheck()) {
+			document.getElementById('gcaMain').style.display = 'none';
+		}
+	}
+	if (this.displayOn == 'mobile') {
+		if (!this.mobileCheck()) {
+			document.getElementById('gcaMain').style.display = 'none';
+		}	
+	}
+	//2
 
 	GCAmobileCheck() {
   		let check = false;
