@@ -152,13 +152,7 @@ class GetChatApp {
 		gcaMainCardInnerTopContentCloseButton.addEventListener('click', () => { 
 		   this.hideChatBox(); 
 		}, false);  
-
-
-		var gcaMainCardPoweredBy = document.createElement("Div");
-		gcaMainCardPoweredBy.id = "gcaMainCardPoweredBy";
-		gcaMainCardPoweredBy.classList.add("gcaMainCardPoweredBy");
-		gcaMainCardPoweredBy.innerHTML = 'Free chat âڑ، &nbsp;by <a href="https://getchat.app/?r='+document.domain+'" target="_BLANK">GetChat.app</a>';
-		document.getElementById("gcaMainCardInner").appendChild(gcaMainCardPoweredBy);  	
+ 	
 
 		var gcaMainCardInnerBody = document.createElement("Div");
 		gcaMainCardInnerBody.id = "gcaMainCardInnerBody";
