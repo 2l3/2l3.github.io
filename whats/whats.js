@@ -60,18 +60,7 @@ class GetChatApp {
 		}
 
 	}
-	//1
-		if (this.displayOn == 'desktop') {
-		if (this.mobileCheck()) {
-			document.getElementById('gcaMain').style.display = 'none';
-		}
-	}
-	if (this.displayOn == 'mobile') {
-		if (!this.mobileCheck()) {
-			document.getElementById('gcaMain').style.display = 'none';
-		}	
-	}
-	//2
+
 
 	GCAmobileCheck() {
   		let check = false;
