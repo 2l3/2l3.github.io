@@ -34,7 +34,7 @@ class GetChatApp {
 				window.open('https://api.whatsapp.com/send?phone='+mobileNumber+'&text='+msg, '_blank');
 				
 			} else {
-				window.open('https://web.whatsapp.com/send?phone='+mobileNumber+'&text='+msg, '_blank');
+				window.open('https://api.whatsapp.com/send?phone='+mobileNumber+'&text='+msg, '_blank');
 			}
 		} else {
 			alert('Mobile number not set!');
