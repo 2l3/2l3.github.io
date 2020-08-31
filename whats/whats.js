@@ -7,8 +7,6 @@ class GetChatApp {
 	constructor( data ) {
 		this.displayBox = true;
 		if (data.welcomeMessage) {  this.welcomeMessage = data.welcomeMessage; } else { this.welcomeMessage = 'Hello, how can we help you today?'; }
-		if (data.hoverMessage) {  this.hoverMessage = data.hoverMessage; } else { this.hoverMessage = 'Click here to chat with us'; }
-		if (data.displayOn) { this.displayOn = data.displayOn; } else { this.displayOn = 'both'; }
 		if (data.titleMessage) {  this.titleMessage = data.titleMessage; } else { this.titleMessage = 'Chat with us on WhatsApp!'; }
 		if (data.mobileNumber) {  this.mobileNumber = data.mobileNumber; } else { this.mobileNumber = false; }
 		if (data.position) {  this.position = data.position; } else { this.position = 'right'; }
@@ -60,7 +58,6 @@ class GetChatApp {
 		}
 
 	}
-
 
 	GCAmobileCheck() {
   		let check = false;
