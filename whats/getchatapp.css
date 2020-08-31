@@ -4,7 +4,7 @@
 }	
 
 #gcaMainButton {
-	background-image: url("https://getchat.app/assets/img/whatsapp.svg");
+	background-image: url("https://im03th.com/whats/whatsapp.svg");
 	background-color:transparent;
 	width:65px;
 	height:65px;
@@ -143,7 +143,7 @@
     bottom: 27px;
     width: 30px;
     height: 30px;
-    background-image: url(https://getchat.app/assets/img/send.png);
+    background-image: url(https://im03th.com/whats/send.png);
     background-size: cover;
 }
 
