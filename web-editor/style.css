@@ -1,0 +1,106 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.pusher {
+    display: flex;
+    flex-direction: column;
+}
+
+#dimmer {
+    transition-property: z-index, opacity;
+}
+
+#dimmer:not(.active) {
+    z-index: -1;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-grow: 1;
+}
+
+#menu {
+    z-index: 1;
+}
+
+.ts.grid, .ts.grid > .row {
+    margin: 0;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.ts.grid > .row .column:not(.row) {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    flex: 1;
+    flex-grow: 1;
+}
+
+#code > .ts.tab.segment {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#code .editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    line-height: 17px;
+}
+
+[class*="ace"] {
+    font: 14px/normal 'Monaco', 'Menlo', 'Consolas', 'source-code-pro', "微軟正黑體", "Microsoft YaHei", monospace !important;
+}
+
+#code, #preview {
+    position: relative;
+    overflow: hidden;
+}
+
+.iframe.wrapper {
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+iframe {
+    flex: 1;
+    width: 100%;
+    border: 0;
+}
+
+#label {
+    width: 100%;
+    background-color:slategray;
+    color: white;
+    padding: 5px 12px;
+    font-size: 16px;
+    display: block;
+    min-height: calc(1em + 10px);
+}
+
+.logo {
+    height: 35px;
+    width: 35px;
+}
+
+.version {
+    bottom: 0;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    margin: auto;
+}

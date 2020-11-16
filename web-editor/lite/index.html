@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Web Editor</title>
+	<!-- Tocas UI -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
+    <!-- Tocas UI End -->
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+    <!--Header menu-->
+    <div class="ts fluid container">
+        <div id="menu" class="ts pointing secondary menu">
+            <a class="active item" data-tab="html">HTML</a>
+            <a class="item" data-tab="css">CSS</a>
+            <a class="item" data-tab="javascript">JS</a>
+            <a class="item" href="javascript:load()">RUN</a>
+            <a class="item" href="javascript:clear()">RESET</a>
+            <div class="right menu">
+                <div class="tablet or large device only only"><a target="_blank" href="https://stoneapp.tech" class="item"><img class="logo" src="https://stoneapp.tech/asset/logo.png">&nbsp;Stone App</a></div>
+                <div class="mobile only"><a target="_blank" href="https://stoneapp.tech" class="item"><img class="logo" src="https://stoneapp.tech/asset/logo.png"></a></div>
+            </div>
+        </div>
+     </div>
+    <!--menu end-->
+
+        <div class="main ts fluid container">
+            <div class="ts grid">
+                <div class="two column row">
+                    <!--textarea-->
+                    <div id="script" class="column">
+                        <div data-tab="html" class="ts active bottom attached tab segment">
+                            <div id="html"></div>
+                        </div>
+                        <div data-tab="css" class="ts bottom attached tab segment">
+                            <div id="css"></div>
+                        </div>
+                        <div data-tab="javascript" class="ts bottom attached tab segment">
+                            <div id="javascript"></div>
+                        </div>
+                    </div>
+
+                    <!--Preview-->
+                    <div id="show" class="column">
+                        <div id="dimmer" class="ts active dimmer">
+                            <div class="ts loader"></div>
+                        </div>
+                        <div id="label"></div>
+                        <iframe id="frame" srcdoc="">Need support of iframe.</iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!--ace editor start-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./script.js" type="text/javascript" charset="utf-8"></script>
+    <!--ace editor end-->
+
+</body>
+</html>
