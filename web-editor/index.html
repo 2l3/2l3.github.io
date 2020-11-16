@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+
+<!-- Mirrored from harmash.com/web-editor/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Nov 2020 14:46:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="refresh" content="86400" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="webEditor-2.min.css" />
+    <link rel="icon" type="image/x-icon" href="../template/images/harmash_x.png" />
+    <script src="jquery.min.js"></script>
+
+    <!-- Code Mirror -->
+    <script src="codemirror-5.56.0/codemirror.min.js"></script>
+    <link rel="stylesheet" href="codemirror-5.56.0/codemirror.min.css">
+    <script src="codemirror-5.56.0/xml.min.js"></script>
+    <script src="codemirror-5.56.0/closetag.min.js"></script>
+    <link rel="stylesheet" href="codemirror-5.56.0/panda-syntax.min.css">
+    <title>Harmash - Web Editor V1</title>
+</head>
+
+<body onresize="screenAdjustment()" onload="screenAdjustment()">
+    <div id="header">
+        <div id="ads"></div>
+        <ul id="containerMenu">
+            <li id="home"><a href="https://harmash.com/"><img src="images/home.png"></a><span class="tooltiptext">الصفحة الرئيسية</span></li>
+            <li id="downloadCode"><img src="images/download.png"><span class="tooltiptext">تحميل الكود</span></li>
+            <li id="toggleTheme"><img src="images/theme.png"><span class="tooltiptext">تغيير الألوان</span></li>
+            <li id="toggleView"><img src="images/rotate.png"><span class="tooltiptext">تغيير العرض</span></li>
+            <li class="tooltip" id="run"><img src="images/run.png"><span class="tooltiptext">تشغيل الكود</span></li>
+        </ul>
+        <span id="dimensions"></span>
+    </div>
+    <div id="container">
+        <div id="main">
+            <div id="editorContainer">
+                <textarea name="editor" id="editor"></textarea>
+            </div>
+            <div id="editorResultContainer">
+                <div id="editorResult">
+                    <iframe id="iframeResult" style="height:99%; width:100%; border:none;" allowfullscreen="true"></iframe>
+                </div>
+            </div>
+            <div id="dragbar"></div>
+        </div>
+    </div>
+    <div id="iframeFix"></div>
+</body>
+
+<!-- Mirrored from harmash.com/web-editor/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Nov 2020 14:46:11 GMT -->
+</html>
+
+<script src="codemirror-5.56.0/xml.min.js"></script>
+<script src="codemirror-5.56.0/javascript.min.js"></script>
+<script src="codemirror-5.56.0/css.min.js"></script>
+<script src="codemirror-5.56.0/htmlmixed.min.js"></script>
+<script src="webEditor-3.js"></script>
