@@ -153,7 +153,7 @@ function setState() {
 
 function welcomeMessage() {
     swal({
-        html: '<h1 class="ts center aligned header">歡迎!第一次使用!</h1>',
+        html: '<h1 class="ts center aligned header">مرحباً بك في أول زيارة لك</h1>',
         type: "success"
     });
     setState();
