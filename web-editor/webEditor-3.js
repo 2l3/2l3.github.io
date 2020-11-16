@@ -111,7 +111,7 @@ $(document).ready(function () {
 		document.body.appendChild(a);
 		a.style = "display: none";
 		a.href = makeTextFile(editor.getValue());
-		a.setAttribute("download", "harmash_webeditor.html");
+		a.setAttribute("download", "im03th_webeditor.html");
 		a.click()
 	});
 	$("#run").click(function () {
