@@ -39,21 +39,6 @@ function runCode() {
 	iframe.document.close()
 }
 
-function loadAds() {
-	var AD_HTML = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
-	if ($(window).width() >= 970) {
-		AD_HTML += '<!-- Web Editor 970 x 90 -->' + '<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-1613148428630404" data-ad-slot="5975336166"></ins>'
-	} else if ($(window).width() >= 728) {
-		AD_HTML += '<!-- Web Editor 728 x 90 -->' + '<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1613148428630404" data-ad-slot="7092976712"></ins>'
-	} else if ($(window).width() >= 468) {
-		AD_HTML += '<!-- Web Editor 468 x 59 -->' + '<ins class="adsbygoogle" style="display:inline-block;width:468px;height:59px" data-ad-client="ca-pub-1613148428630404" data-ad-slot="7113142103"></ins>'
-	} else if ($(window).width() >= 320) {
-		AD_HTML += '<!-- Web Editor 320 x 50 -->' + '<ins class="adsbygoogle" style="display:inline-block;width:320px;height:50px" data-ad-client="ca-pub-1613148428630404" data-ad-slot="4103835381"></ins>'
-	}
-	AD_HTML += '<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-	$("#ads").html(AD_HTML)
-}
-
 function screenAdjustment() {
 	var pageHeight = html.offsetHeight;
 	var pageWidth = html.offsetWidth;
