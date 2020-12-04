@@ -1,0 +1,17 @@
+body {
+    > #app {
+        height: 100vh;
+
+        header {
+            height: calc(100% - 203px);
+
+            .container, .container-fluid {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.full-height {
+    height: 100%;
+}

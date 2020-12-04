@@ -1,0 +1,9 @@
+// Fontawesome path
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+// Default font
+$font-primary: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
+// Custom color
+$default-primary: #3a1143 !default;
+$theme-colors: (
+    "primary": $default-primary
+);

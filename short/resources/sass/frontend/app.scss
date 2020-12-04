@@ -1,0 +1,21 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+//Fontawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+// Ladda
+@import '~ladda/css/ladda';
+// Vue loading overlay
+@import "~vue-loading-overlay/src/css/index.css";
+// Theme
+@import "theme/landing-page";
+// Vue snackbar
+@import "../plugins/vue-snack";
+// Custom
+@import "custom";

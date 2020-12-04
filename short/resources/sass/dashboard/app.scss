@@ -1,0 +1,31 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+// Variables
+@import 'variables';
+@import "~@dacoto/ui-dashboard/src/scss/theme/variables";
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-vue/src/index';
+// Fontawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+// Material design icons
+@import "~@mdi/font/scss/materialdesignicons";
+// Ladda
+@import '~ladda/css/ladda';
+// Vue snackbar
+@import "../plugins/vue-snack";
+// nprogress
+@import "~nprogress/nprogress.css";
+// Vue datetimepicker
+@import "~vue-datetime/dist/vue-datetime.min.css";
+// jvectormap
+@import "~jvectormap/jquery-jvectormap.css";
+// Vue loading overlay
+@import "~vue-loading-overlay/src/css/index.css";
+// Theme
+@import "~@dacoto/ui-dashboard/src/scss/theme";
+// Custom
+@import "custom";
