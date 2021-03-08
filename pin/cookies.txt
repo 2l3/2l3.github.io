@@ -1,0 +1,9 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+twtools.eu	TRUE	/	FALSE	1999999999	pin_any_tweet	hpc76648orhtg5pgtehm2j0856
+twtools.eu	TRUE	/	FALSE	1999999999	welcome_edit	b8bombvmtp5sgmejlcq7dfm6g5
+twtools.eu	TRUE	/	FALSE	1999999999	rtcleaner	2t6qvknoc6s0108qhf219j9054
+twtools.eu	TRUE	/	FALSE	1999999999	oauth_token_secret	eyqAuyLzUiWPeqA2Ru9GlBhduUQeF7gh
+twtools.eu	TRUE	/	FALSE	1999999999	token_secret	EyCzww7hcKoACeB0ayOoOAXURtKKX3ey
+twtools.eu	TRUE	/	FALSE	1999999999	oauth_token	TeHCvwAAAAAAeml9AAABeBIt5Vs
+
