@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from twtools.eu/rtcleaner/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 10:17:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>RT Cleaner</title>
+    <meta name="description" content="Un RT Cleaner qui supprime vos derniers RT sur Twitter après un temps défini." />
+	<link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/ratchet/2.0.2/css/ratchet.min.css" />
+	<link rel="stylesheet" href="css/style.min92eb.css?b">
+
+	 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">	
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
+
+    <meta property="og:title" content="RT Cleaner" />
+    <meta property="og:type" content="other.website" />
+    <meta property="og:url" content="index.html" />
+    <meta property="og:image" content="icons/apple-touch-icon.png" />
+
+    <meta name="twitter:title" content="RT Cleaner" />
+    <meta name="twitter:description" content="RT Cleaner" />
+    <meta name="twitter:image" content="icons/apple-touch-icon.png" />
+
+</head>
+<body>
+
+    <header class="bar bar-nav">
+        <a class="icon icon-left-nav pull-left" href="../index.html"></a>
+
+		<h1 class="title"><a href="index.html">RT Cleaner</a></h1>
+    
+    </header>
+
+	<div class="content content-padded">
+        
+
+        <div class="center">
+        
+        <form action="https://twtools.eu/rtcleaner/post.php" method="post" onsubmit="if( !confirm('Vos retweets récents seront supprimés, continuer ?')){ return false;}" >
+            Durée du RT : <input title="min: 1hour, max: 1 week" type="number" min="60" max="10080" id="time" name="time" min="60" value="65" style="width: 100px;"> mins.
+            <br />
+            <span>
+                <label for="suppr_own_rt"> Supprimer les RT de mes tweets</label>
+            </span> : 
+            <input type="checkbox" id="suppr_own_rt" name="suppr_own_rt"  />
+            
+            <br />
+            <br />
+            <button type="submit" name="fsubmit" class="btn btn-block btn-positive"> Autoriser </button>
+		    <!-- <span class="error">Momentanément indisponible</span> -->
+        </form>
+        
+        </div>
+        
+
+        <div class="center small low blue">
+            +4.9 millions de RT déjà supprimés !        </div>
+
+        <br>
+        <br>
+        
+        <div class="content-padded">
+
+        <p>
+            Toutes les 5 minutes, le script accède à vos 200 derniers tweets/RT et supprime les RT qui dépassent le temps de présence que vous avez donné (60/65 minutes par défaut).        </p>
+
+        <p>
+            Si votre compte est restreint/bloqué/captcha, Twitter bloque aussi ce RT Cleaner, pour un rétablissement plus rapide du service, redonnez à nouveau les autorisations ici quand ça arrive.        </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        </div>
+
+        
+        <script>
+            const selectElement = document.querySelector('#time');
+
+            selectElement.addEventListener('change', (event) => {
+
+                if ( event.target.value < 60 ){
+                    event.target.value = 65;
+                }else if (event.target.value > 10080){
+                    event.target.value = 10080;
+                }
+            });
+        </script>
+
+	</div>
+
+</body>
+
+<!-- Mirrored from twtools.eu/rtcleaner/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 10:17:21 GMT -->
+</html>
