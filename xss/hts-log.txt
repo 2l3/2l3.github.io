@@ -1,12 +1,12 @@
-HTTrack3.49-2+htsswf+htsjava launched on Sun, 25 Apr 2021 02:13:02 at https://pentest-tools.com/website-vulnerability-scanning/xss-scanner-online# +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
-(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://pentest-tools.com/website-vulnerability-scanning/xss-scanner-online# -O1 "C:\Users\im03th\Desktop\202020\e" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 25 Apr 2021 20:47:21 at https://pentest-tools.com/website-vulnerability-scanning/xss-scanner-online +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://pentest-tools.com/website-vulnerability-scanning/xss-scanner-online -O1 "C:\Users\im03th\Desktop\202020\Ee" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
 
 Information, Warnings and Errors reported for this mirror:
 note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
 	such as username/password authentication for websites mirrored in this project
 	do not share these files/folders if you want these information to remain private
 
-02:13:25	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://pentest-tools.com/website-vulnerability-scanning/xss-scanner-online)
+20:47:42	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://pentest-tools.com/website-vulnerability-scanning/xss-scanner-online)
 
-HTTrack Website Copier/3.49-2 mirror complete in 28 seconds : 36 links scanned, 34 files written (2092488 bytes overall) [1070443 bytes received at 38230 bytes/sec], 1309703 bytes transferred using HTTP compression in 24 files, ratio 20%
+HTTrack Website Copier/3.49-2 mirror complete in 26 seconds : 36 links scanned, 34 files written (2092594 bytes overall) [1070450 bytes received at 41171 bytes/sec], 1309809 bytes transferred using HTTP compression in 24 files, ratio 20%
 (1 errors, 0 warnings, 0 messages)
