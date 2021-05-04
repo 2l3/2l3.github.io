@@ -1,0 +1,364 @@
+﻿@model Hospital.Models.Device
+@{
+    Layout = null;
+}
+<html lang="ar-eg" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- SITE TITLE -->
+    <!-- Bootstrap min CSS -->
+    <link href="~/Content/media/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/media/css/style.css" rel="stylesheet">
+    <!-- RTL CSS -->
+    <link href="~/Content/media/css/rtl.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="~/Content/media/css/responsive.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/assets/img/lolo2.png">
+
+    @if (CultureHelper.CurrentLanguageCode != 2)
+    {
+        <title>الصيانه الطبية</title>
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal&amp;display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Tajawal',Tahoma !important;
+            }
+
+            h2, h1, h3, h4, h5, h6, a, p, li, span {
+                font-family: 'Tajawal',Tahoma !important;
+                letter-spacing: 0px !important;
+            }
+
+            .gradient-bg {
+                background: linear-gradient(to right, #428bca,#e0e0e0) !important;
+            }
+
+            .ColorSwitcher {
+                display: none;
+            }
+
+            .single-slider-item .welcome-phone {
+                max-width: 500px !important;
+            }
+
+            .slider-text {
+                text-align: center !important;
+            }
+
+        </style>
+    }
+    else
+    {
+        <title>Medical Maintenance</title>
+        <style>
+            .gradient-bg {
+                background: linear-gradient(to right, #428bca,#e0e0e0) !important;
+            }
+
+            .ColorSwitcher {
+                display: none;
+            }
+
+            .single-slider-item .welcome-phone {
+                max-width: 500px !important;
+            }
+
+            .slider-text {
+                text-align: center !important;
+            }
+
+            .btn-primary {
+                color: #fff;
+                background-color: #f0bb27;
+                border-color: #f0bb27;
+            }
+
+                .btn-primary:hover {
+                    color: #fff;
+                    background-color: #f0bb27;
+                    border-color: #f0bb27;
+                }
+
+            @@media only screen and (max-width: 767px) {
+                .top-menu .navbar-brand {
+                    color: black;
+                    font-size: 20px;
+                    padding: 15px 15px;
+                }
+            }
+        </style>
+    }
+    <style>
+        .DeviceUnit {
+            display: none;
+        }
+
+        .Logo {
+            width: 120px;
+        }
+
+        @@media only screen and (max-width: 600px) {
+            .Logo {
+                width: 50px;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+
+
+
+</head>
+
+<body data-spy="scroll" data-offset="70" style="background: linear-gradient(to right, #428bca,#e0e0e0) !important;" >
+    <!-- START PRELOADER -->
+    <!-- END PRELOADER -->
+    <!-- START HOMEPAGE SLIDER -->
+    <div id="home" class="hompage-slides-wrapper">
+
+                        <div class="single-slider-item gradient-bg wave-bg-two">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="slider-text">
+                                                    @if (CultureHelper.CurrentLanguageCode == 1)
+                                                    {
+                                                        <h1>تم أرسال طلبك بنجاح</h1>
+                                                        <div class="row" style="text-align: right;" id="content">
+                                                            <div class="col-lg-4"></div>
+                                                            <div class="col-lg-4">
+                                                                <h5 style="text-align:center"> أثبات بأرسال الطلب </h5>
+                                                            </div>
+                                                            <div class="col-lg-4"></div>
+                                                            @if (ViewBag.Device.Device != null)
+                                                            {
+                                                            <div class="col-lg-3">
+                                                                أسم الجهاز : @ViewBag.Device.Device.NameAr
+                                                            </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    أسم الجهاز : @ViewBag.Device.DeviceName
+                                                                </div>
+                                                            }
+
+                                                            @if (ViewBag.Device.Device != null)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    رقم الكمبيوتر : @ViewBag.Device.Device.ComputerNumber
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    رقم الكمبيوتر : @ViewBag.Device.ComputerNumber
+                                                                </div>
+                                                            }
+
+                                                            @if (ViewBag.Device.Device != null)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    رقم السريال : @ViewBag.Device.Device.Serial
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    رقم السريال : -
+                                                                </div>
+                                                            }
+
+                                                            @if (ViewBag.Device.RequestType == 1)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    نوع الطلب : @Hospital.Resources.Resource.DamageRequest
+                                                                </div>
+                                                            }
+                                                            else if (ViewBag.Device.RequestType == 2)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    نوع الطلب : @Hospital.Resources.Resource.MovementRequest ( @ViewBag.Device.ToUnitAr )
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    نوع الطلب : @Hospital.Resources.Resource.AddPPMRequest
+                                                                </div>
+                                                            }
+                                                            <div class="col-lg-3">
+                                                                تاريخ الطلب : @DateTime.Now.AddHours(10).ToShortDateString()
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                وقت الطلب : @DateTime.Now.AddHours(10).ToShortTimeString()
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                               مقدم الطلب : @ViewBag.Device.User
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                الملاحظات : @ViewBag.Device.Notes
+                                                            </div>
+                                                        </div>
+
+            
+                                                    }
+                                                    else
+                                                    {
+                                                        <h1>Request Send Successfully</h1>
+                                                        <div class="row" style="text-align: left;" id="content">
+                                                            <div class="col-lg-4"></div>
+                                                            <div class="col-lg-4">
+                                                                <h5 style="text-align:center">
+                                                                    Proof of sending the application
+                                                                </h5>
+                                                            </div>
+                                                            <div class="col-lg-4"></div>
+                                                            @if (ViewBag.Device.Device != null)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Device Name : @ViewBag.Device.Device.NameAr
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Device Name : @ViewBag.Device.DeviceName
+                                                                </div>
+                                                            }
+
+                                                            @if (ViewBag.Device.Device != null)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Computer Number : @ViewBag.Device.Device.ComputerNumber
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Computer Number : @ViewBag.Device.ComputerNumber
+                                                                </div>
+                                                            }
+
+                                                            @if (ViewBag.Device.Device != null)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Serial : @ViewBag.Device.Device.Serial
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Serial : -
+                                                                </div>
+                                                            }
+                                                           
+                                                            @if (ViewBag.Device.RequestType == 1)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Request Type : @Hospital.Resources.Resource.DamageRequest
+                                                                </div>
+                                                            }
+                                                            else if (ViewBag.Device.RequestType == 2)
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Request Type : @Hospital.Resources.Resource.MovementRequest ( @ViewBag.Device.ToUnitEn )
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="col-lg-3">
+                                                                    Request Type : @Hospital.Resources.Resource.AddPPMRequest
+                                                                </div>
+                                                            }
+
+                                                            <div class="col-lg-3">
+                                                                Request Date : @DateTime.Now.AddHours(10).ToShortDateString()
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                Request Time : @DateTime.Now.AddHours(10).ToShortTimeString()
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                 Applicant Name : @ViewBag.Device.User
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                Notes : @ViewBag.Device.Notes
+                                                            </div>
+                                                        </div>
+
+                                                    
+                                                    }
+                                                    <div id="previewImage">
+                                                    </div>
+                                                </div>
+                                            </div><!-- END COL -->
+
+                                        </div><!-- END ROW -->
+                                    </div><!-- END CONTAINER -->
+                        </div>
+    </div>
+
+
+
+    <!-- END HOMEPAGE SLIDER -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Content/media/js/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/media/js/bootstrap.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="~/Content/media/js/owl.carousel.min.js"></script>
+    <!-- Custom JS -->
+    <script src="~/Content/media/js/custom.js"></script>
+    <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"></script>
+
+    <script>
+
+        // html2canvas <- https://html2canvas.hertzen.com/dist/html2canvas.min.js
+
+        // code reference: https://stackoverflow.com/questions/31656689/how-to-save-img-to-users-local-computer-using-html2canvas
+
+        setUpDownloadPageAsImage();
+
+        function setUpDownloadPageAsImage() {
+            document.getElementById("download-page-as-image").addEventListener("click", function () {
+                html2canvas(document.body).then(function (canvas) {
+                    console.log(canvas);
+                    simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
+                });
+            });
+        }
+
+        function simulateDownloadImageClick(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download !== 'string') {
+                window.open(uri);
+            } else {
+                link.href = uri;
+                link.download = filename;
+                accountForFirefox(clickLink, link);
+            }
+        }
+
+        function clickLink(link) {
+            link.click();
+        }
+
+        function accountForFirefox(click) { // wrapper function
+            let link = arguments[1];
+            document.body.appendChild(link);
+            click(link);
+            document.body.removeChild(link);
+        }
+
+
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,59 @@
+﻿@model Hospital.Models.DeviceUnit
+@using Hospital.Resources;
+
+@{
+    ViewBag.Title = Resource.DeviceUnits;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    @using (Html.BeginForm("Create", "DeviceUnit", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <p style="text-align:center;color:red">@ViewBag.Message</p>
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    @Resource.NameAr :
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.NameAr, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.NameAr, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    @Resource.NameEn :
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.NameEn, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.NameEn, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="@Resource.Save" class="btn btn-primary" name="Save" />
+                    <a class="btn btn-default" href="@Url.Action("Index","DeviceUnit")"> @Resource.BackToHome </a>
+                </div>
+            </div>
+        </div>
+    }
+
+
+</div>
+
+<script type="text/javascript" src="~/Content2/Ar-assets/js/lib/jquery-1.11.min.js"></script>
+
+<script>
+
+
+    $(function () {
+        $('form').submit(function () {
+            $('input[name="Save"]').prop('disabled', true);
+        });
+    });
+
+</script>

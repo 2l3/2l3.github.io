@@ -1,0 +1,220 @@
+@model List<Hospital.Models.DeviceUnit>
+@{
+    ViewBag.Title = "Print";
+    Layout = null;
+    var List = new List<Hospital.Models.ReportSetting>(ViewBag.ReportSetting);
+}
+@using Hospital.Resources;
+<html lang="@CultureHelper.CurrentNeutralCulture" dir="@CultureHelper.CurrentCultureHtmlDirection">
+<head>
+    <!-- Plugin Css Put Here -->
+    <link href="~/Content2/Ar-assets/css/bootstrap-rtl.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content2/Ar-assets/css/rtl-css/plugins/selectize.bootstrap3-rtl.css">
+    <link rel="stylesheet" href="~/Content2/Ar-assets/css/rtl-css/plugins/bootstrap-progressbar-3.1.1-rtl.css">
+    <link rel="stylesheet" href="~/Content2/Ar-assets/css/rtl-css/plugins/jquery-jvectormap-rtl.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal',Tahoma !important;
+        }
+
+        h1, h2, h3, h4, h5, h6, a, span, th {
+            font-family: 'Tajawal',Tahoma !important;
+        }
+    </style>
+
+    <style>
+        h1, h2, h3, h4, h5, h6, a, span, th {
+            text-align: right;
+        }
+
+        body {
+            text-align: right;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding-right: 5px;
+        }
+
+        .dot {
+            height: 100px;
+            width: 100px;
+            background-color: #efebeb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        tr {
+            height: 30px !important;
+            text-align: center !important;
+        }
+
+        th {
+            text-align: center !important;
+        }
+
+        .D {
+            font-weight: 300 !important;
+            font-size: 12px;
+        }
+
+        @@page {
+            size: auto; /* auto is the initial value */
+            margin: 0; /* this affects the margin in the printer settings */
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body style="overflow-x:hidden;">
+    <br />
+    <div class="row">
+        <div style="margin: 0 40px 0px 40px;">
+            <div class="row">
+                <div class="col-xs-5" style="padding-right:45px;padding-top:20px;">
+                    @for (var i = 0; i < List.Count(); i++)
+                    {
+                        <p style="text-align:right;font-size:@List[i].FontSize">@List[i].DescAr</p>
+                    }
+                </div>
+                <div class="col-xs-2" style="padding-top:10px">
+                    @if (ViewBag.ReportImage == "" || ViewBag.ReportImage == null)
+                    {
+                        <img src="~/Content2/l.jpg" style="width:100%;" />
+                    }
+                    else
+                    {
+                        <img src="~/Uploads/ReportLogo/@ViewBag.ReportImage" style="width:100%" />
+                    }
+                </div>
+                <div class="col-xs-5" style="padding-left:45px;padding-top:20px;">
+                    @for (var i = 0; i < List.Count(); i++)
+                    {
+                        <p style="text-align:left;font-size:@List[i].FontSize">@List[i].DescEn</p>
+                    }
+                </div>
+            </div>
+            @if (ViewBag.Type == 1)
+            {
+                <h4 style="text-align:center">
+                    طلبات الأصلاح الغير منجزة في  @ViewBag.DeviceUnit.NameAr
+                    <br />
+                    Requests Of Not Completde Repairs @ViewBag.DeviceUnit.NameEn
+                </h4>
+            }
+            else
+            {
+                <h4 style="text-align:center">
+                    طلبات الأصلاح المنجزة في  @ViewBag.DeviceUnit.NameAr <br />
+                    Requests Of Completde Repairs @ViewBag.DeviceUnit.NameEn
+                </h4>
+            }
+            <br />
+            <table style="width:100%;">
+                <thead>
+                    <tr style="background-color:lightgray">
+                        <th style="text-align:center"></th>
+                        <th style="text-align:center">
+                            أسم الجهاز <br /> Device Name
+                        </th>
+                        <th style="text-align:center">
+                            الشركة المصنعة <br /> Company Name
+                        </th>
+                        <th style="text-align:center">
+                            الموديل <br /> Model
+                        </th>
+                        <th style="text-align:center">
+                            رقم التسلسلي<br /> Serial No
+                        </th>
+                        <th style="text-align:center">
+                            القسم <br /> Department
+                        </th>
+                        <th style="text-align:center">
+                            رقم الكمبيوتر <br /> Computer Number
+                        </th>
+                 <th style="text-align:center">
+    تاريخ التعطل <br /> Date Of The Malfunctioning
+</th>
+
+@if (ViewBag.Type == 1)
+{
+    <th style="text-align:center">
+        وقت العطل <br /> Time Of The Malfunctioning
+    </th>
+}
+else
+{
+                            <th style="text-align:center">
+                                تاريخ الأصلاح <br /> Date Of Repair 
+                            </th>
+                        }
+                        @if (ViewBag.Type == 2)
+                        {
+                            <th style="text-align:center">
+                                فترة التعطل <br /> Time Of The Malfunctioning
+                            </th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ var count = 1;}
+                    @foreach (var item in ViewBag.Data)
+                    {
+                        <tr>
+                            <td style="text-align:center">@count</td>
+                            @if (CultureHelper.CurrentLanguageCode == 1)
+                            {
+                                <td style="text-align:center">@item.Device.NameAr</td>
+                            }
+                            else
+                            {
+                                <td style="text-align:center">@item.Device.NameEn</td>
+                            }
+                            <td style="text-align:center">@item.Device.Com</td>
+                            <td style="text-align:center">@item.Device.Model</td>
+                            <td style="text-align:center">@item.Device.Serial</td>
+                            @if (CultureHelper.CurrentLanguageCode == 1)
+                            {
+                                <td style="text-align:center">@item.Device.DeviceUnit.NameAr</td>
+                            }
+                            else
+                            {
+                                <td style="text-align:center">@item.Device.DeviceUnit.NameEn</td>
+                            }
+                            <td style="text-align:center">@item.Device.ComputerNumber</td>
+                            @{ var Date = Convert.ToDateTime(item.CreatedDate);}
+                            <td style="text-align:center">@Date.ToShortDateString()</td>
+                            @if (ViewBag.Type == 1)
+                            {
+                                <td style="text-align:center">@Date.ToShortTimeString()</td>
+                            }
+                            else
+                            {
+                                Date = Convert.ToDateTime(item.ConfirmedDate);
+                                <td style="text-align:center">@Date.ToShortDateString()</td>
+                            }
+
+                            @if (ViewBag.Type == 2)
+                            {
+                                Date = Convert.ToDateTime(item.ConfirmedDate);
+                                var Date2 = Convert.ToDateTime(item.CreatedDate);
+                                var CountDays = (Date - Date2).Days;
+                                <td style="text-align:center">@CountDays</td>
+                            }
+                        </tr>
+                        count++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Content2/Ar-assets/js/lib/jquery-1.11.min.js"></script>
+    <script>
+
+        //window.print();
+
+    </script>
+</body>
+</html>

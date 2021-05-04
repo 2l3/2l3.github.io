@@ -1,0 +1,214 @@
+@model IEnumerable<Hospital.Models.CenterDevice>
+@{
+    ViewBag.Title = "Print";
+    Layout = null;
+    var DateFrom = ViewBag.DateFrom;
+    var DateTo = ViewBag.DateTo;
+    var AboveList = new List<Hospital.Models.CenterReportSetting2>(ViewBag.AboveReportSetting);
+    var BottomList = new List<Hospital.Models.CenterReportSetting2>(ViewBag.BottomReportSetting);
+}
+<html lang="ar-eg" dir="rtl">
+<head>
+    <!-- Plugin Css Put Here -->
+    <link href="~/Content2/Ar-assets/css/bootstrap-rtl.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content2/Ar-assets/css/rtl-css/plugins/selectize.bootstrap3-rtl.css">
+    <link rel="stylesheet" href="~/Content2/Ar-assets/css/rtl-css/plugins/bootstrap-progressbar-3.1.1-rtl.css">
+    <link rel="stylesheet" href="~/Content2/Ar-assets/css/rtl-css/plugins/jquery-jvectormap-rtl.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal',Tahoma !important;
+        }
+
+
+        h1, h2, h3, h4, h5, h6, a, span, th {
+            font-family: 'Tajawal',Tahoma !important;
+        }
+    </style>
+
+    <style>
+        h1, h2, h3, h4, h5, h6, a, span, th {
+            text-align: right;
+        }
+
+        body {
+            text-align: right;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding-right: 5px;
+        }
+
+        .dot {
+            height: 100px;
+            width: 100px;
+            background-color: #efebeb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        tr {
+            height: 45px !important;
+        }
+
+        .D {
+            font-weight: 300 !important;
+            font-size: 12px;
+        }
+
+        @@page {
+            size: auto; /* auto is the initial value */
+            margin: 0; /* this affects the margin in the printer settings */
+            border: 1px solid black;
+        }
+
+        @@media print {
+            .pagebreak {
+                clear: both;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body style="overflow-x:hidden;">
+    <br />
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-xs-5" style="padding-right:45px;padding-top:30px;">
+                @for (var i = 0; i < AboveList.Count(); i++)
+                {
+                    <p style="text-align:right;font-size:@AboveList[i].FontSize">@AboveList[i].DescAr</p>
+                }
+            </div>
+            <div class="col-xs-2" style="padding-top:20px">
+                @if (ViewBag.ReportImage == "" || ViewBag.ReportImage == null)
+                {
+                    <img src="~/Content2/l.jpg" style="width:100%" />
+                }
+                else
+                {
+                    <img src="~/Uploads/ReportLogo/@ViewBag.ReportImage" style="width:100%" />
+                }
+            </div>
+            <div class="col-xs-5" style="padding-left:45px;padding-top:30px;">
+                @for (var i = 0; i < AboveList.Count(); i++)
+                {
+                    <p style="text-align:left;font-size:@AboveList[i].FontSize">@AboveList[i].DescEn</p>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+            <br />
+            <h4 style="text-align:center">  شهادة صيانة دورية <br /> Periodic maintenance certificate</h4>
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-xs-6" style="padding-right:45px;">
+                @for (var i = 0; i < BottomList.Count(); i++)
+                {
+                    if (i == 1)
+                    {
+                        <p style="text-align:right;font-size:@BottomList[i].FontSize"> مركز صحي : @ViewBag.Center.NameAr</p>
+                    }
+                    <p style="text-align:right;font-size:@BottomList[i].FontSize">@BottomList[i].DescAr</p>
+                }
+            </div>
+            <div class="col-xs-6" style="padding-left:45px;">
+                @for (var i = 0; i < BottomList.Count(); i++)
+                {
+                    if (i == 1)
+                    {
+                        <p style="text-align:left;font-size:@BottomList[i].FontSize">Health Center : @ViewBag.Center.NameEn</p>
+                    }
+                    <p style="text-align:left;font-size:@BottomList[i].FontSize">@BottomList[i].DescEn</p>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div style="margin: 0 40px 0px 40px;">
+                <br />
+                <table style="width:100%;">
+                    <tr>
+                        <th style="text-align:center">رقم الكمبيوتر <br /> Computer NO</th>
+                        <th style="text-align:center"> الجهاز <br /> Device</th>
+                        <th style="text-align:center"> رقم التسلسل <br /> Serial Number</th>
+                        <th style="text-align:center"> الشركة المنتجة <br /> Manufacturer</th>
+                        <th style="text-align:center"> الموديل <br /> Model</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center">@item.ComputerNumber</td>
+                        <td style="text-align:center">@item.NameAr<br />@item.NameEn</td>
+                        <td style="text-align:center">@item.Serial</td>
+                        <td style="text-align:center">@item.Com</td>
+                        <td style="text-align:center">@item.Model</td>
+                    </tr>
+                </table>
+                <br />
+                <h5 style="text-align:center;font-size:15px;font-weight:700">و ذلك عن فترة الصيانة من تاريخ : @DateFrom إلي تاريخ : @DateTo  و الجهاز يعمل بحالة جيدة</h5>
+                <h5 style="text-align:center;font-size:15px;font-weight:700">And that for the maintenance period from the date : @DateFrom to date : @DateTo  And the device is working in good condition</h5>
+                <br /><br />
+                <div class="row">
+                    <div class="col-xs-4" style="padding-right:25px;">
+                        <h5 style="text-align:center">مهندس الشركة</h5>
+                        <h5 style="text-align:center"> Company Engineer</h5><br />
+                        <h5>الأسم : @ViewBag.Engineer</h5><br />
+                        @if (ViewBag.EngineerSignImg == "")
+                        {
+                            <h5>التوقيع : ....................................</h5><br />
+                        }
+                        else
+                        {
+                            <h5>
+                                التوقيع :
+                                <img src="~/Content/Uploads/Engineer/@ViewBag.EngineerSignImg" style="width: 150px;height:50px;" />
+                            </h5><br />
+                        }
+                    </div>
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4" style="padding-left:25px;">
+                        <h5 style="text-align:center"> رئيس القسم</h5>
+                        <h5 style="text-align:center"> Head Of Department </h5><br />
+                        <h5>الأسم : .....................................</h5><br />
+                        <h5>التوقيع : ....................................</h5><br />
+                    </div>
+
+                </div>
+
+                <div class="col-xs-4" style="padding-right:25px;">
+                    <h5 style="text-align:center"> القسم الهندسي للمستشفى</h5>
+                    <h5 style="text-align:center"> Hospital Engineer</h5><br />
+                    <h5>الأسم : .....................................</h5><br />
+                    <h5>التوقيع : ....................................</h5><br />
+                </div>
+                <div class="col-xs-4" style="padding-left:25px;">
+                    <h5 style="text-align:center">الختم </h5>
+                    <h5 style="text-align:center">Stamp </h5><br />
+                </div>
+                <div class="col-xs-4">
+                    <h5 style="text-align:center"> مدير المركز الصحي</h5>
+                    <h5 style="text-align:center"> Manager Of Health Center </h5><br />
+                    <h5>الأسم : .....................................</h5><br />
+                    <h5>التوقيع : ....................................</h5><br />
+                </div>
+
+            </div>
+
+        </div>
+        <div class="pagebreak"> </div>
+
+    }
+    <script type="text/javascript" src="~/Content2/Ar-assets/js/lib/jquery-1.11.min.js"></script>
+    <script>
+
+        window.print();
+
+    </script>
+</body>
+</html>
+

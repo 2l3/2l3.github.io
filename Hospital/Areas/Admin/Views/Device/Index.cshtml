@@ -1,0 +1,459 @@
+﻿@model IEnumerable<Hospital.Models.Device>
+@using Hospital.Resources;
+@{
+    ViewBag.Title = Resource.Devices;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" @*style="height: 150px;"*@ >
+                <h3 class="panel-title">
+                    @Resource.Devices
+                    @if (User.IsInRole("HospitalDeviceAdd"))
+                    {
+                        <a class="btn btn-app" href="@Url.Action("Create")" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-plus"></i>
+                            @Resource.AddNew
+                        </a>
+                    }
+
+                    @if (User.IsInRole("HospitalDeviceDelete"))
+                    {
+                        <button class="btn btn-app" id="DeleteSelected" href="#" onclick="DeleteSelected()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-trash-o"></i>
+                            @Resource.Delete
+                        </button>
+                    }
+
+                    @if (User.IsInRole("HospitalDeviceLastModification"))
+                    {
+                        <button class="btn btn-app" id="ShowLastModification" href="#" onclick="ShowLastModification()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-dot-circle-o"></i>
+                            @Resource.ShowLastModification
+                        </button>
+                        <button class="btn btn-app" id="HideLastModification" href="#" onclick="HideLastModification()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-dot-circle-o"></i>
+                            @Resource.HideLastModification
+                        </button>
+                    }
+                        
+                    @if (User.IsInRole("HospitalDeviceSchedule"))
+                    {
+                        <button class="btn btn-app" id="DeviceSchedual" href="#" onclick="DeviceSchedual()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-dot-circle-o"></i>
+                            @Resource.DeviceSchedual
+                        </button>
+                    }
+                       
+                       
+                        <button class="btn btn-app" onclick="PrintBarCode()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-print"></i>
+                            @Resource.PrintBarCode
+                        </button>
+
+                    @if (User.IsInRole("HospitalDeviceArchive"))
+                    {
+                        <button class="btn btn-app" id="ArchiveDevice" onclick="ArchiveDevice()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-archive"></i>
+                            @Resource.Archive
+                        </button>
+                    }
+                        
+                    
+                   
+                </h3>
+            </div>
+            <div class="panel-body">
+                <!--Table Wrapper Start-->
+                <div class="ls-editable-table table-responsive ls-table" >
+                    <table class="table table-bordered table-striped table-bottomless" id="Table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" class="checkbox" id="CheckAll" onchange="CheckAll()" /></th>
+                                <th></th>
+                                <th>@Resource.ShowLastPPM</th>
+                                <th>@Resource.DeviceName  </th>
+                                <th>@Resource.Company </th>
+                                <th>@Resource.DeviceModel </th>
+                                <th>@Resource.Serial </th>
+                                <th>@Resource.DeviceUnit </th>
+                                <th>@Resource.ComputerNumber </th>
+                                <th>@Resource.DeviceCategory </th>
+                                <th>@Resource.Daman </th>
+                                <th>@Resource.BarCode </th>
+                                <th>@Resource.ScheduleCount </th>
+                                <th>@Resource.Operations  </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ var count = 1;}
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><input type="checkbox" class="checkbox" name="Check" value="@item.Id" /></td>
+                                    <td>@count</td>
+                                    <td>
+                                        @if (item.ShowLastModification == true)
+                                        {
+                                            <i class='fa fa-check fa-lg' style='color:green'></i>
+                                        }
+                                        else
+                                        {
+                                            <i class='fa fa-times fa-lg' style='color:red'></i>
+                                        }
+                                    </td>
+                                    @if (CultureHelper.CurrentLanguageCode == 1)
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.NameAr)</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.NameEn)</td>
+                                    }
+                                    <td>@item.Com</td>
+                                    <td>@item.Model</td>
+                                    <td>@item.Serial</td>
+                                    @if (CultureHelper.CurrentLanguageCode == 1)
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.DeviceUnit.NameAr)</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.DeviceUnit.NameEn)</td>
+                                    }
+                                    <td>@item.ComputerNumber</td>
+                                    @if (CultureHelper.CurrentLanguageCode == 1)
+                                    {
+                                        if (item.DeviceCategoryId == 1)
+                                        {
+                                            <td>فئة_A</td>
+                                        }
+                                        else if (item.DeviceCategoryId == 2)
+                                        {
+                                            <td>فئة_B </td>
+                                        }
+                                        else
+                                        {
+                                            <td>فئة_C </td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (item.DeviceCategoryId == 1)
+                                        {
+                                            <td>Category_A  </td>
+                                        }
+                                        else if (item.DeviceCategoryId == 2)
+                                        {
+                                            <td>Category_B  </td>
+                                        }
+                                        else
+                                        {
+                                            <td>Category_C </td>
+                                        }
+                                    }
+
+                                    @if (item.ShowDaman == true)
+                                    {
+                                        if (item.DamanExpireDate.HasValue == true && item.DamanExpireDate.Value.Ticks > DateTime.Now.AddHours(10).Date.Ticks)
+                                        {
+                                            <td><span class="label label-success">@Resource.DamanUnder </span></td>
+                                        }
+                                        else
+                                        {
+                                            <td><span class="label label-danger">@Resource.DamanOut  </span></td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td><span class="label label-danger">@Resource.NoDaman </span></td>
+                                    }
+
+                                    <td><a class="btn btn-default btn-sm" onclick="GetBarCode(@item.Id)"> <i class="fa fa-barcode"></i>  </a></td>
+                                    <td>@item.DeviceSchedules.Count()</td>
+
+                                  
+                                        <td>
+                                            @if (User.IsInRole("HospitalDeviceEdit"))
+                                            {
+                                                <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = item.Id })" title="@Resource.Edit"> <i class="fa fa-edit"></i>  </a>
+
+                                            }
+
+                                            @if (User.IsInRole("HospitalDeviceDelete"))
+                                            {
+                                                <a class="btn btn-danger btn-sm" onclick="return confirm('@Resource.AreYouSureToDelete ');" href="@Url.Action("DeleteConfirmed", new { id = item.Id })" title="@Resource.Delete "><i class="fa fa-trash-o"></i>  </a>
+
+                                            }
+
+
+                                            <a class="btn btn-default btn-sm" href="@Url.Action("Detail", new { id = item.Id })"> <i class="fa fa-eye"></i>  </a>
+                                            
+
+                                            @if (User.IsInRole("HospitalDeviceStickerPPM"))
+                                            {
+                                                <a class="btn btn-default btn-sm" onclick="PrintPPM(@item.Id)"> <i class="fa fa-print"></i>  </a>
+
+                                            }
+                                        </td>
+                                    
+
+                                </tr>
+                                count++;
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+                <!--Table Wrapper Finish-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="text-align:center"> @Hospital.Resources.Resource.BarCode</h4>
+            </div>
+
+            <div id="ModalBody">
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Modal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="text-align:center"> @Hospital.Resources.Resource.PPM</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden" value="" id="SelectedDevice" />
+                <label>@Resource.DateFrom</label>
+                <input type="text" placeholder="@Resource.DateFrom" value="" class="form-control" id="DateFrom" />
+                <label>@Resource.DateTo</label>
+                <input type="text" placeholder="@Resource.DateTo" value="" class="form-control" id="DateTo" />
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="CCClose">@Hospital.Resources.Resource.Close</button>
+                <a href="#" onclick="AutoPrintPPM()" class="btn btn-default">@Hospital.Resources.Resource.Print</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Modal3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="text-align:center"> @Hospital.Resources.Resource.DeviceSchedual</h4>
+            </div>
+
+            <div class="modal-body">
+                <label>@Resource.ScheduleCount</label>
+                <input type="number" value="1" class="form-control" id="ScheduleCount" />
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" >@Hospital.Resources.Resource.Close</button>
+                <a href="#" onclick="GetDeviceSchedual()" class="btn btn-default">@Hospital.Resources.Resource.DeviceSchedual</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="~/Content2/Ar-assets/js/lib/jquery-1.11.min.js"></script>
+<script>
+
+    $(function () {
+
+        $('#Table').dataTable({
+            "pageLength": 10, bFilter: true, paging: true, bInfo: true, ordering: false
+        });
+    })
+
+    function CheckAll() {
+        if ($('#CheckAll').prop("checked") == true) {
+            $('input:checkbox').prop('checked', true);
+        }
+        else if ($('#CheckAll').prop("checked") == false) {
+            $('input:checkbox').prop('checked', false);
+        }
+    }
+
+    function PrintBarCode() {
+        var Ids = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Ids += $(this).val() + ",";
+            }
+        });
+
+        if (Ids == "")
+            return alert("أختر أجهزة أولا");
+
+        window.open("/Admin/Device/PrintBarCodeMulti?Ids=" + Ids, '_blank');
+    }
+
+    function ArchiveDevice() {
+        var Ids = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Ids += $(this).val() + ",";
+            }
+        });
+
+
+        if (Ids == "")
+            return alert("أختر أجهزة أولا");
+     var isconfirm = confirm('@Resource.AreYouSure ');
+     if (isconfirm) {
+         $('#ArchiveDevice').prop('disabled', true);
+         window.open("/Admin/Device/ArchiveDevice?Selected=" + Ids, '_self');
+     }
+    }
+
+    function PrintPPM(Id) {
+        $('#SelectedDevice').val(Id);
+        $('#Modal2').modal('show');
+    }
+
+    function AutoPrintPPM() {
+        $('#CCClose').click();
+        window.open("/Admin/Device/PPM?DeviceId=" + $('#SelectedDevice').val() + "&DateFrom=" + $('#DateFrom').val() + "&DateTo=" + $('#DateTo').val(), '_blank');
+    }
+
+
+    function GetBarCode(Id) {
+        $.ajax({
+            url: '@Url.Action("GetBarCode", "Device")',
+             data: { Id:Id},
+                type: 'Get',
+                success: function (data) {
+                    $('#ModalBody').html(data);
+                    $('#Modal').modal('show');
+                }
+            })
+    }
+
+    function DeleteSelected()
+    {
+        var Selected = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Selected += $(this).val() + ",";
+            }
+        });
+
+        if (Selected != "")
+        {
+            var isconfirm = confirm('@Resource.AreYouSureToDelete ');
+            if (isconfirm)
+            {
+                $('#ShowLastModification').prop('disabled', true);
+                $('#DeleteSelected').prop('disabled', true);
+                $('#HideLastModification').prop('disabled', true);
+                window.open("/Admin/Device/DeleteSelected?Selected=" + Selected, '_self');
+            }
+        }
+    }
+
+    function ShowLastModification()
+    {
+        var Selected = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Selected += $(this).val() + ",";
+            }
+        });
+
+        if (Selected != "")
+        {
+            var isconfirm = confirm('@Resource.AreYouSure ');
+            if (isconfirm)
+            {
+                $('#ShowLastModification').prop('disabled', true);
+                $('#DeleteSelected').prop('disabled', true);
+                $('#HideLastModification').prop('disabled', true);
+                window.open("/Admin/Device/ShowLastModification?Selected=" + Selected, '_self');
+            }
+        }
+    }
+
+    function HideLastModification()
+    {
+        var Selected = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Selected += $(this).val() + ",";
+            }
+        });
+
+        if (Selected != "")
+        {
+            var isconfirm = confirm('@Resource.AreYouSure ');
+            if (isconfirm)
+            {
+                $('#ShowLastModification').prop('disabled', true);
+                $('#DeleteSelected').prop('disabled', true);
+                $('#HideLastModification').prop('disabled', true);
+                window.open("/Admin/Device/HideLastModification?Selected=" + Selected, '_self');
+            }
+        }
+    }
+
+    function GetDeviceSchedual()
+    {
+        var Selected = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Selected += $(this).val() + ",";
+            }
+        });
+
+        if (Selected != "")
+        {
+            var isconfirm = confirm('@Resource.AreYouSure ');
+            if (isconfirm)
+            {
+                var ScheduleCount = $('#ScheduleCount').val();
+                if (ScheduleCount <= 0)
+                    return alert("@Resource.ScheduleCountError");
+                $('#ShowLastModification').prop('disabled', true);
+                $('#DeleteSelected').prop('disabled', true);
+                $('#HideLastModification').prop('disabled', true);
+                window.open("/Admin/Device/DeviceSchedual?Selected=" + Selected + "&ScheduleCount=" + ScheduleCount, '_self');
+            }
+        }
+    }
+
+
+    function DeviceSchedual()
+    {
+        $('#ScheduleCount').val(1);
+        $('#Modal3').modal('show');
+    }
+
+
+
+
+</script>

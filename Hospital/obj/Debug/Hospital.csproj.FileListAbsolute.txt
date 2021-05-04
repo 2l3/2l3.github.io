@@ -1,0 +1,621 @@
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\ApplicationInsights.config
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\csc.exe
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\csc.exe.config
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\csc.rsp
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\csi.exe
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\csi.exe.config
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\csi.rsp
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.AppContext.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Console.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.IO.Compression.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Security.Claims.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.ValueTuple.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\vbc.exe
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\vbc.exe.config
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\vbc.rsp
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\VBCSCompiler.exe
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Hospital.dll.config
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Hospital.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Hospital.pdb
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\ar\Hospital.resources.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Antlr3.Runtime.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\EntityFramework.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\EntityFramework.SqlServer.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.Web.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Newtonsoft.Json.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Owin.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.Helpers.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.Mvc.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.Optimization.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.Razor.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.WebPages.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.WebPages.Razor.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\WebGrease.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\zxing.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\zxing.presentation.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\EntityFramework.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\EntityFramework.SqlServer.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.Helpers.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.Mvc.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.Optimization.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.Razor.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.WebPages.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\System.Web.WebPages.Razor.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Antlr3.Runtime.pdb
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\zxing.pdb
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\zxing.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\zxing.presentation.pdb
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\zxing.presentation.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Newtonsoft.Json.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\bin\Microsoft.AI.Web.xml
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.nmk.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.hgjk.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.hgjk5.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.ghjkl.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.ghjk.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjk.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fvghjk.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fvghjk52.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjk1.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.ertyuioplkmnbvghjkmnbvghj.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.ty.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjkl.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjkl5.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv655.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv655888.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkjvn.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn55.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn555.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn55555.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.skdjvn.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.d.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fffff.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkbjv.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkbjv4.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.jhdsvg.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.jhdsvg4.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdhvb.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdjbvn.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.uyasgjh.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.uyasgjh1.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Resources.Resource.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.Resources.Resource.ar.resources
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.csproj.GenerateResource.Cache
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\ar\Hospital.resources.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.dll
+C:\Users\Momen\source\repos\Hospital\Hospital\obj\Debug\Hospital.pdb
+F:\Current Projects\repos\Hospital\Hospital\bin\ApplicationInsights.config
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\csc.exe
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\csc.exe.config
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\csc.rsp
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\csi.exe
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\csi.exe.config
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\csi.rsp
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.AppContext.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Collections.Immutable.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Console.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Diagnostics.Process.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.IO.Compression.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.IO.Pipes.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Reflection.Metadata.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Security.AccessControl.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Security.Claims.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Security.Principal.Windows.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Threading.Thread.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.ValueTuple.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Xml.XmlDocument.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Xml.XPath.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\vbc.exe
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\vbc.exe.config
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\vbc.rsp
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\VBCSCompiler.exe
+F:\Current Projects\repos\Hospital\Hospital\bin\roslyn\VBCSCompiler.exe.config
+F:\Current Projects\repos\Hospital\Hospital\bin\Hospital.dll.config
+F:\Current Projects\repos\Hospital\Hospital\bin\Hospital.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Hospital.pdb
+F:\Current Projects\repos\Hospital\Hospital\bin\ar\Hospital.resources.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Antlr3.Runtime.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\EntityFramework.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\EntityFramework.SqlServer.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.DependencyCollector.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.Web.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.WindowsServer.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.ApplicationInsights.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Web.Infrastructure.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Newtonsoft.Json.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\Owin.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.Helpers.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.Mvc.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.Optimization.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.Razor.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.WebPages.Deployment.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.WebPages.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.WebPages.Razor.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\WebGrease.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\zxing.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\zxing.presentation.dll
+F:\Current Projects\repos\Hospital\Hospital\bin\EntityFramework.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\EntityFramework.SqlServer.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.Helpers.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.Mvc.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.Optimization.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.Razor.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.WebPages.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.WebPages.Deployment.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\System.Web.WebPages.Razor.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Antlr3.Runtime.pdb
+F:\Current Projects\repos\Hospital\Hospital\bin\zxing.pdb
+F:\Current Projects\repos\Hospital\Hospital\bin\zxing.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\zxing.presentation.pdb
+F:\Current Projects\repos\Hospital\Hospital\bin\zxing.presentation.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Newtonsoft.Json.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.ApplicationInsights.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.DependencyCollector.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.WindowsServer.xml
+F:\Current Projects\repos\Hospital\Hospital\bin\Microsoft.AI.Web.xml
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.nmk.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.hgjk.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.hgjk5.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.ghjkl.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.ghjk.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjk.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fvghjk.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fvghjk52.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjk1.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.ertyuioplkmnbvghjkmnbvghj.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.ty.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjkl.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjkl5.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv655.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv655888.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkjvn.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn55.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn555.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn55555.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.skdjvn.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.d.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.fffff.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkbjv.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkbjv4.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.jhdsvg.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.jhdsvg4.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdhvb.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdjbvn.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.uyasgjh.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.uyasgjh1.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Resources.Resource.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Resources.Resource.ar.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.csproj.GenerateResource.Cache
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\ar\Hospital.resources.dll
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.dll
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.pdb
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdg5545ppo.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdg5545ppo5.resources
+F:\Current Projects\repos\Hospital\Hospital\obj\Debug\Hospital.csprojResolveAssemblyReference.cache
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\ApplicationInsights.config
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\csc.exe
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\csc.exe.config
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\csc.rsp
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\csi.exe
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\csi.exe.config
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\csi.rsp
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.AppContext.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Console.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.IO.Compression.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Security.Claims.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.ValueTuple.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\vbc.exe
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\vbc.exe.config
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\vbc.rsp
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\VBCSCompiler.exe
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Hospital.dll.config
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Hospital.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Hospital.pdb
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\ar\Hospital.resources.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Antlr3.Runtime.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\EntityFramework.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\EntityFramework.SqlServer.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.Web.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.Security.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Newtonsoft.Json.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Owin.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.Helpers.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.Mvc.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.Optimization.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.Razor.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.WebPages.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\WebGrease.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\zxing.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\zxing.presentation.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\EntityFramework.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\EntityFramework.SqlServer.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.Security.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.Helpers.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.Mvc.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.Optimization.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.Razor.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.WebPages.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Antlr3.Runtime.pdb
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\zxing.pdb
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\zxing.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\zxing.presentation.pdb
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\zxing.presentation.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Newtonsoft.Json.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\bin\Microsoft.AI.Web.xml
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.csprojResolveAssemblyReference.cache
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.nmk.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.hgjk.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.hgjk5.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.ghjkl.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.ghjk.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjk.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.fvghjk.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.fvghjk52.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjk1.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.ertyuioplkmnbvghjkmnbvghj.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.ty.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjkl.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjkl5.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv655.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv655888.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkjvn.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn55.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn555.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn55555.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.skdjvn.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.d.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.fffff.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkbjv.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkbjv4.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.jhdsvg.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.jhdsvg4.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdhvb.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdjbvn.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.uyasgjh.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.uyasgjh1.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdg5545ppo.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdg5545ppo5.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Resources.Resource.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.Resources.Resource.ar.resources
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.csproj.GenerateResource.Cache
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\ar\Hospital.resources.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.dll
+C:\Users\Ahmed\Desktop\H\Hospital\Hospital\obj\Debug\Hospital.pdb
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\ApplicationInsights.config
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\csc.exe
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\csc.exe.config
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\csc.rsp
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\csi.exe
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\csi.exe.config
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\csi.rsp
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.AppContext.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Console.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.IO.Compression.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.IO.Pipes.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Security.Claims.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Threading.Thread.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.ValueTuple.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Xml.XPath.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\vbc.exe
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\vbc.exe.config
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\vbc.rsp
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\VBCSCompiler.exe
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Hospital.dll.config
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Hospital.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Hospital.pdb
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\ar\Hospital.resources.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Antlr3.Runtime.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\EntityFramework.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\EntityFramework.SqlServer.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.Web.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.ApplicationInsights.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.Security.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Newtonsoft.Json.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Owin.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.Helpers.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.Mvc.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.Optimization.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.Razor.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.WebPages.Deployment.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.WebPages.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.WebPages.Razor.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\WebGrease.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\zxing.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\zxing.presentation.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\EntityFramework.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\EntityFramework.SqlServer.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.Security.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.Helpers.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.Mvc.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.Optimization.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.Razor.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.WebPages.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.WebPages.Deployment.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\System.Web.WebPages.Razor.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Antlr3.Runtime.pdb
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\zxing.pdb
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\zxing.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\zxing.presentation.pdb
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\zxing.presentation.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Newtonsoft.Json.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.ApplicationInsights.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\bin\Microsoft.AI.Web.xml
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.csprojAssemblyReference.cache
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.nmk.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.hgjk.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.hgjk5.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.ghjkl.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.ghjk.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjk.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.fvghjk.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.fvghjk52.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjk1.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.ertyuioplkmnbvghjkmnbvghj.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.ty.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjkl.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.fghjkl5.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv655.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdkbnv655888.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkjvn.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn55.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn555.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sldjbvn55555.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.skdjvn.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.d.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.fffff.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkbjv.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdkbjv4.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.jhdsvg.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.jhdsvg4.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sjdhvb.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdjbvn.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.uyasgjh.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.uyasgjh1.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdg5545ppo.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Migrations.sdg5545ppo5.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Resources.Resource.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.Resources.Resource.ar.resources
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.csproj.GenerateResource.cache
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\ar\Hospital.resources.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.csproj.CopyComplete
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.dll
+C:\Users\im03th\Desktop\Hospital\Hospital\obj\Debug\Hospital.pdb

@@ -1,0 +1,368 @@
+﻿@model Hospital.Models.CenterDevice
+@{
+    Layout = null;
+}
+<html lang="@CultureHelper.CurrentNeutralCulture" dir="@CultureHelper.CurrentCultureHtmlDirection">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- SITE TITLE -->
+    <!-- Bootstrap min CSS -->
+    <link href="~/Content/media/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Owl Carouse CSS -->
+    <link href="~/Content/media/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Content/media/css/owl.theme.default.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="~/Content/media/css/style.css" rel="stylesheet">
+    <!-- RTL CSS -->
+    <link href="~/Content/media/css/rtl.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="~/Content/media/css/responsive.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/assets/img/lolo2.png">
+
+    @if (CultureHelper.CurrentLanguageCode != 2)
+    {
+        <title>الصيانه الطبية</title>
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal&amp;display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Tajawal',Tahoma !important;
+            }
+
+            h2, h1, h3, h4, h5, h6, a, p, li, span {
+                font-family: 'Tajawal',Tahoma !important;
+                letter-spacing: 0px !important;
+            }
+
+            .gradient-bg {
+                background: linear-gradient(to right, #428bca,#e0e0e0) !important;
+            }
+
+            .ColorSwitcher {
+                display: none;
+            }
+
+            .single-slider-item .welcome-phone {
+                max-width: 500px !important;
+            }
+
+            .slider-text {
+                text-align: center !important;
+            }
+
+
+            @@media only screen and (max-width: 767px) {
+                .top-menu .navbar-brand {
+                    color: black;
+                    font-size: 20px;
+                    padding: 15px 15px;
+                }
+            }
+        </style>
+    }
+    else
+    {
+        <title>Medical Maintenance</title>
+        <style>
+            .gradient-bg {
+                background: linear-gradient(to right, #428bca,#e0e0e0) !important;
+            }
+
+            .ColorSwitcher {
+                display: none;
+            }
+
+            .single-slider-item .welcome-phone {
+                max-width: 500px !important;
+            }
+
+            .slider-text {
+                text-align: center !important;
+            }
+
+
+
+            @@media only screen and (max-width: 767px) {
+                .top-menu .navbar-brand {
+                    color: black;
+                    font-size: 20px;
+                    padding: 15px 15px;
+                }
+            }
+        </style>
+    }
+    <style>
+        .DeviceUnit {
+            display: none;
+        }
+
+        .Logo {
+            width: 120px;
+        }
+
+        @@media only screen and (max-width: 600px) {
+            .Logo {
+                width: 50px;
+            }
+
+            #Table {
+                overflow: scroll;
+                width: 330px;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+
+
+
+</head>
+
+<body data-spy="scroll" data-offset="0">
+    <!-- START PRELOADER -->
+    <div class="preloader-wrap" style="display: none;">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- END PRELOADER -->
+    <!-- START NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-md navbar-light top-menu">
+        <div class="container">
+
+            @if (CultureHelper.CurrentLanguageCode == 1)
+            {
+                <a class="navbar-brand" href="#" style="font-size: 15px;">
+                    <img src="~/Content/assets/img/lolo2.png" class="Logo">
+                </a>
+
+                @Html.Partial("_LanguageSwitcher", new LanguageSwitcherViewModel())
+
+            }
+            else
+            {
+                @Html.Partial("_LanguageSwitcher", new LanguageSwitcherViewModel())
+
+                <a class="navbar-brand" href="#" style="font-size: 15px;">
+                    <img src="~/Content/assets/img/lolo2.png" class="Logo">
+                </a>
+            }
+
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- START HOMEPAGE SLIDER -->
+    <div id="home" class="hompage-slides-wrapper">
+        <div class="homepage-slides owl-carousel owl-theme owl-rtl owl-loaded">
+
+            <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(3072px, 0px, 0px); transition: all 0s ease 0s; width: 7680px;">
+                    <div class="owl-item active" style="width: 1536px;">
+                        <div class="single-slider-item gradient-bg wave-bg-two">
+                            <div class="slide-item-table">
+                                <div class="slide-item-tablecell">
+                                    <div class="container">
+                                        @if (CultureHelper.CurrentLanguageCode == 1)
+                                        {
+                                            <h1 style="text-align:center">@Model.NameAr</h1>
+                                        }
+                                        else
+                                        {
+                                            <h1 style="text-align:center">@Model.NameEn</h1>
+                                        }
+
+                                    @if (Model.ShowLastModification == true && Model.LastModificationDate.HasValue)
+                                    {
+                                        
+                                            <h4 style="text-align:center">@Hospital.Resources.Resource.LastModification (@Model.LastModificationDate.Value.ToShortDateString())</h4>
+                                        
+                                    }
+                                    
+                                        <div class="row">
+
+                                            <div class="col-lg-6">
+                                                <div class="slider-text" id="Table">
+                                                    <p style="text-align:center">
+                                                        @Hospital.Resources.Resource.PreviousRequests
+                                                    </p>
+                                                    <br /><br />
+                                                    <div style="overflow-x:scroll;height:400px;">
+                                                        <table class="table table-bordered table-responsive" dir="@CultureHelper.CurrentCultureHtmlDirection">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>@Hospital.Resources.Resource.Code</th>
+                                                                    <th>@Hospital.Resources.Resource.RequestType</th>
+                                                                    <th>@Hospital.Resources.Resource.CreatedDate</th>
+                                                                    <th>@Hospital.Resources.Resource.RequestProcess</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach (var item in ViewBag.List)
+                                                                {
+                                                                    <tr>
+                                                                        <td>@item.Id</td>
+                                                                        @if (item.RequestType == 1)
+                                                                        {
+                                                                            <td>@Hospital.Resources.Resource.DamageRequest</td>
+                                                                        }
+                                                                        else if (item.RequestType == 2)
+                                                                        {
+                                                                            <td>@Hospital.Resources.Resource.MovementRequest</td>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <td>@Hospital.Resources.Resource.AddPPMRequest</td>
+                                                                        }
+                                                                        <td>@item.CreatedDate</td>
+                                                                        @if (item.IsDeleted == true)
+                                                                        {
+                                                                            <td>@Hospital.Resources.Resource.Deleted ( @item.DeleteReason )</td>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            if (item.ConfirmType == 1)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.New</td>
+                                                                            }
+                                                                            else if (item.ConfirmType == 2)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.Confirming</td>
+                                                                            }
+                                                                            else if (item.ConfirmType == 3)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.Confirm2</td>
+                                                                            }
+                                                                            else if (item.ConfirmType == 4)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.Confirm3</td>
+                                                                            }
+                                                                            else if (item.ConfirmType == 5)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.Confirm4</td>
+                                                                            }
+                                                                            else if (item.ConfirmType == 6)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.Confirm5</td>
+                                                                            }
+                                                                            else if (item.ConfirmType == 8)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.Confirm8</td>
+                                                                            }
+                                                                            else if (item.ConfirmType == 9)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.PPMWillbeAdded</td>
+                                                                            }
+                                                                            else if (item.ConfirmType == 10)
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.PPMAdded</td>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <td>@Hospital.Resources.Resource.Confrimed</td>
+                                                                            }
+                                                                        }
+                                                                    </tr>
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="slider-text">
+
+                                                    <p>
+                                                        @Hospital.Resources.Resource.AddDeviceRequest
+                                                    </p>
+                                                    @using (Html.BeginForm("SendCenterRequest", "Website", FormMethod.Post))
+                                                    {
+                                                        <input type="hidden" value="@Model.Id" id="DeviceId" name="DeviceId" />
+                                                        <div class="slide-button">
+                                                            <label style="color:white">@Hospital.Resources.Resource.NameOfTheApplicant</label><br>
+                                                            <input dir="@CultureHelper.CurrentCultureHtmlDirection" type="text" value="" class="form-control" id="User" name="User" required />
+                                                            <label style="color:white">@Hospital.Resources.Resource.RequestType</label>
+                                                            <select dir="@CultureHelper.CurrentCultureHtmlDirection" class="form-control" id="RequestType" onchange="RequestTypeChange(this)" name="RequestType" required>
+                                                                <option value="1" selected>@Hospital.Resources.Resource.DamageRequest</option>
+                                                                <option value="2">@Hospital.Resources.Resource.MovementRequest</option>
+                                                                <option value="3">@Hospital.Resources.Resource.AddPPMRequest</option>
+                                                            </select>
+                                                            <label style="color:white" class="DeviceUnit">@Hospital.Resources.Resource.ToUnit</label>
+                                                            <select dir="@CultureHelper.CurrentCultureHtmlDirection" class="form-control DeviceUnit" id="DeviceUnitId" name="DeviceUnitId">
+                                                                @foreach (var item in ViewBag.DeviceUnits)
+                                                                {
+                                                                    if (Model.CenterDeviceUnitId == item.Id)
+                                                                    {
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (CultureHelper.CurrentLanguageCode == 1)
+                                                                        {
+                                                                            <option value="@item.Id">@item.NameAr</option>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <option value="@item.Id">@item.NameEn</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                            <label style="color:white">@Hospital.Resources.Resource.Note</label>
+                                                            <textarea dir="@CultureHelper.CurrentCultureHtmlDirection" class="form-control" id="Reason" name="Reason" rows="5" cols="7" required></textarea>
+                                                            <br />
+                                                            <input type="submit" value="@Hospital.Resources.Resource.SendRequest" name="Save" style="margin-bottom: 10px;" class="btn btn-primary">
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div><!-- END COL -->
+
+                                        </div><!-- END ROW -->
+                                    </div><!-- END CONTAINER -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="icofont-long-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icofont-long-arrow-right"></i></button></div><div class="owl-dots disabled"></div>
+        </div>
+    </div>
+
+
+
+    <!-- END HOMEPAGE SLIDER -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Content/media/js/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/media/js/bootstrap.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="~/Content/media/js/owl.carousel.min.js"></script>
+    <!-- Custom JS -->
+    <script src="~/Content/media/js/custom.js"></script>
+    <script>
+
+        function RequestTypeChange(e) {
+            var val = $(e).val();
+            if (val == 1 || val == 3)
+            {
+                $('.DeviceUnit').hide();
+            }
+            else
+            {
+                $('.DeviceUnit').show();
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

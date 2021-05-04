@@ -1,0 +1,46 @@
+﻿@using ZXing;
+@using System.Drawing;
+@using System.Drawing.Imaging;
+
+<!-- Modal body -->
+
+@{
+    string folderPath = "~/Images/";
+    string imagePath = "../../Images/QrCode" + ViewBag.Device.Id + ".jpg";
+    // If the directory doesn't exist then create it.
+    if (!Directory.Exists(Server.MapPath(folderPath)))
+    {
+        Directory.CreateDirectory(folderPath);
+    }
+
+    var barcodeWriter = new BarcodeWriter();
+    barcodeWriter.Format = BarcodeFormat.QR_CODE;
+    var result = barcodeWriter.Write("https://7-v.net/Website/SendRequest?DeviceId=" + ViewBag.Device.Id);
+    //var result = barcodeWriter.Write("http://sayyaf-001-site2.itempurl.com/Website/SendRequest?DeviceId=" + ViewBag.Device.Id);
+
+    string barcodePath = Server.MapPath(imagePath);
+    var barcodeBitmap = new Bitmap(result);
+    using (MemoryStream memory = new MemoryStream())
+    {
+        using (FileStream fs = new FileStream(barcodePath, FileMode.Create, FileAccess.ReadWrite))
+        {
+            barcodeBitmap.Save(memory, ImageFormat.Jpeg);
+            byte[] bytes = memory.ToArray();
+            fs.Write(bytes, 0, bytes.Length);
+        }
+    }
+
+    <div class="modal-body">
+        <img src="@imagePath" alt="Image" style="width:400px;margin: 0 15% 0px 0px;" />
+
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">@Hospital.Resources.Resource.Close</button>
+        <a href="@imagePath" class="btn btn-default" download>@Hospital.Resources.Resource.Download</a>
+    </div>
+
+}
+
+

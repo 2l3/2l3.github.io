@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Hospital.Models.ApplicationUser>
+@{
+    ViewBag.Title = Hospital.Resources.Resource.Users;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    @Hospital.Resources.Resource.Users
+                   @if (User.IsInRole("ApplicationUsersAdd"))
+                   {
+                    <a class="btn btn-app" href="@Url.Action("Create")" style="float:@Hospital.Resources.Resource.right;margin-top:-7px;">
+                        <i class="fa fa-plus"></i>
+                        @Hospital.Resources.Resource.AddNew
+                    </a>
+                   }
+                   
+                </h3>
+            </div>
+            <div class="panel-body">
+                <!--Table Wrapper Start-->
+                <div class="ls-editable-table table-responsive ls-table">
+                    <table class="table table-bordered table-striped table-bottomless" id="Table">
+                        <thead>
+                            <tr>
+                                <th>@Hospital.Resources.Resource.Code </th>
+                                <th>@Hospital.Resources.Resource.Name </th>
+                                <th>@Hospital.Resources.Resource.UserName </th>
+                                <th>@Hospital.Resources.Resource.Email  </th>
+                                <th>@Hospital.Resources.Resource.Phone </th>
+                                <th>@Hospital.Resources.Resource.EngineerName </th>
+                                <th>@Hospital.Resources.Resource.CreatedDate   </th>
+                                <th>@Hospital.Resources.Resource.Operations  </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                                    @if (item.Engineer == null)
+                                    {
+                                        <td> - </td>
+                                    }
+                                    else
+                                    {
+                                        if (CultureHelper.CurrentLanguageCode == 1)
+                                        {
+                                            <td> @item.Engineer.NameAr</td>
+                                        }
+                                        else
+                                        {
+                                            <td> @item.Engineer.NameEn</td>
+                                        }
+                                    }
+                                    <td>@item.CreatedDate.Value.ToShortDateString()</td>
+                                    <td>
+@if (User.IsInRole("ApplicationUsersRoles"))
+{
+    <a class="" href="@Url.Action("Roles", new { id = item.Id })"> <i class="fa fa-ban"></i>@Hospital.Resources.Resource.Responsibility  </a>
+
+}
+
+                                        @if (User.IsInRole("ApplicationUsersEdit"))
+                                        {
+                                            <a class="" href="@Url.Action("Edit", new { id = item.Id })"> <i class="glyphicon glyphicon-pencil"></i>@Hospital.Resources.Resource.Edit  </a>
+
+                                        }
+                                        @if (User.IsInRole("ApplicationUsersDelete"))
+                                        {
+                                            <a class="" onclick="return confirm('@Hospital.Resources.Resource.AreYouSureToDelete ');" href="@Url.Action("DeleteConfirmed", new { id = item.Id })"><i class="fa fa-trash-o"></i>@Hospital.Resources.Resource.Delete     </a>
+
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+                <!--Table Wrapper Finish-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Content2/Ar-assets/js/lib/jquery-1.11.min.js"></script>
+<script>
+
+    $(function () {
+
+        $('#Table').dataTable({
+            "pageLength": 10, bFilter: true, paging: true, bInfo: true, ordering: false
+        });
+    })
+
+</script>

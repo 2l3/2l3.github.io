@@ -1,0 +1,314 @@
+@model IEnumerable<Hospital.Models.DeviceSchedule>
+@using Hospital.Resources;
+
+@{
+    ViewBag.Title = Resource.DeviceScheduleNotification;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    @Resource.DeviceScheduleNotification
+                  
+                    @if (User.IsInRole("HospitalDeviceScheduleNotificationClose"))
+                    {
+                        <button class="btn btn-app" href="#" id="CloseNotification" onclick="CloseNotification()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-trash-o"></i>
+                            @Resource.CloseNotification
+                        </button>
+                    }
+
+                    @if (User.IsInRole("HospitalDeviceScheduleNotificationPrintPPM"))
+                    {
+                        <button class="btn btn-app" id="GeneratePPM" href="#" onclick="GeneratePPM()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-print"></i>
+                            @Resource.GeneratePPM
+                        </button>
+                    }
+                        
+                      
+                    
+                </h3>
+            </div>
+            <div class="panel-body">
+                <!--Table Wrapper Start-->
+                <div class="ls-editable-table table-responsive ls-table">
+                    <table class="table table-bordered table-striped table-bottomless" id="Table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="CheckBoxAll" name="CheckBoxAll" onchange="CheckBoxAll()" /> </th>
+                                <th> </th>
+                                <th>@Resource.ShowLastPPM</th>
+                                <th>@Resource.DeviceName  </th>
+                                <th>@Resource.Company </th>
+                                <th>@Resource.DeviceModel </th>
+                                <th>@Resource.Serial </th>
+                                <th>@Resource.DeviceUnit </th>
+                                <th>@Resource.ComputerNumber </th>
+                                <th>@Resource.DeviceCategory </th>
+                                <th> @Resource.PPM45</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ var count = 1;}
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @if (item.Device.DeviceCategoryId == 1)
+                                    {
+                                        <th> <input type="checkbox" value="0,@item.Id" name="CheckBox" class="CheckBox" /> </th>
+                                    }
+                                    else if (item.Device.DeviceCategoryId == 2)
+                                    {
+                                        <th> <input type="checkbox" value="0,@item.Id" name="CheckBox" class="CheckBox" /> </th>
+                                    }
+                                    else
+                                    {
+                                        if (DateTime.Now.AddHours(10).Year <= item.LastPrintPPMYear)
+                                        {
+                                           <th> <input type="checkbox" value="@item.Id,@item.Id" name="CheckBox" class="CheckBox" /> </th>
+                                        }
+                                        else
+                                        {
+                                            <th> <input type="checkbox" value="@item.Id,0" name="CheckBox" class="CheckBox" /> </th>
+                                        }
+                                    }
+                                    <td>@count</td>
+                                    <td>
+                                        @if (item.Device.ShowLastModification == true)
+                                        {
+                                            <i class='fa fa-check fa-lg' style='color:green'></i>
+                                        }
+                                        else
+                                        {
+                                            <i class='fa fa-times fa-lg' style='color:red'></i>
+                                        }
+                                    </td>
+                                    @if (CultureHelper.CurrentLanguageCode == 1)
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.Device.NameAr)</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.Device.NameEn)</td>
+                                    }
+                                    <td>@item.Device.Com</td>
+                                    <td>@item.Device.Model</td>
+                                    <td>@item.Device.Serial</td>
+                                     @if (CultureHelper.CurrentLanguageCode == 1)
+                                     {
+                                        <td>@Html.DisplayFor(modelItem => item.Device.DeviceUnit.NameAr)</td>
+                                     }
+                                     else
+                                     {
+                                        <td>@Html.DisplayFor(modelItem => item.Device.DeviceUnit.NameEn)</td>
+                                     }
+                                    <td>@item.Device.ComputerNumber</td>
+                                  @if (CultureHelper.CurrentLanguageCode == 1)
+                                  {
+                                      if (item.Device.DeviceCategoryId == 1)
+                                      {
+                                        <td>  @Resource.j1</td>
+                                      }
+                                      else if (item.Device.DeviceCategoryId == 2)
+                                      {
+                                        <td> @Resource.j2</td>
+                                      }
+                                      else
+                                      {
+                                        <td> @Resource.j3</td>
+                                      }
+                                  }
+                                  else
+                                  {
+                                      if (item.Device.DeviceCategoryId == 1)
+                                      {
+                                        <td>Category_A  </td>
+                                      }
+                                      else if (item.Device.DeviceCategoryId == 2)
+                                      {
+                                        <td>Category_B  </td>
+                                      }
+                                      else
+                                      {
+                                        <td>Category_C </td>
+                                      }
+                                  }
+
+                                    @if (item.Device.DeviceCategoryId == 1 || item.Device.DeviceCategoryId == 2)
+                                    {
+                                        <td><span class="label label-success">@Resource.f1</span></td>
+                                    }
+                                    else if (DateTime.Now.AddHours(10).Year <= item.LastPrintPPMYear)
+                                    {
+                                        <td><span class="label label-success">@Resource.f2</span></td>
+                                    }
+                                    else
+                                    {
+                                        <td><span class="label label-danger">@Resource.f3</span></td>
+                                    }
+                                </tr>
+                                count++;
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+                <!--Table Wrapper Finish-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Modal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="text-align:center"> @Hospital.Resources.Resource.PPMReport</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden" value="" id="SelectedDevice" />
+                <label>@Resource.Engineers</label>
+                <select class="form-control" id="Engineer">
+                    <option value="0" selected>@Resource.Engineers</option>
+                    @foreach (var item in ViewBag.Engineers)
+                    {
+                        if (ViewBag.SelectedEngineerId == item.Id)
+                        {
+                            if (CultureHelper.CurrentLanguageCode == 1)
+                            {
+                                <option selected value="@item.Id">@item.NameAr</option>
+                            }
+                            else
+                            {
+                                <option selected value="@item.Id">@item.NameEn</option>
+                            }
+                        }
+                        else
+                        {
+                            if (CultureHelper.CurrentLanguageCode == 1)
+                            {
+                                <option value="@item.Id">@item.NameAr</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Id">@item.NameEn</option>
+                            }
+                        }
+                    }
+                </select>
+
+                <label>@Resource.DateFrom</label>
+                <input type="text" placeholder="@Resource.DateFrom" value="" class="form-control" id="DateFrom" />
+                <label>@Resource.DateTo</label>
+                <input type="text" placeholder="@Resource.DateTo" value="" class="form-control" id="DateTo" />
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="CCClose">@Hospital.Resources.Resource.Close</button>
+                <a href="#" onclick="AutoPrintPPM()" class="btn btn-default">@Hospital.Resources.Resource.Print</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Content2/Ar-assets/js/lib/jquery-1.11.min.js"></script>
+<script>
+
+    function AutoPrintPPM() {
+        $('#CCClose').click();
+        var DateFrom = $('#DateFrom').val();
+        var DateTo = $('#DateTo').val();
+        if (DateTo == "" || DateFrom == "")
+            return alert("@Resource.ChooseDate");
+        window.open("/Admin/Device/PMMReportPrintMulti?SelectedDevice=" + $('#SelectedDevice').val() + "&DateFrom=" + $('#DateFrom').val() + "&DateTo=" + $('#DateTo').val() + "&EngineerId=" + $('#Engineer :selected').val(), '_blank');
+
+        setTimeout(function () {
+            location.reload();
+        }, 3000);
+    }
+
+    $(function () {
+
+        $('#Table').dataTable({
+            "pageLength": 10, bFilter: true, paging: true, bInfo: true, ordering: false
+        });
+    })
+
+    function CheckBoxAll() {
+        if ($('#CheckBoxAll').prop("checked") == true) {
+            $('.CheckBox').prop("checked", true);
+        }
+        else {
+            $('.CheckBox').prop("checked", false);
+        }
+    }
+
+    function GeneratePPM() {
+        var Ids = "";
+        var C = 0;
+        $("input[name='CheckBox']").each(function () {
+            if ($(this).prop("checked") == true) {
+                var Val = $(this).val();
+                var arr = Val.split(",");
+                if (arr[0] == "0") {
+                    alert("@Resource.CannotPrintPPMForAorBDesvices");
+                    C = 1;
+                    return false;
+                }
+                Ids += arr[0] + ",";
+            }
+        });
+
+        if (Ids == "" && C == 0)
+            return alert("@Resource.AddDevices");
+        else if (C == 1)
+            return false;
+
+        $('#SelectedDevice').val(Ids);
+        $('#DateTo').val("");
+        $('#DateFrom').val("");
+        $('#Modal2').modal("show");
+    }
+
+    function CloseNotification()
+    {
+        var C = 0;
+        var Ids = "";
+        $("input[name='CheckBox']").each(function () {
+            if ($(this).prop("checked") == true)
+            {
+                 var Val = $(this).val();
+                var arr = Val.split(",");
+                if (arr[1] == "0") {
+                    alert("@Resource.PrintPPMFrist");
+                    C = 1;
+                    return false;
+                }
+                Ids += arr[1] + ",";
+            }
+        });
+
+        if (Ids == "" && C == 0)
+            return alert("@Resource.AddDevices");
+        else if(C == 1)
+            return false;
+
+             var isconfirm = confirm('@Resource.AreYouSure ');
+            if (isconfirm)
+            {
+                $('#CloseNotification').prop('disabled', true);
+
+                window.open("/Admin/DeviceScheduleNotification/CloseNotification?Ids=" + Ids, '_self');
+            }
+
+    }
+
+</script>
+

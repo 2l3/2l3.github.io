@@ -1,0 +1,68 @@
+﻿@using Hospital.Resources;
+
+@{
+    ViewBag.Title = Resource.DeviceSchedual;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-wrapper">
+    
+        <input type="hidden" value="@ViewBag.Selected" id="Selected" />
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    @Resource.ScheduleCount :
+                </div>
+                <div class="col-md-8">
+                    <input type="number" value="@ViewBag.ScheduleCount" min="1" readonly id="ScheduleCount" class="form-control" required name="ScheduleCount" />
+                </div>
+            </div>
+            <div id="SDiv">
+                @for (var i = 1; i <= ViewBag.ScheduleCount; i++)
+                {
+                    <div class="form-group" id="ScheduleDiv_@i">
+                        <div class="control-label col-md-2">
+                            @Resource.PPMDate :
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DropDownList("DayId", null, htmlAttributes: new { @class = "form-control", @required = "required",@id="Day_"+i })
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DropDownList("MonthId", null, htmlAttributes: new { @class = "form-control", @required = "required", @id = "Month_" + i })
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" onclick="Save()" value="@Resource.Save" class="btn btn-primary" name="Save" />
+                    <a class="btn btn-default" href="@Url.Action("Index","CenterDevice")"> @Resource.BackToHome </a>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+<script type="text/javascript" src="~/Content2/Ar-assets/js/lib/jquery-1.11.min.js"></script>
+
+<script>
+
+    function Save()
+    {
+        $('input[name="Save"]').prop('disabled', true);
+        var Dates = "";
+        var ScheduleCount = $('#ScheduleCount').val();
+        var Selected = $('#Selected').val();
+        for (var i = 1; i <= ScheduleCount; i++)
+        {
+            Dates += ($('#Day_' + i + " :selected").val() + ":" + $('#Month_' + i + " :selected").val()+",");
+        }
+
+        window.open("/Admin/CenterDevice/SaveDeviceSchedual?Selected=" + Selected + "&ScheduleCount=" + ScheduleCount + "&Dates=" + Dates, '_self');
+    }
+
+</script>

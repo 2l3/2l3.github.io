@@ -1,0 +1,229 @@
+﻿@model IEnumerable<Hospital.Models.DDevice>
+@using Hospital.Resources;
+@{
+    ViewBag.Title = Resource.HospitalArchive;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" @*style="height: 150px;"*@>
+                <h3 class="panel-title">
+                    @Resource.HospitalArchive
+                    
+@if (User.IsInRole("HospitalArchiveDelete"))
+{
+    <button class="btn btn-app" id="DeleteSelected" href="#" onclick="DeleteSelected()" style="float:@Resource.right;margin-top:-7px;">
+        <i class="fa fa-trash-o"></i>
+        @Resource.Delete
+    </button>
+}
+
+                       
+                        <button class="btn btn-app" onclick="Print()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-print"></i>
+                            @Resource.Print
+                        </button>
+
+                    @if (User.IsInRole("HospitalArchiveCancel"))
+                    {
+                        <button class="btn btn-app" id="CancelArchiveDevice" onclick="CancelArchiveDevice()" style="float:@Resource.right;margin-top:-7px;">
+                            <i class="fa fa-archive"></i>
+                            @Resource.CancelArchive
+                        </button>
+                    }
+                    
+
+                </h3>
+            </div>
+            <div class="panel-body">
+                <!--Table Wrapper Start-->
+                <div class="ls-editable-table table-responsive ls-table">
+                    <table class="table table-bordered table-striped table-bottomless" id="Table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" class="checkbox" id="CheckAll" onchange="CheckAll()" /></th>
+                                <th></th>
+                                <th>@Resource.DeviceName  </th>
+                                <th>@Resource.Company </th>
+                                <th>@Resource.DeviceModel </th>
+                                <th>@Resource.Serial </th>
+                                <th>@Resource.DeviceUnit </th>
+                                <th>@Resource.ComputerNumber </th>
+                                <th>@Resource.DeviceCategory </th>
+                                <th>@Resource.Daman </th>
+                                <th>@Resource.ArchiveDate </th>
+                                <th>@Resource.Operations  </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ var count = 1;}
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><input type="checkbox" class="checkbox" name="Check" value="@item.Id" /></td>
+                                    <td>@count</td>
+                                    @if (CultureHelper.CurrentLanguageCode == 1)
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.NameAr)</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.NameEn)</td>
+                                    }
+                                    <td>@item.Com</td>
+                                    <td>@item.Model</td>
+                                    <td>@item.Serial</td>
+                                    @if (CultureHelper.CurrentLanguageCode == 1)
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.DeviceUnit.NameAr)</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Html.DisplayFor(modelItem => item.DeviceUnit.NameEn)</td>
+                                    }
+                                    <td>@item.ComputerNumber</td>
+                                    @if (CultureHelper.CurrentLanguageCode == 1)
+                                    {
+                                        if (item.DeviceCategoryId == 1)
+                                        {
+                                            <td>فئة_A</td>
+                                        }
+                                        else if (item.DeviceCategoryId == 2)
+                                        {
+                                            <td>فئة_B </td>
+                                        }
+                                        else
+                                        {
+                                            <td>فئة_C </td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (item.DeviceCategoryId == 1)
+                                        {
+                                            <td>Category_A  </td>
+                                        }
+                                        else if (item.DeviceCategoryId == 2)
+                                        {
+                                            <td>Category_B  </td>
+                                        }
+                                        else
+                                        {
+                                            <td>Category_C </td>
+                                        }
+                                    }
+
+                                    @if (item.ShowDaman == true)
+                                    {
+                                        if (item.DamanExpireDate.HasValue == true && item.DamanExpireDate.Value.Ticks > DateTime.Now.Date.Ticks)
+                                        {
+                                            <td><span class="label label-success">تحت الضمان</span></td>
+                                        }
+                                        else
+                                        {
+                                            <td><span class="label label-danger"> خارج الضمان  </span></td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td><span class="label label-danger"> لا يوجد ضمان</span></td>
+                                    }
+
+                                    <td>@item.CreatedDate.Value.ToShortDateString()</td>
+
+                                    
+                                        <td>
+                                            @if (User.IsInRole("HospitalArchiveDelete"))
+                                            {
+                                                <a class="btn btn-danger btn-sm" onclick="return confirm('@Resource.AreYouSureToDelete ');" href="@Url.Action("HospitalDeleteConfirmed", new { id = item.Id })" title="@Resource.Delete "><i class="fa fa-trash-o"></i>  </a>
+                                            }
+                                            <a class="btn btn-default btn-sm" href="@Url.Action("HospitalDetail", new { id = item.Id })"> <i class="fa fa-eye"></i>  </a>
+                                        </td>
+                                    
+
+                                </tr>
+                                count++;
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+                <!--Table Wrapper Finish-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Content2/Ar-assets/js/lib/jquery-1.11.min.js"></script>
+<script>
+    $(function () {
+
+        $('#Table').dataTable({
+            "pageLength": 10, bFilter: true, paging: true, bInfo: true, ordering: false
+        });
+    })
+
+    function CheckAll() {
+        if ($('#CheckAll').prop("checked") == true) {
+            $('input:checkbox').prop('checked', true);
+        }
+        else if ($('#CheckAll').prop("checked") == false) {
+            $('input:checkbox').prop('checked', false);
+        }
+    }
+
+    function Print() {
+        var Ids = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Ids += $(this).val() + ",";
+            }
+        });
+
+        if (Ids == "")
+            return alert("أختر أجهزة أولا");
+
+        window.open("/Admin/Archive/HospitalPrint?Ids=" + Ids, '_blank');
+    }
+
+    function CancelArchiveDevice() {
+        var Ids = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Ids += $(this).val() + ",";
+            }
+        });
+
+        if (Ids == "")
+            return alert("أختر أجهزة أولا");
+         var isconfirm = confirm('@Resource.AreYouSure ');
+         if (isconfirm) {
+             $('#CancelArchiveDevice').prop('disabled', true);
+
+             window.open("/Admin/Archive/CancelHospitalArchive?Selected=" + Ids, '_self');
+         }
+    }
+
+     function DeleteSelected()
+    {
+        var Selected = "";
+        $("input[name='Check']").each(function () {
+            if ($(this).prop("checked") == true) {
+                Selected += $(this).val() + ",";
+            }
+        });
+
+        if (Selected != "")
+        {
+            var isconfirm = confirm('@Resource.AreYouSureToDelete ');
+            if (isconfirm) {
+                $('#CancelArchiveDevice').prop('disabled', true);
+                $('#DeleteSelected').prop('disabled', true);
+                window.open("/Admin/Archive/HospitalDeleteSelected?Selected=" + Selected, '_self');
+            }
+        }
+            }
+
+</script>
