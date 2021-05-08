@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Cards Maker</title>
+    <meta name="description" content="Cards Maker - World's beautiful and amazing online portal for greetings cards maker">
+    <meta name="author" content="Ahmed Elkadrey - www.codesgit.com">
+    <meta name="copyright" content="Ahmed Elkadrey - www.codesgit.com">
+
+    <link type="text/css" rel="stylesheet" href="files/style.css" />
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript">
+        function gotoContent(element, callBack)
+        {
+            $('html, body').animate(
+            {
+                  scrollTop: $(element).offset().top - 100,
+                  scrollLeft: 0
+            }, "slow", null, function()
+            {
+                if(callBack) callBack();
+            });
+        }
+
+        function brwStester()
+        {
+            var doc = {};
+            doc.scrollTop = $(document).scrollTop();            
+            return doc;
+        }
+        $(document).ready(function()
+        {            
+                var lastID = null;
+                $("#leftContents").css('height', ($("#tests").offset().top - brwStester().scrollTop - 80)+ 'px');
+                $("#tests").remove();
+                $(window).scroll(function()
+                {
+                  $(".selected").removeClass('selected');
+                   if(brwStester().scrollTop > 30)
+                   {
+                       $("#gotoTop").fadeIn();
+                       $("#test").html('');
+                       var breaked = false;
+                       var lstHeight = 0;
+                       $("#tester").html('');
+                       $(".contents").each(function()
+                       {
+                            if($(this).offset().top - 100 + $(this).height() + 250 > brwStester().scrollTop && breaked == false && brwStester().scrollTop > 550)
+                            {
+                                  $('#link_' + this.id).addClass('selected');  
+                                  var selectedIDScroll = $('#leftContents').find('.selected:eq(0)').attr('id');
+                                    if(lastID != selectedIDScroll)
+                                    {
+                                        lastID = selectedIDScroll;
+                                        $("#leftContents").animate(
+                                          {
+                                                scrollTop: $('#leftContents').find('.selected:eq(0)').offset().top - $("#leftContents").offset().top,
+                                                scrollLeft: 0
+                                          }, 50);
+                                    }
+                                  breaked = true;
+                            }
+                       });
+                   }
+                   else  $("#gotoTop").fadeOut();
+
+                });
+                
+                
+            
+                
+                $("[goto]").each(function()
+                {
+                    $(this).click(function()
+                    {
+                        $(".selected").removeClass('selected');
+                        gotoContent('#' + $(this).attr('goto'));
+                        $(this).addClass('selected');
+                    });
+                });
+        });
+    </script>
+</head>
+<body data-spy="scroll" id="top">
+    <div id="tests" style="position: fixed;bottom: 0px;"></div>
+      <div id="head">
+          <h1>
+            Cards Maker
+            <small>v1.5</small>
+
+          </h1>
+          <a href="http://www.codesgit.com/" target="_blank" class="powered">CodesGit Products</a>
+          <div class="slogin">World's beautiful and amazing online portal for greetings cards maker</div>
+      </div>
+      <div id="leftContents">
+              <div id="gotoTop" style="text-align: center;display: none;"><img class="pointer" goto="Home" src="files/top.png" /></div>
+              <a title="What is this ?" id="link_What_is_this_" goto="What_is_this_">What is this ?</a><a title="Features" id="link_Features" goto="Features">Features</a><a title="How to install the product ?" id="link_How_to_install_the_product_" goto="How_to_install_the_product_">How to install the product ?</a><a title="How it is working" id="link_How_it_is_working" goto="How_it_is_working">How it is working</a>
+      </div>
+
+      <div id="content">
+        <div id="Home">
+           <h1 id="homeing">
+              <div class='screenshots'><img src='files/1515664089.jpg' /></div>
+              <div style="font-weight: normal;font-size: 14px;text-align: right" class="slogin">World's beautiful and amazing online portal for greetings cards maker</div>
+           </h1>
+
+        </div>
+        <div theKey="What_is_this_" id="What_is_this_" class="contents">
+                        <h1>What is this ?</h1>
+                        <hr /><div class="details">World's beautiful and amazing online portal for greetings cards maker. Cards Maker provide opportunity to create greeting card online for wishes HAPPY BIRTHDAY, MARRIAGE ANNIVERSARY, FRIENDSHIP DAY, VALENTINE DAY, NEW YEAR etc. You can write your own name and text on greeting cards and photo. Create your personalized free online greeting card using write your own name on pictures and images. You can download your selected design greeting cards free and you can use for wishes to friend and family on festival and speical occasion very quick</div></div><div theKey="Features" id="Features" class="contents">
+                        <h1>Features</h1>
+                        <hr /><ul class="points"><li>Create your own cards maker website</li><li>Upload Custom designs</li><li>Easy to customize Cards</li><li>No Database required</li><li>Earn money from google adsens</li><li>Easy Setup</li><li>Responsive</li><li>Bootstrap 3</li><li>Multiple Photos uploader</li><li>share cards and send to mail</li></ul></div><div theKey="How_to_install_the_product_" id="How_to_install_the_product_" class="contents">
+                        <h1>How to install the product ?</h1>
+                        <hr /><ul class="points"><li>Extract zip file and upload “publish” directory to your website</li><li>Open your browser and type the path to the application on your website for example: www.yourwebsite.com/cards/</li><li>Fill form fields with your Website name and access information like the following: <div class='screenshots'><img width='90%' src='files/1516529834.png' /></div></li><li>Click install to continue</li><li>Congratulations your application has been installed successfully</li></ul></div><div theKey="How_it_is_working" id="How_it_is_working" class="contents">
+                        <h1>How it is working</h1>
+                        <hr /><div class="details">Navigate to your website: www.yourwebsite.com/cards then:</div><ul class="points"><li>Login to admin area</li><li>Upload your Cards and photos</li><li>Customize text colors - font - text positions</li><li>Save to publish</li><li>Your visitor find his favorite card</li><li>Type his name then download his card</li><li>share the card</li><li>Send card by email</li></ul></div>
+      </div>
+</body>
+</html>
