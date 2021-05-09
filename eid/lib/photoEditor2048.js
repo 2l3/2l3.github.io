@@ -38,7 +38,7 @@ else
 {if(callBack)callBack(res);else
 {waiting(true);$("#sharing").modal('show');}});});};this.shareNow=function(photo,type)
 {var that=this;function buildURL()
-{return $('base:eq(0)').attr('href')+'index.php?do=share&p=show&path='+strReplace("https://imasdar.com/","_-_",(that.uploadedImages[that.selectedImageName].path).substr(7));}
+{return $('base:eq(0)').attr('href')+'index.php?do=share&p=show&path='+strReplace("https://im03th.com/","_-_",(that.uploadedImages[that.selectedImageName].path).substr(7));}
 switch(type)
 {case 'facebook':var appID=$('[property="fb:app_id"]').attr('content');if(!empty(appID))
 {var url='https://www.facebook.com/v2.9/dialog/share?app_id='+appID+'&href='+escape(buildURL());popup(url,'facebook',{width:600,height:350});}
