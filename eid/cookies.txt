@@ -1,6 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-imasdar.com	TRUE	/	FALSE	1999999999	PHPSESSID	deb5ed609974c09a21a83429d3ae627b
-.imasdar.com	TRUE	/	FALSE	1999999999	__cfduid	d45e89918a4250760b716877d7c2030231620498530
-imasdar.com	TRUE	/	FALSE	1999999999	SameSite	Lax
-
