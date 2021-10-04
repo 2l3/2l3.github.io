@@ -1,0 +1,467 @@
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr"><head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                                <!-- head -->
+                <base href="https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="twitter, tweet, db , direct message, direct, message , private, private message">
+	<meta name="rights" content="khalil-shreateh.com">
+	<meta name="author" content="khalil-shreateh.com">
+	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	<meta name="description" content="Add  ‘call to action’ button in the tweet to take the conversation private over direct message (DM)">
+	<meta name="generator" content="khalil-shreateh.com">
+	<title>Add private message button to your tweet</title>
+	<link href="/khalil.shtml/social_applications/templates/jd_medical/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	<link href="/khalil.shtml/social_applications/index.php?option=com_ajax&amp;plugin=arktypography&amp;format=json" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic&amp;subset=latin" rel="stylesheet" type="text/css">
+	<link href="/khalil.shtml/social_applications/templates/jd_medical/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/khalil.shtml/social_applications/templates/jd_medical/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="/khalil.shtml/social_applications/templates/jd_medical/css/legacy.css" rel="stylesheet" type="text/css">
+	<link href="/khalil.shtml/social_applications/templates/jd_medical/css/template.css" rel="stylesheet" type="text/css">
+	<link href="/khalil.shtml/social_applications/templates/jd_medical/css/presets/preset1.css" rel="stylesheet" type="text/css" class="preset">
+	<link href="/khalil.shtml/social_applications/templates/jd_medical/css/frontend-edit.css" rel="stylesheet" type="text/css">
+	<link href="https://khalil-shreateh.com/khalil.shtml/social_applications/media/editors/arkeditor/css/squeezebox.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+body{font-family:Open Sans, sans-serif; font-weight:300; }
+h1{font-family:Open Sans, sans-serif; font-weight:800; }
+h2{font-family:Open Sans, sans-serif; font-weight:600; }
+h3{font-family:Open Sans, sans-serif; font-weight:normal; }
+h4{font-family:Open Sans, sans-serif; font-weight:normal; }
+h5{font-family:Open Sans, sans-serif; font-weight:600; }
+h6{font-family:Open Sans, sans-serif; font-weight:600; }
+.sp-megamenu-parent >li {    font-size: small;}
+.sp-megamenu-parent .sp-dropdown .sp-dropdown-inner ul.sp-dropdown-items > li.sp-menu-item {line-height: 10px;}
+#sp-top-bar{ background-color:#ffffff;color:#828282; }
+#sp-appointment-section{ background-image:url("/khalil.shtml/social_applications/images/bg_img1.jpg");background-repeat:no-repeat;background-size:cover;background-attachment:inherit; }
+	</style>
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/khalil.shtml/social_applications/media/jui/js/jquery.min.js?6df11a64d27f7dedab00b6d6ec347430" type="text/javascript"></script>
+	<script src="/khalil.shtml/social_applications/media/jui/js/jquery-noconflict.js?6df11a64d27f7dedab00b6d6ec347430" type="text/javascript"></script>
+	<script src="/khalil.shtml/social_applications/media/jui/js/jquery-migrate.min.js?6df11a64d27f7dedab00b6d6ec347430" type="text/javascript"></script>
+	<script src="/khalil.shtml/social_applications/media/system/js/caption.js?6df11a64d27f7dedab00b6d6ec347430" type="text/javascript"></script>
+	<script src="/khalil.shtml/social_applications/templates/jd_medical/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/khalil.shtml/social_applications/templates/jd_medical/js/jquery.sticky.js" type="text/javascript"></script>
+	<script src="/khalil.shtml/social_applications/templates/jd_medical/js/main.js" type="text/javascript"></script>
+	<script src="/khalil.shtml/social_applications/templates/jd_medical/js/frontend-edit.js" type="text/javascript"></script>
+	<script src="https://khalil-shreateh.com/khalil.shtml/social_applications/media/editors/arkeditor/js/jquery.easing.min.js" type="text/javascript"></script>
+	<script src="https://khalil-shreateh.com/khalil.shtml/social_applications/media/editors/arkeditor/js/squeezebox.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+var sp_preloader = '0';
+
+var sp_gotop = '1';
+
+var sp_offanimation = 'slidetop';
+
+(function()
+				{
+					if(typeof jQuery == 'undefined')
+						return;
+					
+					jQuery(function($)
+					{
+						if($.fn.squeezeBox)
+						{
+							$( 'a.modal' ).squeezeBox({ parse: 'rel' });
+				
+							$( 'img.modal' ).each( function( i, el )
+							{
+								$(el).squeezeBox({
+									handler: 'image',
+									url: $( el ).attr( 'src' )
+								});
+							})
+						}
+						else if(typeof(SqueezeBox) !== 'undefined')
+						{
+							$( 'img.modal' ).each( function( i, el )
+							{
+								SqueezeBox.assign( el, 
+								{
+									handler: 'image',
+									url: $( el ).attr( 'src' )
+								});
+							});
+						}
+						
+						function jModalClose() 
+						{
+							if(typeof(SqueezeBox) == 'object')
+								SqueezeBox.close();
+							else
+								ARK.squeezeBox.close();
+						}
+					
+					});
+				})();
+	</script>
+	<meta name="twitter:title" content="Add private message button to your tweet">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@khalil_shreateh">
+  <meta name="twitter:url" content="https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html" =""="">
+  <meta name="twitter:description" content="Tutorial&nbsp;https://youtu.be/KPM5cb-R658
+
+This APP is Totally Free and before using please read carefully:&nbsp;
+1- To use this app simply insert your twitter username without @ , choose a custom message then hit Generate&nbsp;my code&nbsp;
+2- You can order any social media app or browser extension&nbsp;via contacting me&nbsp;&nbsp;
+
+&nbsp;
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+">
+  <meta name="twitter:image" content="https://khalil-shreateh.com/khalil.shtml/social_applications/images/2020/twitter-private-message.png">
+  <meta property="og:title" content="Add private message button to your tweet">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html" =""="">
+  <meta property="og:image" content="https://khalil-shreateh.com/khalil.shtml/social_applications/images/2020/twitter-private-message.png">
+  <meta property="og:description" content="Tutorial&nbsp;https://youtu.be/KPM5cb-R658
+
+This APP is Totally Free and before using please read carefully:&nbsp;
+1- To use this app simply insert your twitter username without @ , choose a custom message then hit Generate&nbsp;my code&nbsp;
+2- You can order any social media app or browser extension&nbsp;via contacting me&nbsp;&nbsp;
+
+&nbsp;
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+">
+	<!-- Start: Google Structured Data -->
+            <script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : "TikTok Giveaway pick winner from tiktok contest",
+  "image" : "https://khalil-shreateh.com/khalil.shtml/social_applications/images/2020/Pick_winner_from_TikoTok_Giveaway.jpg",
+  "url" : "https://khalil-shreateh.com/khalil.shtml/social_applications/tiktok-applications/tiktok-giveaway-pick-winner-from-tiktok-replies.html",
+  "author" : {
+    "@type" : "Person",
+    "name" : "https://twitter.com/khalil_shreateh"
+  },
+  "datePublished" : "2019-07-27",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "https://www.instagram.com/khalilshreateh"
+  },
+  "applicationCategory" : "social media",
+  "downloadUrl" : "https://khalil-shreateh.com/khalil.shtml/social_applications/tiktok-applications/tiktok-giveaway-pick-winner-from-tiktok-replies.html",
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "ratingCount" : "986532585"
+  },
+  "review" : {
+    "@type" : "Review",
+    "reviewRating" : {
+      "@type" : "Rating",
+      "ratingValue" : "5"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : "Twitter Contest - Draw random Winner - Giveaway via replies",
+  "image" : "https://khalil-shreateh.com/khalil.shtml/social_applications/images/2018/twitter-contest.jpg",
+  "url" : "https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/contest-winner-pick-a-twitter-winner-from-replies.html",
+  "author" : {
+    "@type" : "Person",
+    "name" : "https://twitter.com/khalil_shreateh"
+  },
+  "datePublished" : "2019-07-27",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "https://www.instagram.com/khalilshreateh"
+  },
+  "applicationCategory" : "social media",
+  "downloadUrl" : "https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/contest-winner-pick-a-twitter-winner-from-replies.html",
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "ratingCount" : "986532585"
+  },
+  "review" : {
+    "@type" : "Review",
+    "reviewRating" : {
+      "@type" : "Rating",
+      "ratingValue" : "5"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">{
+   "@context":"http://schema.org",
+   "@type":"WebSite",
+   "name":"khalil shreateh",
+   "image":"https://shreateh.net//images/logo-t1.png",
+   "@id":"",
+   "url":"https://shreateh.net/",
+   "sameAs":[
+		"https://www.instagram.com/khalilshreateh/",
+		"https://www.youtube.com/c/shreateh-net",
+		"https://www.facebook.com/khalilshreateh566",
+		"https://twitter.com/shreateh",
+"https://twitter.com/khalil_shreateh",
+"https://www.linkedin.com/in/shreateh"
+	]
+}</script>
+<script type="application/ld+json">{
+   "@context":"http://schema.org/",
+   "@type":"Person",
+   "name":"khalil shreateh",
+   "alternateName":"خليل شريتح",
+   "url":"https://shreateh.net",
+   "image":"",
+   "sameAs":[
+		"https://www.instagram.com/khalilshreateh/",
+		"https://www.youtube.com/c/shreateh-net",
+		"https://www.facebook.com/khalilshreateh566",
+		"https://www.facebook.com/shrete.shrete.71",
+		"https://twitter.com/khalil_shreateh",
+"https://twitter.com/khalil_shreateh",
+"https://www.linkedin.com/in/shreateh"
+   ],
+   "jobTitle":"Manager"
+}</script>
+            <!-- End: Google Structured Data -->
+
+                
+<script data-ad-client="ca-pub-2935457182564134" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src="https://khalil-shreateh.com/Applications/Youtube-API/jquery.js"></script>
+<script src="https://khalil-shreateh.com/Applications/Youtube-API/rain.js"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-46474890-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-46474890-1');
+</script>
+
+				                <meta property="twitter:site" content="@shreateh">
+<meta property="fb:page_id" content="796369160498497">
+</head>
+				<body class="site com-content view-article no-layout no-task itemid-284 en-gb ltr  sticky-header layout-fluid off-canvas-menu-init default " style="">
+
+                    <div class="body-wrapper">
+                        <div class="body-innerwrapper">
+                            <section id="sp-top-bar" class=" hidden-xs"><div class="container"><div class="row"><div id="sp-top1" class="col-sm-8 col-md-8"><div class="sp-column "><ul class="sp-contact-info"><li class="sp-contact-email"><i class="fa fa-envelope"></i> <a href="mailto:khalil@khalil-shreateh.com">khalil@khalil-shreateh.com</a></li></ul></div></div><div id="sp-top2" class="col-sm-4 col-md-4"><div class="sp-column "><ul class="social-icons"><li><a target="_blank" href="https://www.facebook.com/Khalil-Shreateh-397743597485614/"><i class="fa fa-facebook"></i></a></li><li><a target="_blank" href="https://twitter.com/shreateh"><i class="fa fa-twitter"></i></a></li><li><a target="_blank" href="https://www.youtube.com/channel/UC99SyRo6rKHyHWpC_jZq7Kg?sub_confirmation=1"><i class="fa fa-youtube"></i></a></li><li><a target="_blank" href="https://linkedin.com/in/shreateh"><i class="fa fa-linkedin"></i></a></li><li><a target="_blank" href="https://t.me/khalil_shreateh"><i class="fa fa-telegram"></i></a></li></ul></div></div></div></div></section><div class="nav-placeholder" style="height: inherit;"></div><header id="sp-header" class="animated menu-fixed-out"><div class="container"><div class="row" style="position: relative;"><div id="sp-logo" class="col-xs-8 col-sm-3 col-md-3"><div class="sp-column "><div class="logo"><a href="/khalil.shtml/social_applications/"><img class="sp-default-logo hidden-xs" src="/khalil.shtml/social_applications/images/logo.png" alt="Social Media Applications"><img class="sp-retina-logo hidden-xs" src="/khalil.shtml/social_applications/images/logo.png" alt="Social Media Applications" width="549" height="100"><img class="sp-default-logo visible-xs" src="/khalil.shtml/social_applications/images/logo.png" alt="Social Media Applications"></a></div></div></div><div id="sp-menu" class="col-xs-4 col-sm-9 col-md-9" style="position: static;"><div class="sp-column ">			<div class="sp-megamenu-wrapper">
+				<a id="offcanvas-toggler" class="visible-sm visible-xs" href="#"><i class="fa fa-bars"></i></a>
+				<ul class="sp-megamenu-parent menu-fade-up hidden-sm hidden-xs"><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/">Home</a></li><li class="sp-menu-item sp-has-child"><a href="/khalil.shtml/social_applications/facebook-applications.html">Facebook</a><div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 250px;"><div class="sp-dropdown-inner"><ul class="sp-dropdown-items"><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-account-verification.html">Account Verifications</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/login-with-facebook.html">Login..</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-pages-unliker-app.html" title="FACEBOOK PAGES UNLIKER">Pages Unliker</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-id-viewer-app.html">Facebook ID Viewer</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/profile-picture-viewer-app.html">Profile Picture Viewer</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/12-delete-facebook-page-posts-all-at-once.html" rel="noopener noreferrer" target="_blank">Pages Posts Cleaner</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-blue-post.html">Facebook Blue Post</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-360-photo.html">Facebook 360 photo</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/video-downloader.html">Video Downloader</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/video-uploader.html">Video Uploader</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/add-a-frame-and-protect-facebook-profile-picture.html">DP Guard</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-contest-draw-random-facebook-giveaway-via-comments.html">Facebook Giveaway</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/facebook-applications/is-your-data-exposed-to-hackers.html">Am I Hacked!</a></li></ul></div></div></li><li class="sp-menu-item sp-has-child"><a href="/khalil.shtml/social_applications/youtube-applications.html">YouTube</a><div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 250px;"><div class="sp-dropdown-inner"><ul class="sp-dropdown-items"><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/youtube-applications/channel-videos-api-html.html">Channel Videos API</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/youtube-applications/youtube-rss.html">YouTube RSS</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/youtube-applications/youtube-link-opener.html" rel="noopener noreferrer" target="_blank">Youtube LinkOpener</a></li></ul></div></div></li><li class="sp-menu-item sp-has-child"><a href="/khalil.shtml/social_applications/web-applications.html">Web Apps</a><div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 250px;"><div class="sp-dropdown-inner"><ul class="sp-dropdown-items"><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/khalil.shtml/social_applications/web-applications-html/14-liquid-text-html">Liquid Text</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/web-applications/x-and-u-code-decoder.html">\x and \u Code Decoder</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/web-applications/css-button-generator.html">CSS Button Generator</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/web-applications/pop-up-api.html">Pop-Up API</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/web-applications/wifi-qr-code-generator.html">WiFi QR</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/web-applications/black-and-white-image-colorizer.html">Black&amp;White Colorizer </a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/web-applications/photo-restore-and-colorizer.html">Photo Restore and Colorizer</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/web-applications/have-i-been-compromised.html">Hack Check</a></li></ul></div></div></li><li class="sp-menu-item sp-has-child"><a href="/khalil.shtml/social_applications/instagram-apps.html">Instagram</a><div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 250px;"><div class="sp-dropdown-inner"><ul class="sp-dropdown-items"><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/instagram-apps/instagram-profile-picture-in-full-size.html">Instagram DP Viewer</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/instagram-apps/instagram-get-post-time.html">Instagram Get Post Time</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/instagram-apps/instagram-contest-draw-winner-giveaway.html">Instagram Contest Draw Winner - Giveaway</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/instagram-apps/instagram-story-downloader.html">Story Downloader</a></li></ul></div></div></li><li class="sp-menu-item sp-has-child active"><a href="/khalil.shtml/social_applications/twitter.html">Twitter</a><div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 250px;"><div class="sp-dropdown-inner"><ul class="sp-dropdown-items"><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/twitter/contest-winner-pick-a-twitter-winner-from-replies.html">Contest Winner [replies]</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/twitter/contest-winner-pick-a-twitter-winner-from-retweets.html">Contest Winner [retweets]</a></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/twitter/contest-winner-pick-a-twitter-winner-from-hashtag.html">Contest Winner [hashtag]</a></li><li class="sp-menu-item current-item active"><a href="/khalil.shtml/social_applications/twitter/message-button.html">Message Button</a></li></ul></div></div></li><li class="sp-menu-item sp-has-child"><a href="/khalil.shtml/social_applications/tiktok-applications.html">TikTok</a><div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 250px;"><div class="sp-dropdown-inner"><ul class="sp-dropdown-items"><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/tiktok-applications/tiktok-giveaway-pick-winner-from-tiktok-replies.html">TikTok Giveaway</a></li></ul></div></div></li><li class="sp-menu-item"><a href="/khalil.shtml/social_applications/social-media-downloader.html">SocialDownloader</a></li></ul>			</div>
+		</div></div></div></div></header><section id="sp-page-title"><div class="row"><div id="sp-title" class="col-sm-12 col-md-12"><div class="sp-column "></div></div></div></section><section id="sp-slider"><div class="container"><div class="row"><div id="sp-slider" class="col-sm-12 col-md-12"><div class="sp-column "><div class="sp-module "><div class="sp-module-content">
+
+<div class="custom">
+	<p><span style="font-size: 8pt;"><strong><span style="color: #c7254e;"><a href="https://www.paypal.me/shreateh" rel="noopener noreferrer" style="color: #c7254e;" target="_blank">Donate via Paypal : Paypal.me/shreateh</a> </span></strong></span></p><!-- youtubecool-header --><script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div></div></div></div></div></div></section><section id="sp-main-body"><div class="container"><div class="row"><div id="sp-left" class="col-sm-3 col-md-3"><div class="sp-column custom-class"><div class="sp-module "><div class="sp-module-content">
+
+<div class="custom">
+	<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Sidebar-A -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2935457182564134" data-ad-slot="1879001008" data-ad-format="auto"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div></div></div></div><div id="sp-component" class="col-sm-9 col-md-9"><div class="sp-column "><div id="system-message-container">
+	</div>
+<article class="item item-page">
+	
+	
+	
+	<div class="entry-header">
+		
+		
+					<h2>
+									Add private message button to your tweet							</h2>
+												</div>
+
+				
+		
+				
+	
+			<div>
+		<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- youtubecool-header -->
+<ins class="adsbygoogle" style="display:inline-block;width:650px;height:94px" data-ad-client="ca-pub-2935457182564134" data-ad-slot="8983859009"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><div style="margin-left:auto;margin-right:auto;text-align:center;"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2935457182564134" data-ad-slot="5863717304"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p><code>Tutorial&nbsp;</code><a href="https://youtu.be/KPM5cb-R658" target="_blank">https://youtu.be/KPM5cb-R658</a></p>
+
+<p><code>This APP is Totally Free and before using please read carefully:&nbsp;<br>
+1- To use this app simply insert your twitter username without @ , choose a custom message then hit Generate&nbsp;my code&nbsp;</code><br>
+<code>2- You can order any social media app or browser extension&nbsp;via contacting me&nbsp;&nbsp;</code><br>
+<br>
+&nbsp;</p>
+
+<p><iframe frameborder="0" src="https://khalil-shreateh.com/khalil.shtml/social_applications/Applications/twitter_contest/MessageButton/" style="width:650px; height:500px"></iframe></p>
+
+<div style="margin-left:auto;margin-right:auto;text-align:center;"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2935457182564134" data-ad-slot="5863717304"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<img alt="" height="183" src="/khalil.shtml/social_applications/images/2020/twitter-private-message.png" style="" width="312">
+<p>&nbsp;</p>
+ <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- youtubecool-footer -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2935457182564134" data-ad-slot="2797724604"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>	</div>
+
+	
+	
+				
+	
+	
+			<div class="article-footer-wrap">
+			<div class="article-footer-top">
+									<div class="helix-social-share">
+		<div class="helix-social-share-icon">
+			<ul>
+				
+				<li>
+					<div class="facebook" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share On Facebook">
+
+						<a class="facebook" onclick="window.open('https://khalil-shreateh.com/khalil.shtml/ShareToFB.php','Facebook','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" href="https://www.facebook.com/sharer.php?u=https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html">
+
+							<i class="fa fa-facebook"></i>
+						</a>
+
+					</div>
+				</li>
+				<li>
+					<div class="twitter" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share On Twitter">
+						
+						<a class="twitter" onclick="window.open('https://twitter.com/share?url=https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html&amp;text=Add%20private%20message%20button%20to%20your%20tweet','Twitter share','width=600,height=300,left='+(screen.availWidth/2-300)+',top='+(screen.availHeight/2-150)+''); return false;" href="https://twitter.com/share?url=https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html&amp;text=Add%20private%20message%20button%20to%20your%20tweet">
+							<i class="fa fa-twitter"></i>
+						</a>
+
+					</div>
+				</li>
+				<li>
+					<div class="google-plus">
+						<a class="gplus" data-toggle="tooltip" data-placement="top" title="" onclick="window.open('https://plus.google.com/share?url=https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html','Google plus','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" href="https://plus.google.com/share?url=https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html" data-original-title="Share On Google Plus">
+						<i class="fa fa-google-plus"></i></a>
+					</div>
+				</li>
+				
+				<li>
+					<div class="linkedin">
+						<a class="linkedin" data-toggle="tooltip" data-placement="top" title="" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&amp;url=https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html','Linkedin','width=585,height=666,left='+(screen.availWidth/2-292)+',top='+(screen.availHeight/2-333)+''); return false;" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://khalil-shreateh.com/khalil.shtml/social_applications/twitter/message-button.html" data-original-title="Share On Linkedin">
+							
+						<i class="fa fa-linkedin-square"></i></a>
+					</div>
+				</li>
+			</ul>
+		</div>		
+	</div> <!-- /.helix-social-share -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+					</div>
+	
+</article></div></div></div></div></section><section id="sp-appointment-section"><div class="container"><div class="row"><div id="sp-appointment-2" class="col-sm-12 col-md-12"><div class="sp-column "><div class="sp-module "><div class="sp-module-content">
+
+<div class="custom">
+	<p><code>Share your comment publicly</code></p>
+<script type="text/javascript">path="https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUC99SyRo6rKHyHWpC_jZq7Kg%2F%3Fsub_confirmation%3D1%26path%3D"+encodeURIComponent(window.location.pathname);
+document.write(`<p><iframe referrerpolicy="no-referrer" frameborder="0" height="100px" scrolling="no" src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=87741124305&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2d6ca29d4f147c%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff15688ba38961dc%26relation%3Dparent.parent&container_width=733&height=100&href=${path}&locale=en_US&numposts=5&sdk=joey&version=v7.0&width=100%" style="border: none; visibility: visible; width: 100%; height: 587px;"  width="550px"></iframe></p>`);</script><p><iframe referrerpolicy="no-referrer" frameborder="0" height="100px" scrolling="no" src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=87741124305&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2d6ca29d4f147c%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff15688ba38961dc%26relation%3Dparent.parent&amp;container_width=733&amp;height=100&amp;href=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUC99SyRo6rKHyHWpC_jZq7Kg%2F%3Fsub_confirmation%3D1%26path%3D%2Fkhalil.shtml%2Fsocial_applications%2Ftwitter%2Fmessage-button.html&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;version=v7.0&amp;width=100%" style="border: none; visibility: visible; width: 100%; height: 587px;" width="550px"></iframe></p></div>
+</div></div></div></div></div></div></section><section id="sp-contact-us"><div class="container"><div class="row"><div id="sp-contact-us" class="col-sm-12 col-md-12"><div class="sp-column "><div class="sp-module "><div class="sp-module-content">
+
+<div class="custom">
+	<p></p> 
+
+<script type="text/javascript" src="//in-page-push.com/400/3645229" data-cfasync="false" async="async"></script>
+<script async="async" data-cfasync="false" src="//upgulpinon.com/1?z=3645223"></script>
+ 
+
+
+ 
+
+<script src="https://ptawehex.net/pfe/current/tag.min.js?z=3768296" data-cfasync="false" async=""></script> 
+
+
+ 
+
+
+
+</div>
+</div></div></div></div></div></div></section><footer id="sp-footer"><div class="container"><div class="row"><div id="sp-footer1" class="col-sm-12 col-md-12"><div class="sp-column "><div class="sp-module "><div class="sp-module-content">
+
+<div class="custom">
+	<div class="social_icons">
+
+<ul>
+	<li><a href="https://www.facebook.com/shreateh.net" rel="noopener noreferrer" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+	<li><a href="https://twitter.com/Shreateh" rel="noopener noreferrer" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+	<li><a href="https://www.linkedin.com/in/shreateh" rel="noopener noreferrer" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+	<li><a href="https://www.youtube.com/channel/UC99SyRo6rKHyHWpC_jZq7Kg?sub_confirmation=1" rel="noopener noreferrer" target="_blank"><i class="fa fa-youtube-square"></i></a></li>
+	<li><a href="https://www.instagram.com/khalilshreateh/" rel="noopener noreferrer" target="_blank"><i class="fa fa-instagram"></i></a></li>
+	<li><a href="https://t.me/khalil_shreateh/" rel="noopener noreferrer" target="_blank"><i class="fa fa-telegram"></i></a></li>
+</ul>
+</div>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- youtube verical --><script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div></div><span class="sp-copyright">Copyright ©  All Rights Reserved. Created by khalil-shreateh.com.</span></div></div></div></div></footer>                        </div> <!-- /.body-innerwrapper -->
+                    </div> <!-- /.body-innerwrapper -->
+
+                    <!-- Off Canvas Menu -->
+                    <div class="offcanvas-overlay"></div><div class="offcanvas-menu">
+                        <a href="#" class="close-offcanvas"><i class="fa fa-remove"></i></a>
+                        <div class="offcanvas-inner">
+                                                          <div class="sp-module _menu"><div class="sp-module-content"><ul class="nav menu">
+<li class="item-101"><a href="/khalil.shtml/social_applications/"> Home</a></li><li class="item-157  deeper parent"><a href="/khalil.shtml/social_applications/facebook-applications.html"> Facebook</a><span class="offcanvas-menu-toggler collapsed" data-toggle="collapse" data-target="#collapse-menu-157"><i class="open-icon fa fa-angle-down"></i><i class="close-icon fa fa-angle-up"></i></span><ul class="collapse" id="collapse-menu-157"><li class="item-279"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-account-verification.html"> Account Verifications</a></li><li class="item-278"><a href="/khalil.shtml/social_applications/facebook-applications/login-with-facebook.html"> Login..</a></li><li class="item-155"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-pages-unliker-app.html" title="FACEBOOK PAGES UNLIKER"> Pages Unliker</a></li><li class="item-163"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-id-viewer-app.html"> Facebook ID Viewer</a></li><li class="item-164"><a href="/khalil.shtml/social_applications/facebook-applications/profile-picture-viewer-app.html"> Profile Picture Viewer</a></li><li class="item-165"><a href="/khalil.shtml/social_applications/facebook-applications/12-delete-facebook-page-posts-all-at-once.html" target="_blank"> Pages Posts Cleaner</a></li><li class="item-203"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-blue-post.html"> Facebook Blue Post</a></li><li class="item-204"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-360-photo.html"> Facebook 360 photo</a></li><li class="item-241"><a href="/khalil.shtml/social_applications/facebook-applications/video-downloader.html"> Video Downloader</a></li><li class="item-250"><a href="/khalil.shtml/social_applications/facebook-applications/video-uploader.html"> Video Uploader</a></li><li class="item-253"><a href="/khalil.shtml/social_applications/facebook-applications/add-a-frame-and-protect-facebook-profile-picture.html"> DP Guard</a></li><li class="item-268"><a href="/khalil.shtml/social_applications/facebook-applications/facebook-contest-draw-random-facebook-giveaway-via-comments.html"> Facebook Giveaway</a></li><li class="item-300"><a href="/khalil.shtml/social_applications/facebook-applications/is-your-data-exposed-to-hackers.html"> Am I Hacked!</a></li></ul></li><li class="item-166  deeper parent"><a href="/khalil.shtml/social_applications/youtube-applications.html"> YouTube</a><span class="offcanvas-menu-toggler collapsed" data-toggle="collapse" data-target="#collapse-menu-166"><i class="open-icon fa fa-angle-down"></i><i class="close-icon fa fa-angle-up"></i></span><ul class="collapse" id="collapse-menu-166"><li class="item-167"><a href="/khalil.shtml/social_applications/youtube-applications/channel-videos-api-html.html"> Channel Videos API</a></li><li class="item-238"><a href="/khalil.shtml/social_applications/youtube-applications/youtube-rss.html"> YouTube RSS</a></li><li class="item-290"><a href="/khalil.shtml/social_applications/youtube-applications/youtube-link-opener.html" target="_blank"> Youtube LinkOpener</a></li></ul></li><li class="item-168  deeper parent"><a href="/khalil.shtml/social_applications/web-applications.html"> Web Apps</a><span class="offcanvas-menu-toggler collapsed" data-toggle="collapse" data-target="#collapse-menu-168"><i class="open-icon fa fa-angle-down"></i><i class="close-icon fa fa-angle-up"></i></span><ul class="collapse" id="collapse-menu-168"><li class="item-169"><a href="/khalil.shtml/social_applications/khalil.shtml/social_applications/web-applications-html/14-liquid-text-html"> Liquid Text</a></li><li class="item-200"><a href="/khalil.shtml/social_applications/web-applications/x-and-u-code-decoder.html"> \x and \u Code Decoder</a></li><li class="item-201"><a href="/khalil.shtml/social_applications/web-applications/css-button-generator.html"> CSS Button Generator</a></li><li class="item-205"><a href="/khalil.shtml/social_applications/web-applications/pop-up-api.html"> Pop-Up API</a></li><li class="item-287"><a href="/khalil.shtml/social_applications/web-applications/wifi-qr-code-generator.html"> WiFi QR</a></li><li class="item-292"><a href="/khalil.shtml/social_applications/web-applications/black-and-white-image-colorizer.html"> Black&amp;White Colorizer </a></li><li class="item-312"><a href="/khalil.shtml/social_applications/web-applications/photo-restore-and-colorizer.html"> Photo Restore and Colorizer</a></li><li class="item-313"><a href="/khalil.shtml/social_applications/web-applications/have-i-been-compromised.html"> Hack Check</a></li></ul></li><li class="item-239  deeper parent"><a href="/khalil.shtml/social_applications/instagram-apps.html"> Instagram</a><span class="offcanvas-menu-toggler collapsed" data-toggle="collapse" data-target="#collapse-menu-239"><i class="open-icon fa fa-angle-down"></i><i class="close-icon fa fa-angle-up"></i></span><ul class="collapse" id="collapse-menu-239"><li class="item-240"><a href="/khalil.shtml/social_applications/instagram-apps/instagram-profile-picture-in-full-size.html"> Instagram DP Viewer</a></li><li class="item-261"><a href="/khalil.shtml/social_applications/instagram-apps/instagram-get-post-time.html"> Instagram Get Post Time</a></li><li class="item-264"><a href="/khalil.shtml/social_applications/instagram-apps/instagram-contest-draw-winner-giveaway.html"> Instagram Contest Draw Winner - Giveaway</a></li><li class="item-291"><a href="/khalil.shtml/social_applications/instagram-apps/instagram-story-downloader.html"> Story Downloader</a></li></ul></li><li class="item-243  active deeper parent"><a href="/khalil.shtml/social_applications/twitter.html"> Twitter</a><span class="offcanvas-menu-toggler collapsed" data-toggle="collapse" data-target="#collapse-menu-243"><i class="open-icon fa fa-angle-down"></i><i class="close-icon fa fa-angle-up"></i></span><ul class="collapse" id="collapse-menu-243"><li class="item-254"><a href="/khalil.shtml/social_applications/twitter/contest-winner-pick-a-twitter-winner-from-replies.html"> Contest Winner [replies]</a></li><li class="item-282"><a href="/khalil.shtml/social_applications/twitter/contest-winner-pick-a-twitter-winner-from-retweets.html"> Contest Winner [retweets]</a></li><li class="item-267"><a href="/khalil.shtml/social_applications/twitter/contest-winner-pick-a-twitter-winner-from-hashtag.html"> Contest Winner [hashtag]</a></li><li class="item-284  current active"><a href="/khalil.shtml/social_applications/twitter/message-button.html"> Message Button</a></li></ul></li><li class="item-302  deeper parent"><a href="/khalil.shtml/social_applications/tiktok-applications.html"> TikTok</a><span class="offcanvas-menu-toggler collapsed" data-toggle="collapse" data-target="#collapse-menu-302"><i class="open-icon fa fa-angle-down"></i><i class="close-icon fa fa-angle-up"></i></span><ul class="collapse" id="collapse-menu-302"><li class="item-303"><a href="/khalil.shtml/social_applications/tiktok-applications/tiktok-giveaway-pick-winner-from-tiktok-replies.html"> TikTok Giveaway</a></li></ul></li><li class="item-285"><a href="/khalil.shtml/social_applications/social-media-downloader.html"> SocialDownloader</a></li></ul>
+</div></div>
+                                                    </div> <!-- /.offcanvas-inner -->
+                    </div> <!-- /.offcanvas-menu -->
+
+                    
+                    
+                    <!-- Preloader -->
+                    
+                    <!-- Go to top -->
+                                            <a href="javascript:void(0)" class="scrollup">&nbsp;</a>
+                    
+                
+                
+<div id="gtx-trans" style="position: absolute; left: 779px; top: 338px;"><div class="gtx-trans-icon"></div></div></body><div id="__genieContainer" style="all: initial;"></div></html>
