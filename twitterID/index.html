@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="UTF-8">
+
+	<title>TweeterID - Twitter ID and username converter</title>
+
+	<meta name="title" content ="TweeterID - Twitter ID and username converter" />
+	<meta name="keywords" content="twitter API, twitter ID, twitter username, get twitter ID, get Twitter username, username from ID, twitter ID lookup, twitter, api, twitter convert, twitter converter, user, find your twitter id, tweet id, tweeter id" />
+	<meta name="description" content="Convert any Twitter account's username or @handle into its respective Twitter ID, or convert ID to username" />
+	<meta name="author" content="Jared Feldman and Dillon Hess" />
+	<meta name="Copyright" content="Copyright TweeterID 2021. All Rights Reserved." />
+
+	<meta property="og:title" content="TweeterID - Twitter ID and username converter" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://tweeterid.com" />
+	<meta property="og:image" content="/images/logo.png" />
+	<meta property="og:description" content="Convert any Twitter account's username or @handle into its respective Twitter ID, or convert ID to username" />
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Mobile Compatibility -->
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+    </head>
+<body>
+
+	<div class="top">
+		<div class="content">
+
+		<h1>TweeterID</h1>
+		<h2>Twitter ID and username converter</h2>
+
+		<div class="leftColumn">
+		
+			<p class="instructions">Type in any Twitter ID or @handle below, and it will be
+				converted into the respective ID or username <span class="viewportNormal">on the right</span><span class="viewportMobile">below</span>:</p>
+
+			<form id="twitterInput" action="javascript:twitterID;">
+				<input type="text" id="twitter" name="twitter" class="twitter" maxlength="30" />
+			</form>
+
+			<div class="twitterButton" id="twitterButton"><div class="innerborder"><p>Convert</p></div></div>
+
+			<div class="blockAd">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- TweeterID (Block) -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:300px;height:250px"
+				     data-ad-client="ca-pub-2723092998487179"
+				     data-ad-slot="2765827484"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+			
+		</div><!-- End leftColumn -->
+		
+		
+		<div class="rightColumn">
+			
+			<div class="outputSection" id="outputSection">
+				<div class="output" id="output"></div>
+				<p class="originalOutputPrompt" id="oop">Enter a Twitter ID or @handle<br /><span class="viewportNormal">on the left</span><span class="viewportMobile">above</span><br />and it will be converted here.</p>
+			</div>
+			
+		</div><!-- End rightColumn -->
+
+		<div class="spacer"></div>
+
+		</div><!-- End Content -->
+	</div><!-- End Top -->
+
+	
+	<div class="bottom">
+		<div class="content">
+			
+		<div class="foot1">
+			<p class="title">What is a Twitter ID?</p>
+			<p>The Twitter ID is a unique value that every account on Twitter
+				has.  No two people have the same ID.  Although an account can
+				change its @handle, it can never change its Twitter ID.
+			</p>
+		</div>
+
+		<div class="foot2">
+			<p class="title">How can you use TweeterID?</p>
+			<p>TweeterID allows you to easily look up any username (@handle) on
+				Twitter and find out what their corresponding ID is.  Alternatively,
+				you can also use it to convert an ID into a username.
+			</p>
+		</div>
+
+		<div class="foot3">
+			<p class="title">Twitter API with ID?</p>
+			<p>Using the TweeterID converter enables developers working with the
+				Twitter API to easily transition between the primary key usage
+				of the Twitter ID, and the publicly visible
+				username (or @handle) of an account.
+			</p>
+		</div>
+
+		<div class="footSpacer"></div>
+
+		</div><!-- End content -->
+	</div><!-- End Bottom -->
+
+
+	<script type="text/javascript" language="javascript" src="script.js"></script>
+
+<!-- Start Google Analytics Tracking -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37123644-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google Analytics Tracking -->
+
+
+</body>
+</html>
