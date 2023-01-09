@@ -1,9 +1,0 @@
-import './axios';
-import './popper';
-import './jquery';
-import './bootstrap';
-import './sweetalert';
-import './ladda';
-import './lodash';
-import './moment';
-import './password';
