@@ -1,0 +1,2589 @@
+Apple’s latest version of Shortcuts includes many practical actions for your custom workflows and automations. It even has actions that open menus in Settings. Unfortunately, many menu items, sections, sliders, and toggles are missing — but that’s where URL schemes and deep links come in.
+
+The Shortcuts app has at least 40 Settings-related actions, which you can find under various categories, from the Settings app itself to networking and scripting.
+
+Notable topics include Background Sounds, Color Filters, Device Details, Focus, Text Size, and Zoom. Apple has even added a few more on iOS 17, such as Get Hotspot Password, Set Hotspot Password, Find Cellular Plans, Toggle Cellular Plan, Reset Cellular Data Statistics, Set Data Roaming, Set Default Line, and Set Left/Right Balance.
+
+What’s great about these is that you can have your shortcuts change settings for you, whether it’s something you code into the workflow directly or ask the shortcut’s user to input. It’s pretty impressive, and I hope Apple adds more in upcoming updates.
+
+But there are still a lot of menus, headings, sliders, and toggles in Settings. Until Apple includes more, you can use URL schemes and deep links.
+
+Part II: URL Schemes for Apple iOS Apps
+One important thing to note: the schemes listed below for the Settings app are merely paths to Settings menus. Apple restricts schemes from toggling switches on and off, selecting different features from a list, and so on. It does so for security purposes so that runaway apps or shortcuts don’t alter your settings without you realizing it.
+
+Using These URL Schemes in Shortcuts
+The schemes below with nothing after the :// are just schemes to open the apps up one way or another, while those with syntax information after the : or :// perform “deep link” specific actions within the apps.
+
+In the list, you’ll notice that some schemes have the :// characters in them, while others just use : without the // symbols. You can easily remove or add the // marks for each one, which should still work.
+
+Also, anything with a # sign in the path is just highlighting or taking you to where the item is listed, not actually taking you into that specific submenu. If you see &path or / in the URL after the main menu item, those should directly take you into the specified submenu.
+
+To keep things simple, I’ll use the following labels to indicate what each scheme does. If there isn’t a label, the scheme likely opens the app or main menu.
+
+highlight (highlights the menu item)
+open (opens the menu)
+section (jumps to the section)
+slider (jumps to the slider bar)
+toggle (jumps to the toggle)
+Keep in mind that Apple may change the URL scheme names, paths, parameters, anchors, queries, and/or fragments for its apps and services at any time. It has done so before, such as links to specific settings, with each new iOS update (iOS 11, iOS 12, iOS 13, iOS 14, iOS 15, iOS 16, iOS 17, etc.).
+
+Settings
+Settings
+open | App-prefs://
+open | App-prefs:
+open | prefs://
+open | prefs:
+open | prefs:root
+open | prefs:root=
+open | com.apple.preferences://
+open | com.apple.preferences:
+Settings ⇾ Accessibility
+SKIP BELOW FOR ACCESSIBILITY SETTINGS
+Settings ⇾ Action Button
+Action Button
+prefs:root=ACTION_BUTTON
+Settings ⇾ Airplane Mode
+Airplane Mode
+toggle | prefs:root=ROOT#AIRPLANE_MODE
+Settings ⇾ Apple ID
+Apple ID
+prefs:root=APPLE_ACCOUNT
+
+↳ Contact Key Transparency  (iOS 16.6 and later)
+  highlight | prefs:root=APPLE_ACCOUNT#TRANSPARENCY
+  open      | prefs:root=APPLE_ACCOUNT&path=TRANSPARENCY
+
+↳ Family Sharing 
+  highlight | prefs:root=APPLE_ACCOUNT#FAMILY
+  open      | prefs:root=APPLE_ACCOUNT&path=FAMILY
+  
+  ↳ App Store Subscriptions
+    highlight | prefs:root=APPLE_ACCOUNT&path=FAMILY#APP_STORE_SUBSCRIPTIONS
+
+  ↳ Apple Cash  (iOS 15.7.7 and earlier)
+    highlight | prefs:root=APPLE_ACCOUNT&path=FAMILY#APPLE_CASH
+
+  ↳ Apple Subscriptions
+    highlight | prefs:root=APPLE_ACCOUNT&path=FAMILY#APPLE_SUBSCRIPTIONS
+
+  ↳ Ask to Buy
+    highlight | prefs:root=APPLE_ACCOUNT&path=FAMILY#ASK_TO_BUY
+
+  ↳ iCloud Storage or iCloud+
+  highlight | prefs:root=APPLE_ACCOUNT&path=FAMILY#ICLOUD_STORAGE
+
+  ↳ Purchase Sharing  (iOS 15 and earlier)
+  highlight | prefs:root=APPLE_ACCOUNT&path=FAMILY#PURCHASE_SHARING
+
+  ↳ Screen Time  
+  highlight | prefs:root=APPLE_ACCOUNT&path=FAMILY#SCREEN_TIME
+
+↳ iCloud  
+  highlight | prefs:root=APPLE_ACCOUNT#ICLOUD_SERVICE
+  open      | prefs:root=APPLE_ACCOUNT&path=ICLOUD_SERVICE
+  open      | prefs:root=CASTLE
+
+  ↳ Hide My Email  
+  highlight | prefs:root=APPLE_ACCOUNT&path=ICLOUD_SERVICE#PRIVATE_EMAIL_MANAGE
+  open      | prefs:root=APPLE_ACCOUNT&path=ICLOUD_SERVICE/PRIVATE_EMAIL_MANAGE
+
+↳ Subscriptions  
+  highlight | prefs:root=APPLE_ACCOUNT#SUBSCRIPTIONS
+  open      | prefs:root=APPLE_ACCOUNT&path=SUBSCRIPTIONS
+Settings ⇾ Apple Pencil (iPad only)
+Apple Pencil
+open | prefs:root=Pencil
+
+↳ Only Draw with Apple Pencil 
+  toggle | prefs:root=Pencil#PrefersPencilDraws
+
+↳ Scribble  
+  toggle | prefs:root=Pencil#PencilTextInput
+Settings ⇾ App Store
+App Store
+open | prefs:root=STORE
+
+↳ App Downloads  
+  open | prefs:root=STORE&path=App%20Downloads
+
+↳ Video Autoplay
+  open | prefs:root=STORE&path=Video%20Autoplay
+Settings ⇾ Battery
+Battery
+open | prefs:root=BATTERY_USAGE
+
+↳ Battery Health  (iPhone-only; iOS 15 and earlier)
+  open | prefs:root=BATTERY_USAGE&path=BATTERY_HEALTH
+
+↳ Battery Health & Charging  (iPhone-only; iOS 16 and later)
+  open | prefs:root=BATTERY_USAGE&path=BATTERY_HEALTH
+Settings ⇾ Bluetooth
+Bluetooth
+open | prefs:root=Bluetooth
+Settings ⇾ Books
+Books
+open | prefs:root=IBOOKS
+Settings ⇾ Calendar
+Calendar
+open | prefs:root=CALENDAR
+
+↳ Alternate Calendars
+  open | prefs:root=CALENDAR&path=Alternate%20Calendars
+
+↳ Default Alert Times
+  open | prefs:root=CALENDAR&path=Default%20Alert%20Times
+
+↳ Default Calendar
+  open | prefs:root=CALENDAR&path=Default%20Calendar
+
+↳ Sync
+  open | prefs:root=CALENDAR&path=Sync
+Settings ⇾ Camera
+Camera
+open | prefs:root=CAMERA
+
+↳ Grid
+  toggle | prefs:root=CAMERA#CameraGridSwitch
+
+↳ Formats
+  open  prefs:root=CAMERA&path=CameraFormatsSettingsList
+
+↳ Preserve Settings
+  open | prefs:root=CAMERA&path=CameraPreserveSettingsSwitch
+
+  ↳ Camera Mode
+    toggle | prefs:root=CAMERA&path=CameraPreserveSettingsSwitch#CAMUserPreferencePreserveCaptureMode
+
+↳ Record Slo-mo
+  open | prefs:root=CAMERA&path=Record%20Slo-mo
+
+↳ Record Video
+  open | prefs:root=CAMERA&path=Record%20Video
+
+↳ Scan QR Codes
+  toggle | prefs:root=CAMERA#CameraQRBannerSwitch
+Settings ⇾ Cellular
+Cellular
+open | prefs:root=MOBILE_DATA_SETTINGS_ID
+
+↳ App Data Usage  (with 1 or 2 active SIMs)
+  section | prefs:root=MOBILE_DATA_SETTINGS_ID#APP_DATA_USAGE
+
+↳ Cellular Data  (with 2 active SIMs)
+  open | prefs:root=MOBILE_DATA_SETTINGS_ID&path=MOBILE_DATA_SETTINGS
+
+↳ Cellular Data Options  (with 1 active SIM)
+  open | prefs:root=MOBILE_DATA_SETTINGS_ID&path=CELLULAR_DATA_OPTIONS
+
+↳ Low Data Mode  (with 1 active SIM)
+  toggle | prefs:root=MOBILE_DATA_SETTINGS_ID&path=CELLULAR_DATA_OPTIONS#Low%20Data%20Mode
+Settings ⇾ Compass
+Compass
+open | prefs:root=COMPASS
+Settings ⇾ Contacts
+Contacts
+open | prefs:root=CONTACTS
+Settings ⇾ Control Center
+Control Center
+open | prefs:root=ControlCenter
+
+↳ Customize Controls  (iOS 13 and earlier)
+  open | prefs:root=ControlCenter&path=CUSTOMIZE_CONTROLS
+Settings ⇾ Display
+Display
+open | prefs:root=DISPLAY
+
+↳ Auto Lock
+  open | prefs:root=DISPLAY&path=AUTOLOCK
+
+↳ Text Size
+  open | prefs:root=DISPLAY&path=TEXT_SIZE
+Settings ⇾ Display & Brightness
+Display & Brightness
+open | prefs:root=DISPLAY&path=APPEARANCE
+
+↳ Auto Lock
+  highlight | prefs:root=DISPLAY&path=APPEARANCE#AUTOLOCK
+
+↳ Text Size
+  highlight | prefs:root=DISPLAY&path=APPEARANCE#TEXT_SIZE
+Settings ⇾ Do Not Disturb (iOS 14 and earlier)
+Do Not Disturb  (iOS 14 and earlier)
+open | prefs:root=DO_NOT_DISTURB
+
+↳ Allow Calls From  (iOS 14 and earlier)
+  open | prefs:root=DO_NOT_DISTURB&path=Allow%20Calls%20From
+Settings ⇾ Emergency SOS
+Emergency SOS
+open | prefs:root=EMERGENCY_SOS
+
+↳ Animation Demo
+  section | prefs:root=EMERGENCY_SOS#TRIGGER_ANIMATION_GROUP
+  highlight | prefs:root=EMERGENCY_SOS#TRIGGER_ANIMATION
+
+↳ Auto Call  (iOS 15.1 and earlier)
+  section | prefs:root=EMERGENCY_SOS#AUTO_CALL_GROUP
+  toggle | prefs:root=EMERGENCY_SOS#AUTO_CALL
+
+↳ Call Quietly  (iOS 16.3 and later; hidden if other settings off)
+  section | prefs:root=EMERGENCY_SOS#ALARM_SOUND_GROUP
+  toggle | prefs:root=EMERGENCY_SOS#ALARM_SOUND_SWITCH
+
+↳ Call with 5 Button Presses  (iOS 16.3 and later)
+  section | prefs:root=EMERGENCY_SOS#CALL_WITH_PRESSES_GROUP
+  toggle | prefs:root=EMERGENCY_SOS#CALL_WITH_PRESSES
+
+↳ Call with 5 Presses  (iOS 15.2 to iOS 16.2)
+  section | prefs:root=EMERGENCY_SOS#CALL_WITH_PRESSES_GROUP
+  toggle | prefs:root=EMERGENCY_SOS#CALL_WITH_PRESSES
+  
+↳ Call with Hold  (iOS 15.2 to iOS 16.2)
+  section | prefs:root=EMERGENCY_SOS#CALL_WITH_HOLD_GROUP
+  toggle | prefs:root=EMERGENCY_SOS#CALL_WITH_HOLD
+
+↳ Call with Hold and Release  (iOS 16.3 and later)
+  section | prefs:root=EMERGENCY_SOS#CALL_WITH_HOLD_GROUP
+  toggle | prefs:root=EMERGENCY_SOS#CALL_WITH_HOLD
+
+↳ Call with Side Button  (iOS 15.1 and earlier)
+  section | prefs:root=EMERGENCY_SOS#CALL_WITH_SIDE_BUTTON_GROUP
+  toggle | prefs:root=EMERGENCY_SOS#CALL_WITH_SIDE_BUTTON
+
+↳ Countdown Sound  (iOS 16.2 and earlier; hidden if other settings off)
+  section | prefs:root=EMERGENCY_SOS#ALARM_SOUND_GROUP
+  toggle | prefs:root=EMERGENCY_SOS#ALARM_SOUND_SWITCH
+
+↳ Crash Detection  (iOS 16 and later)
+  section | ?
+
+  ↳ Call After Severe Crash
+    toggle | ?
+
+↳ Emergency Contacts
+  section | prefs:root=EMERGENCY_SOS#EMERGENCY_CONTACTS
+
+  ↳ Edit Emergency Contacts in Health
+    highlight | prefs:root=EMERGENCY_SOS#OPEN_HEALTH
+
+  ↳ Set up Emergency Contacts in Health
+    highlight | prefs:root=EMERGENCY_SOS#OPEN_HEALTH
+
+↳ Emergency SOS via Satellite  (iOS 16.1 and later)
+  section | ?
+
+  ↳ Open Connection Assistant
+    open | x-apple-sosbuddy://
+
+Misc.
+open | telsos://
+Settings ⇾ Exposure Notifications
+Exposure Notifications
+open | prefs:root=EXPOSURE_NOTIFICATION
+Settings ⇾ Face ID & Passcode
+Face ID & Passcode
+open | prefs:root=PASSCODE
+
+↳ Allow Access When Locked
+  section | prefs:root=PASSCODE#ALLOW_ACCESS_WHEN_LOCKED
+
+  ↳ Accessories
+    toggle | 
+
+  ↳ Control Center
+    toggle | ?
+
+  ↳ Home Control
+    toggle | prefs:root=PASSCODE#HOME_CONTROL_SWITCH
+
+  ↳ Live Activities
+    toggle | ?
+
+  ↳ Lock Screen Widgets
+    toggle | ?
+
+  ↳ Notification Center
+    toggle | ?
+
+  ↳ Reply with Message
+    toggle | prefs:root=PASSCODE#REPLY_WITH_MESSAGE_SWITCH
+
+  ↳ Return Missed Calls
+    toggle | prefs:root=PASSCODE#RETURN_MISSED_CALLS_SWITCH
+
+  ↳ Siri
+    toggle | ?
+
+  ↳ Today View and Search
+    toggle | ?
+
+  ↳ Wallet
+    toggle | prefs:root=PASSCODE#WALLET_SWITCH
+
+↳ Attention
+  section | ?
+
+  ↳ Attention Aware Features
+    toggle | ?
+
+  ↳ Require Attention for Face ID
+    toggle | ?
+
+↳ Change Passcode
+  highlight | prefs:root=PASSCODE#CHANGE_PASSCODE
+  open | prefs:root=PASSCODE&path=CHANGE_PASSCODE
+
+↳ Erase Data
+  toggle | prefs:root=PASSCODE#WIPE_DEVICE
+
+↳ Face ID with Mask
+  toggle | ?
+
+↳ Require Passcode
+  highlight | prefs:root=PASSCODE#PASSCODE_REQ
+  open | prefs:root=PASSCODE&path=PASSCODE_REQ
+
+↳ Reset Face ID
+  highlight | ?
+  open | ?
+
+↳ Set Up an Alternate Appearance
+  highlight | ?
+  open | ?
+
+↳ Turn Passcode Off
+  highlight | prefs:root=PASSCODE#PASSCODE_OFF
+  open | prefs:root=PASSCODE&path=PASSCODE_OFF
+
+↳ Unlock with Apple Watch  (iOS 14.5 and later)
+  section | prefs:root=PASSCODE#AUTO_UNLOCK_DEVICES_GROUP
+
+↳ Use Face ID For
+  section | ?
+
+  ↳ iPhone Unlock
+    toggle | ?
+
+  ↳ iTunes & App Store
+    toggle | ?
+
+  ↳ Other Apps
+    highlight | ?
+    open | ?
+
+  ↳ Password AutoFill
+    toggle | ?
+
+  ↳ Wallet & Apple Pay
+    toggle | ?
+
+↳ Voice Dial
+  toggle | prefs:root=PASSCODE#VOICE_DIAL
+Settings ⇾ FaceTime
+prefs:root=FACETIME
+Settings ⇾ Focus
+prefs:root=DO_NOT_DISTURB
+-------------------------
+
+Focus ⇾ Focus Status  (section)
+prefs:root=DO_NOT_DISTURB&path=status
+Settings ⇾ Game Center
+prefs:root=GAMECENTER
+Settings ⇾ General
+General
+open | prefs:root=General
+
+↳ About 
+  highlight | prefs:root=General#About
+  open      | prefs:root=General&path=About
+
+  ↳ Certificate Trust Settings 
+    highlight | prefs:root=General&path=About#CERT_TRUST_SETTINGS
+    open      | prefs:root=General&path=About/CERT_TRUST_SETTINGS
+
+  ↳ Coverage  (new as of iOS 16.6 but backward compatible)
+    highlight | prefs:root=General&path=About#WARRANTY_COVERAGE
+    open      | prefs:root=General&path=About/WARRANTY_COVERAGE
+
+↳ AirDrop  
+  highlight | prefs:root=General#AIRDROP_LINK
+  open      | prefs:root=General&path=AIRDROP_LINK
+
+↳ AirPlay & Handoff  
+  highlight | prefs:root=General#CONTINUITY_SPEC
+  open      | prefs:root=General&path=CONTINUITY_SPEC
+
+  ↳ Automatically AirPlay to TVs
+    highlight | prefs:root=General&path=CONTINUITY_SPEC#AIRPLAY_TO_TV
+    open      | prefs:root=General&path=CONTINUITY_SPEC/AIRPLAY_TO_TV
+
+  ↳ Continuity Camera
+    toggle | prefs:root=General&path=CONTINUITY_SPEC#WOMBAT_CAMERA
+
+  ↳ Handoff 
+    toggle | prefs:root=General&path=CONTINUITY_SPEC#CONTINUITY
+
+  ↳ Transfer to HomePod
+    toggle | prefs:root=General&path=CONTINUITY_SPEC#TRANSFER_TO_HOMEPOD
+
+↳ Background App Refresh 
+  highlight | 
+  open      | prefs:root=General&path=AUTO_CONTENT_DOWNLOAD
+
+↳ CarPlay
+  highlight | 
+  open      | prefs:root=General&path=CARPLAY
+
+↳ Date & Time
+  highlight | 
+  open      | prefs:root=General&path=DATE_AND_TIME
+
+↳ Dictionary
+  highlight | 
+  open      | prefs:root=General&path=DICTIONARY
+
+↳ Home Button
+  highlight | 
+  open      | prefs:root=General&path=HOME_BUTTON
+
+↳ iPhone Storage
+  highlight | 
+  open      | prefs:root=General&path=STORAGE_MGMT
+
+  ↳ MISC.
+    prefs:root=General&path=STORAGE_MGMT#MANAGE
+    prefs:root=General&path=STORAGE_MGMT#OFFLOAD
+
+↳ Keyboard
+  highlight |
+  open      | prefs:root=General&path=Keyboard
+
+  ↳ Keyboards
+    highlight | 
+    open      | prefs:root=General&path=Keyboard/KEYBOARDS
+
+  ↳ One Handed Keyboard
+    highlight | 
+    open      | prefs:root=General&path=Keyboard/ReachableKeyboard
+
+  ↳ Text Replacement
+    highlight | 
+    open      | prefs:root=General&path=Keyboard/USER_DICTIONARY
+
+↳ Language & Region
+  highlight | 
+  open      | prefs:root=General&path=INTERNATIONAL
+
+↳ Legal & Regulatory
+  highlight | 
+  open      | prefs:root=General&path=LEGAL_AND_REGULATORY
+
+↳ Multitasking  (iPad-only)
+  highlight | prefs:root=General#Multitasking_Gesture_Switch
+  open      | prefs:root=General&path=MULTITASKING
+
+↳ NFC
+  highlight | 
+  open      | prefs:root=General&path=NFC_LINK
+
+↳ Picture in Picture
+  highlight | 
+  open      | prefs:root=General&path=PiP_SPEC
+
+↳ Profile or Profiles  (iOS 14.8.1 and earlier)
+  highlight | 
+  open      | prefs:root=General&path=ManagedConfigurationList
+
+↳ Regulatory
+  highlight | 
+  open      | prefs:root=General&path=REGULATORY
+
+↳ Reset  (iOS 14 and older)
+  highlight | 
+  open      | prefs:root=General&path=Reset
+
+  ↳ Reset All Settings  (iOS 14 and older)
+    highlight | prefs:root=General&path=Reset#settingsErase
+
+  ↳ Erase All Content and Settings  (iOS 14 and older)
+    highlight | prefs:root=General&path=Reset#fullErase
+
+  ↳ Reset Network Settings  (iOS 14 and older)
+    highlight | prefs:root=General&path=Reset#RESET_NETWORK_LABEL
+
+  ↳ Reset All Cellular Plans  (iOS 14 and older)
+    highlight | prefs:root=General&path=Reset#cellularErase
+
+  ↳ Subscriber Services  (iOS 14 and older)
+    highlight | prefs:root=General&path=Reset#SUBSCRIBER_SERVICES_ID
+
+  ↳ Reset Keyboard Dictionary  (iOS 14 and older)
+    highlight | prefs:root=General&path=Reset#RESET_KEYBOARD_DICTIONARY_LABEL
+
+  ↳ Reset Home Screen Layout  (iOS 14 and older)
+    highlight | prefs:root=General&path=Reset#RESET_ICONS_LABEL
+
+  ↳ Reset Location & Privacy  (iOS 14 and older)
+    highlight | prefs:root=General&path=Reset#RESET_PRIVACY_LABEL
+
+↳ Shut Down
+  highlight | prefs:root=General#SHUTDOWN_LABEL
+  open      | prefs:root=General&path=SHUTDOWN_LABEL
+
+↳ Software Update
+  highlight | 
+  open      | prefs:root=General&path=SOFTWARE_UPDATE_LINK
+
+  ↳ Beta Updates
+    highlight |
+    open      | os-beta-updates://
+
+↳ Trackpad  (iPad-only)
+  highlight |
+  open      | prefs:root=General&path=POINTERS
+
+↳ Trackpad & Mouse  (iPad-only)
+  highlight | 
+  open      | prefs:root=General&path=POINTERS
+
+↳ Transfer or Reset iPhone  (iOS 15 and newer)
+  highlight | 
+  open      | prefs:root=General&path=Reset
+
+  ↳ Get Started  (iOS 15 and newer)
+    highlight |
+    open      | prefs-prebuddy://
+
+↳ TV Out
+  highlight | 
+  open      | prefs:root=General&path=TV_OUT
+
+↳ Use Side Switch To
+  section | prefs:root=General#Rotation_Switch_Action_Group
+
+↳ VPN  (iOS 14.8.1 and earlier)
+  highlight | 
+  open      | prefs:root=General&path=VPN
+
+↳ VPN & Device Management  (iOS 15 and later)
+  highlight |
+  open      | prefs:root=General&path=ManagedConfigurationList
+Settings ⇾ Health
+Health
+open | prefs:root=HEALTH
+Settings ⇾ iCloud
+iCloud prefs:root=CASTLE
+-----------------
+
+iCloud Backup  (open)
+prefs:root=CASTLE&path=BACKUP
+Settings ⇾ Mail
+prefs:root=MAIL
+prefs:root=ACCOUNT_SETTINGS  -  iOS 14 and later only
+----------------------------------------------------
+
+Mail ⇾ Blocked
+prefs:root=MAIL&path=Blocked  (open)
+
+Mail ⇾ Blocked Sender Options (open)
+prefs:root=MAIL&path=Blocked%20Sender%20Options
+
+Mail ⇾ Default Account  (open)
+prefs:root=MAIL&path=Default%20Account
+
+Mail ⇾ Include Attachments with Replies  (open)
+prefs:root=MAIL&path=Include%20Attachments%20with%20Replies
+
+Mail ⇾ Increase Quote Level  (open)
+prefs:root=MAIL&path=Increase%20Quote%20Level
+
+Mail ⇾ Mark Addresses  (open)
+prefs:root=MAIL&path=Mark%20Addresses
+
+Mail ⇾ Muted Thread Action  (open)
+prefs:root=MAIL&path=Muted%20Thread%20Action
+
+Mail ⇾ Notifications  (open)
+prefs:root=MAIL&path=NOTIFICATIONS
+
+Mail ⇾ Preview  (open)
+prefs:root=MAIL&path=Preview
+
+Mail ⇾ Signature  (open)
+prefs:root=MAIL&path=Signature
+
+Mail ⇾ Swipe Options  (open)
+prefs:root=MAIL&path=Swipe%20Options
+Settings ⇾ Maps
+prefs:root=MAPS
+---------------
+
+Maps ⇾ Climate | Air Quality Index  (toggle)
+prefs:root=MAPS#Air%20Quality%20Index
+
+Maps ⇾ Climate | Weather Conditions  (toggle)
+prefs:root=MAPS#Weather%20Conditions
+
+Maps ⇾ Distances  (section)
+prefs:root=MAPS#Distances
+
+Maps ⇾ Driving & Navigation  (open) *
+prefs:root=MAPS&path=Driving%20&%20Navigation
+
+Maps ⇾ Driving & Navigation ⇾ Avoid  (section) *
+prefs:root=MAPS&path=Driving%20&%20Navigation#Avoid
+
+Maps ⇾ Driving & Navigation ⇾ Navigation Voice Volume  (section) *
+prefs:root=MAPS&path=Driving%20&%20Navigation#Navigation%20Voice%20Volume
+
+Maps ⇾ Driving & Navigation ⇾ Pause Spoken Audio  (toggle) *
+prefs:root=MAPS&path=Driving%20&%20Navigation#Pause%20Spoken%20Audio
+
+Maps ⇾ Driving & Navigation ⇾ Show in Navigation  (section) *
+prefs:root=MAPS&path=Driving%20&%20Navigation#Show%20in%20Navigation
+
+Maps ⇾ Driving & Navigation ⇾ Show in Navigation | Compass  (toggle) *
+prefs:root=MAPS&path=Driving%20&%20Navigation#Compass
+
+Maps ⇾ Driving & Navigation ⇾ Show in Navigation | Speed Limit  (toggle) *
+prefs:root=MAPS&path=Driving%20&%20Navigation#Speed%20Limit
+
+Maps ⇾ Map Labels | Always in English  (toggle)
+prefs:root=MAPS#Always%20in%20English
+
+Maps ⇾ Preferred Transportation Type  (section)
+prefs:root=MAPS#Preferred%20Transportation%20Type
+
+Maps ⇾ Preferred Type of Travel  (section)
+prefs:root=MAPS#Preferred%20Transportation%20Type
+
+Maps ⇾ Transit  (open)
+prefs:root=MAPS&path=Transit
+
+Maps ⇾ Walking  (open)
+prefs:root=MAPS&path=Walking
+
+Maps ⇾ Walking ⇾ Optical Heading  (toggle)
+prefs:root=MAPS&path=Walking#Optical%20Heading
+
+Maps ⇾ Your Car | Show Parked Location  (toggle)
+prefs:root=MAPS#Show%20Parked%20Location
+
+* Not working in at least iOS 13 and later
+Settings ⇾ Measure
+prefs:root=MEASURE
+Settings ⇾ Messages
+prefs:root=MESSAGES
+Settings ⇾ Music
+prefs:root=MUSIC
+----------------
+
+Music ⇾ Cellular Data  (open)
+prefs:root=MUSIC&path=com.apple.Music:CellularData
+
+Music ⇾ EQ  (open)
+prefs:root=MUSIC&path=com.apple.Music:EQ
+
+Music ⇾ Optimize Storage  (open)
+prefs:root=MUSIC&path=com.apple.Music:OptimizeStorage
+
+Music ⇾ Volume Limit  (open)
+prefs:root=MUSIC&path=com.apple.Music:VolumeLimit
+
+Music ⇾ EQ  (open)
+prefs:root=MUSIC&path=com.apple.Music:EQ
+Settings ⇾ News
+prefs:root=NEWS
+Settings ⇾ Notes
+prefs:root=NOTES
+----------------
+
+Notes ⇾ Access Notes from Lock Screen  (open)
+prefs:root=NOTES&path=Access%20Notes%20from%20Lock%20Screen
+
+Notes ⇾ Default Account  (open)
+prefs:root=NOTES&path=Default%20Account
+
+Notes ⇾ Lines & Grids  (open)
+prefs:root=NOTES&path=Lines%20%26%20Grids
+
+Notes ⇾ New Notes Start With  (open)
+prefs:root=NOTES&path=New%20Notes%20Start%20With
+
+Notes ⇾ Note Backgrounds  (open)
+prefs:root=NOTES&path=Note%20Backgrounds
+
+Notes ⇾ Password  (open)
+prefs:root=NOTES&path=Password
+
+Notes ⇾ Sort Checked Items  (open)
+prefs:root=NOTES&path=Sort%20Checked%20Items
+
+Notes ⇾ Sort Notes By  (open)
+prefs:root=NOTES&path=Sort%20Notes%20By
+Settings ⇾ Notifications
+prefs:root=NOTIFICATIONS_ID
+---------------------------
+
+Notifications ⇾ Siri Suggestions  (open)
+prefs:root=NOTIFICATIONS_ID&path=Siri%20Suggestions
+Settings ⇾ Passwords (iOS 15 and later)
+prefs:root=PASSWORDS
+--------------------
+
+Passwords ⇾ Search  (open and search)
+prefs:root=PASSWORDS&search=YourSearchTerm
+Settings ⇾ Passwords & Accounts (iOS 14 and earlier)
+prefs:root=ACCOUNTS_AND_PASSWORDS
+---------------------------------
+
+Passwords & Accounts ⇾ Fetch New Data  (open)
+prefs:root=ACCOUNTS_AND_PASSWORDS&path=FETCH_NEW_DATA
+
+Passwords & Accounts ⇾ Add Account  (open)
+prefs:root=ACCOUNTS_AND_PASSWORDS&path=ADD_ACCOUNT
+Settings ⇾ Personal Hotspot
+prefs:root=INTERNET_TETHERING
+-----------------------------
+
+Personal Hotspot ⇾ Family Sharing  (open)
+prefs:root=INTERNET_TETHERING&path=Family%20Sharing
+
+Personal Hotspot ⇾ Wi-Fi Password  (open)
+prefs:root=INTERNET_TETHERING&path=Wi-Fi%20Password
+Settings ⇾ Phone
+prefs:root=Phone
+Settings ⇾ Photos
+prefs:root=Photos
+Settings ⇾ Privacy
+prefs:root=Privacy
+------------------
+
+Privacy ⇾ Contacts  (open)
+prefs:root=Privacy&path=CONTACTS
+
+Privacy ⇾ Calendars  (open)
+prefs:root=Privacy&path=CALENDARS
+
+Privacy ⇾ Camera  (open)
+prefs:root=Privacy&path=CAMERA
+
+Privacy ⇾ Location Services  (open)
+prefs:root=Privacy&path=LOCATION
+
+Privacy ⇾ Microphone  (open)
+prefs:root=Privacy&path=MICROPHONE
+
+Privacy ⇾ Motion  (open)
+prefs:root=Privacy&path=MOTION
+
+Privacy ⇾ Photos  (open)
+prefs:root=Privacy&path=PHOTOS
+
+Privacy ⇾ Reminders  (open)
+prefs:root=Privacy&path=REMINDERS
+
+Privacy ⇾ Speech Recognition  (open)
+prefs:root=Privacy&path=SPEECH_RECOGNITION
+Settings ⇾ Reminders
+Reminders
+prefs:root=REMINDERS
+
+↳ Default List
+  highlight | prefs:root=REMINDERS#DEFAULT_LIST
+  open      | prefs:root=REMINDERS&path=DEFAULT_LIST
+Settings ⇾ Ringtone
+Ringtone
+prefs:root=Sounds&path=Ringtone
+Settings ⇾ Safari
+Safari
+prefs:root=SAFARI
+
+↳ General
+  section | ?
+
+  ↳ AutoFill
+    highlight | prefs:root=SAFARI#AUTO_FILL
+    open      | prefs:root=SAFARI&path=AUTO_FILL
+
+  ↳ Block Pop-ups
+    toggle | prefs:root=SAFARI#BLOCK_POPUPS
+
+  ↳ Content Blockers (iOS 14.8.1 and earlier)
+    highlight | prefs:root=SAFARI#CONTENT_BLOCKERS
+    open      | prefs:root=SAFARI&path=CONTENT_BLOCKERS
+
+  ↳ Downloads
+    highlight | prefs:root=SAFARI#DOWNLOADS
+    open      | prefs:root=SAFARI&path=DOWNLOADS
+
+  ↳ Extensions (iOS 15 and later)
+    highlight | prefs:root=SAFARI#WEB_EXTENSIONS
+    open      | prefs:root=SAFARI&path=WEB_EXTENSIONS
+
+  ↳ Favorites
+    highlight | ?
+    open      | ?
+
+↳ Privacy & Security
+  section | ?
+
+  ↳ Prevent Cross-Site Tracking
+    toggle | prefs:root=SAFARI#TRACKER_PROTECTION
+
+↳ Profiles (iOS 17 and later)
+  section | prefs:root=SAFARI#Profiles
+
+↳ Search
+  section | ?
+
+  ↳ Also Use in Private Browsing (iOS 17 and later)
+    toggle | ?
+
+  ↳ Preload Top Hit
+    toggle | ?
+
+  ↳ Quick Website Search
+    highlight | ?
+    open      | ?
+
+  ↳ Safari Suggestions
+    toggle | ?
+
+  ↳ Search Engine
+    highlight | ?
+    open      | ?
+
+  ↳ Search Engine Suggestions
+    toggle | ?
+
+↳ Settings for Websites
+  section | ?
+
+  ↳ Camera
+    highlight | prefs:root=SAFARI#Camera
+    open      | prefs:root=SAFARI&path=Camera
+
+  ↳ Location
+    highlight | prefs:root=SAFARI#Location
+    open      | prefs:root=SAFARI&path=Location
+
+  ↳ Microphone
+    highlight | prefs:root=SAFARI#Microphone
+    open      | prefs:root=SAFARI&path=Microphone
+
+  ↳ Page Zoom
+    highlight | prefs:root=SAFARI#Page%20Zoom
+    open      | prefs:root=SAFARI&path=Page%20Zoom
+
+  ↳ Profiles (iOS 17 and later)
+    highlight | ?
+    open      | ?
+
+  ↳ Reader
+    highlight | prefs:root=SAFARI#Reader
+    open      | prefs:root=SAFARI&path=Reader
+
+  ↳ Request Desktop Website
+    highlight | prefs:root=SAFARI#Request%20Desktop%20Website
+    open      | prefs:root=SAFARI&path=Request%20Desktop%20Website
+    
+↳ Tabs
+  section | ?
+
+  ↳ Allow Website Tinting
+    toggle | ?
+
+  ↳ Close Tabs
+    highlight | prefs:root=SAFARI#Close%20Tabs
+    open      | prefs:root=SAFARI&path=Close%20Tabs
+
+  ↳ Landscape Tab Bar
+    toggle | ?
+
+  ↳ Open Links
+    highlight | ?
+    open      | ?
+Settings ⇾ Screen Time
+prefs:root=SCREEN_TIME
+----------------------
+Screen Time ⇾ Always Allowed
+prefs:root=SCREEN_TIME&path=ALWAYS_ALLOWED
+Screen Time ⇾ App Limits
+prefs:root=SCREEN_TIME&path=APP_LIMITS
+Screen Time ⇾ Communication Limits
+prefs:root=SCREEN_TIME&path=COMMUNICATION_LIMITS
+Screen Time ⇾ Content & Privacy Restrictions
+prefs:root=SCREEN_TIME&path=CONTENT_PRIVACY
+Screen Time ⇾ Downtime
+prefs:root=SCREEN_TIME&path=DOWNTIME
+Settings ⇾ Shortcuts
+prefs:root=SHORTCUTS
+--------------------
+Shortcuts ⇾ iCloud Sync
+prefs:root=SHORTCUTS#WFCloudKitSyncEnabled
+Shortcuts ⇾ iCloud Sync
+prefs:root=SHORTCUTS#WFCloudKitSyncOrderEnabled
+Shortcuts ⇾ Legal Notices
+prefs:root=SHORTCUTS&path=Legal%20Notices
+Settings ⇾ Siri & Search
+prefs:root=SIRI
+prefs-siri-shortcuts://
+---------------
+Siri & Search ⇾ Allow Siri When Locked
+prefs:root=SIRI#ASSISTANT_LOCK_SCREEN_ACCESS
+Siri & Search ⇾ Language
+prefs:root=SIRI&path=LANGUAGE_ID
+Siri & Search ⇾ Siri Voice
+prefs:root=SIRI&path=VOICE_ID
+Siri & Search ⇾ Siri Responses
+prefs:root=SIRI&path=VOICE_FEEDBACK_ID
+Siri & Search ⇾ My Information
+prefs:root=SIRI&path=MY_INFO
+Siri & Search ⇾ Suggestions in Search
+prefs:root=SIRI#Suggestions%20in%20Search
+Siri & Search ⇾ Suggestions while Searching
+prefs:root=SIRI#Suggestions%20while%20Searching
+Siri & Search ⇾ Suggestions in Look Up
+prefs:root=SIRI#Suggestions%20in%20Look%20Up
+Siri & Search ⇾ Suggestions on Lock Screen
+prefs:root=SIRI#Suggestions%20on%20Lock%20Screen
+Siri & Search ⇾ Suggestions on Home Screen
+prefs:root=SIRI#Suggestions%20on%20Home%20Screen
+Siri & Search ⇾ Suggestions when Sharing
+prefs:root=SIRI#Suggestions%20when%20Sharing
+Settings ⇾ Sounds & Haptics
+Sounds & Haptics
+prefs:root=Sounds
+
+↳ Change with Buttons
+  toggle | prefs:root=Sounds#CHANGE_WITH_BUTTONS
+
+↳ Headphone Audio
+  section | ?
+
+  ↳ Headphone Safety
+    highlight | prefs:root=Sounds#HEADPHONE_LEVEL_LIMIT_SETTING
+    open      | prefs:root=Sounds&path=HEADPHONE_LEVEL_LIMIT_SETTING
+  
+    ↳ Headphone Notifications
+      highlight | prefs:root=Sounds&path=HEADPHONE_LEVEL_LIMIT_SETTING#SHSHeadphoneWeeklyNotificationsKey
+
+    ↳ Lightning Adapters (on non-USB-C models)
+      highlight | prefs:root=Sounds&path=HEADPHONE_LEVEL_LIMIT_SETTING#HEADPHONE_LIGHTNING_ADAPTERS
+      open      | prefs:root=Sounds&path=HEADPHONE_LEVEL_LIMIT_SETTING/HEADPHONE_LIGHTNING_ADAPTERS
+
+    ↳ Reduce Loud Sounds [or Audio]
+      toggle | prefs:root=Sounds&path=HEADPHONE_LEVEL_LIMIT_SETTING#SHSHeadphoneLevelLimitSwitchKey
+
+  ↳ Personalized Spatial Audio
+    highlight | prefs:root=Sounds&path=Reminder#Personalized%20Spatial%20Audio
+    open      | prefs:root=Sounds&path=Reminder&path=Personalized%20Spatial%20Audio
+
+↳ Keyboard Clicks (iOS 15.8 and earlier)
+  toggle | prefs:root=Sounds#KEYBOARD_SOUND_SWITCH
+
+↳ Keyboard Feedback (iOS 16 and later)
+  highlight | prefs:root=Sounds#Keyboard%20Feedback
+  open      | prefs:root=Sounds&path=Keyboard%20Feedback
+
+↳ Lock Sound
+  toggle | prefs:root=Sounds#LOCK_SOUND_SWITCH
+
+↳ Ringer and Alerts (iOS 15.8 and earlier)
+↳ Ringtone and Alert Volume (iOS 16)
+↳ Ringtone and Alerts (iOS 17 and later)
+  section | prefs:root=Sounds#RINGER_AND_ALERT_GROUP
+
+  ↳ AirDrop (iOS 15.8 and earlier)
+    highlight | prefs:root=Sounds#AIRDROP
+    open      | prefs:root=Sounds&path=AIRDROP
+
+  ↳ Calendar Alerts  
+    highlight | prefs:root=Sounds#Calendar%20Alarm
+    open      | prefs:root=Sounds&path=Calendar%20Alarm
+
+  ↳ Default Alerts (iOS 17.2 and later)
+    highlight | ?
+    open      | ?
+
+  ↳ New Mail
+    highlight | prefs:root=Sounds#NEW_MAIL
+    open      | prefs:root=Sounds&path=NEW_MAIL
+
+  ↳ New Voicemail
+    highlight | prefs:root=Sounds#Voicemail
+    open      | prefs:root=Sounds&path=Voicemail
+
+  ↳ Reminder Alerts
+    highlight | prefs:root=Sounds#Reminder%20Alerts
+    open      | prefs:root=Sounds&path=Reminder%20Alerts
+
+  ↳ Ringtone 
+    highlight | prefs:root=Sounds#Ringtone
+    open      | prefs:root=Sounds&path=Ringtone
+
+  ↳ Sent Mail 
+    highlight | prefs:root=Sounds#SENT_MAIL
+    open      | prefs:root=Sounds&path=SENT_MAIL
+
+  ↳ Text Tone  
+    highlight | prefs:root=Sounds#Text_Messages
+    open      | prefs:root=Sounds&path=Text_Messages
+
+↳ Sounds and Haptic Patterns (iOS 16)
+↳ Sounds and Vibration Patterns (iOS 15.8 and earlier)
+↳ System Sounds and Haptics (iOS 17 and later)
+  section | prefs:root=Sounds#SOUNDS_ALERT_GROUP
+
+↳ System Haptics
+  toggle | prefs:root=Sounds&path=SOUND_EFFECTS
+Settings ⇾ StandBy
+StandBy
+prefs:root=AMBIENT
+Settings ⇾ Stocks
+prefs:root=STOCKS
+-----------------
+Stocks ⇾ Privacy
+prefs:root=STOCKS#Privacy
+Stocks ⇾ Reset Identifier
+prefs:root=STOCKS#reset_identifier
+Settings ⇾ Touch ID & Passcode
+Touch ID & Passcode
+open | prefs:root=PASSCODE
+
+↳ Allow Access When Locked
+  section | prefs:root=PASSCODE#ALLOW_ACCESS_WHEN_LOCKED
+
+  ↳ Accessories
+    toggle | 
+
+  ↳ Control Center
+    toggle | ?
+
+  ↳ Home Control
+    toggle | prefs:root=PASSCODE#HOME_CONTROL_SWITCH
+
+  ↳ Live Activities
+    toggle | ?
+
+  ↳ Lock Screen Widgets
+    toggle | ?
+
+  ↳ Notification Center
+    toggle | ?
+
+  ↳ Reply with Message
+    toggle | prefs:root=PASSCODE#REPLY_WITH_MESSAGE_SWITCH
+
+  ↳ Return Missed Calls
+    toggle | prefs:root=PASSCODE#RETURN_MISSED_CALLS_SWITCH
+
+  ↳ Siri
+    toggle | ?
+
+  ↳ Today View and Search
+    toggle | ?
+
+  ↳ Wallet
+    toggle | prefs:root=PASSCODE#WALLET_SWITCH
+
+↳ Change Passcode
+  highlight | prefs:root=PASSCODE#CHANGE_PASSCODE
+  open | prefs:root=PASSCODE&path=CHANGE_PASSCODE
+
+↳ Erase Data
+  toggle | prefs:root=PASSCODE#WIPE_DEVICE
+
+↳ Fingerprints
+  section | ?
+
+  ↳ Add a Fingerprint
+    highlight | ?
+
+↳ Require Passcode
+  highlight | prefs:root=PASSCODE#PASSCODE_REQ
+  open | prefs:root=PASSCODE&path=PASSCODE_REQ
+
+↳ Reset Touch ID
+  highlight | ?
+  open | ?
+
+↳ Turn Passcode Off
+  highlight | prefs:root=PASSCODE#PASSCODE_OFF
+  open | prefs:root=PASSCODE&path=PASSCODE_OFF
+
+↳ Use Touch ID For
+  section | ?
+
+  ↳ iPhone Unlock
+    toggle | ?
+
+  ↳ iTunes & App Store
+    toggle | ?
+
+  ↳ Other Apps
+    highlight | ?
+    open | ?
+
+  ↳ Password AutoFill
+    toggle | ?
+
+  ↳ Wallet & Apple Pay
+    toggle | ?
+
+↳ Voice Dial
+  toggle | prefs:root=PASSCODE#VOICE_DIAL
+Settings ⇾ TV
+prefs:root=TVAPP
+----------------
+TV ⇾ Use Cellular Data
+prefs:root=TVAPP#com.apple.videos%3AVideosUseCellularDataEnabledSetting
+TV ⇾ Playback Quality
+prefs:root=TVAPP#com.apple.videos%3APlaybackQualityGroup
+TV ⇾ Video Definition
+prefs:root=TVAPP&path=com.apple.videos%3APreferredPurchaseResolution
+TV ⇾ Home Sharing
+prefs:root=TVAPP#com.apple.videos%3AHomeSharingFooter
+Settings ⇾ TV Provider
+prefs-tvprovider://
+prefs:root=VIDEO_SUBSCRIBER
+Settings ⇾ Voice Memos
+prefs:root=VOICE_MEMOS
+Settings ⇾ VPN
+prefs:root=General&path=VPN
+Settings ⇾ Wallet
+prefs:root=PASSBOOK
+Settings ⇾ Wallpaper
+prefs:root=Wallpaper
+Settings ⇾ Wi-Fi
+prefs:root=WIFI
+Accessibility Settings
+The below URLs can all be found manually by navigating to Settings ⇾ Accessibility, and they are grouped by Vision, Physical and Motor, Hearing, and General.
+
+prefs:root=ACCESSIBILITY
+
+prefs:root=ACCESSIBILITY_DESCRIPTION
+
+prefs:root=ACCESSIBILITY_KEYWORDS
+
+prefs:root=ACCESSIBILITY#VISION
+
+prefs:root=ACCESSIBILITY#MOBILITY_HEADING
+
+prefs:root=ACCESSIBILITY#HEARING_HEADING
+
+prefs:root=ACCESSIBILITY#GENERAL_HEADING
+Vision Accessibility Settings
+Settings ⇾ Accessibility ⇾ VoiceOver
+VoiceOver
+open | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE
+
+↳ Activities
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#Activities
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Activities
+
+  ↳ Add Activity
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Activities#New 
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Activities/New
+
+  ↳ Programming
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Activities#Programming
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Activities/Programming
+
+↳ Always Speak Notifications  (iOS 14.8.1 and earlier)
+  toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#SPEAK_NOTIFICATIONS
+
+↳ Audio
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#Audio
+
+  ↳ Audio Ducking
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Audio#AUDIO_DUCKING
+
+  ↳ Auto-select Speaker in Call
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Audio#ROUTE_TO_SPEAKER
+   
+  ↳ Send to HDMI
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Audio#ROUTE_TO_HDMI
+
+  ↳ VoiceOver Sounds & Haptics
+    highlight | ?
+    open      | ?
+
+↳ Braille
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#Braille
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille
+
+  ↳ Auto Advance Duration
+    highlight | ?
+    open      | ?
+
+  ↳ Braille Alert Messages
+    highlight | ?
+    open      | ?
+
+    ↳ Braille Alert Messages
+      toggle | ?
+
+    ↳ Show until Dismissed
+      toggle | ?
+
+  ↳ Braille Screen Input
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#BrailleGesturesInput
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleGesturesInput
+
+    ↳ Uncontracted Six-dot Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleGesturesInput#SixDotBraille
+
+    ↳ Uncontracted Eight-dot Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleGesturesInput#EightDotBraille
+
+    ↳ Contracted Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleGesturesInput#ContractedBraille
+
+    ↳ Reverse Dot Positions
+      toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleGesturesInput#SHOULD_REVERSE_DOTS
+
+  ↳ Braille Tables
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#tableIdentifier
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/tableIdentifier
+
+    ↳ Add Braille Table
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/tableIdentifier#ADD_NEW_BRAILLE_LANGUAGE
+      open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/tableIdentifier/ADD_NEW_BRAILLE_LANGUAGE
+
+  ↳ Choose a Braille Display...
+    section | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#DEVICES
+
+  ↳ Enable Bluetooth on Start
+    toggle | ?
+
+  ↳ Equations use Nemeth Code
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#ALWAYS_USE_NEMETH
+
+  ↳ Ignore Chord Duration
+    highlight | ?
+    open      | ?
+
+  ↳ Input
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#BrailleDisplayInput
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayInput
+
+    ↳ Uncontracted Six-dot Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayInput#SixDotBraille
+
+    ↳ Uncontracted Eight-dot Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayInput#EightDotBraille
+
+    ↳ Contracted Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayInput#ContractedBraille
+
+    ↳ Automatic Translation
+      toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayInput#GRADE2_AUTO_TRANSLATE
+
+  ↳ Output
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#BrailleDisplayOutput
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayOutput
+
+    ↳ Uncontracted Six-dot Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayOutput#SixDotBraille
+
+    ↳ Uncontracted Eight-dot Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayOutput#EightDotBraille
+
+    ↳ Contracted Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/BrailleDisplayOutput#ContractedBraille
+
+  ↳ Show Onscreen Keyboard
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#SHOW_SW_KEYBOARD
+
+  ↳ Sound Curtain
+    toggle | ?
+
+  ↳ Status Cells
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#STATUS_CELL
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/STATUS_CELL
+
+    ↳ Status Cells Position
+      section | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/STATUS_CELL#STATUS_CELL_POSITION
+
+      ↳ Left
+        highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/STATUS_CELL#STATUS_CELL_LEFT
+
+      ↳ Right
+        highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/STATUS_CELL#STATUS_CELL_RIGHT
+   
+    ↳ Show General Status
+      toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/STATUS_CELL#StatusCellGeneral
+
+    ↳ Show Text Status
+      toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille/STATUS_CELL#StatusCellTextStyle
+  
+  ↳ Text Formatting
+    toggle | ?
+
+  ↳ Turn Pages when Panning
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#AUTO_TURN_PAGES
+
+  ↳ Word Wrap
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Braille#WORD_WRAP
+
+↳ Caption Panel
+  toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#CaptionPanel
+
+↳ Commands  (iOS 17.2 and later)
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#CustomizeCommands
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands
+
+  ↳ All Commands  (iOS 17.2 and later)
+    highlight | ?
+    open      | ?
+
+  ↳ Braille Screen Input  (iOS 17.2 and later)
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands#BrailleScreenInput
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands/BrailleScreenInput
+
+  ↳ Handwriting  (iOS 17.2 and later)
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands#Handwriting
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands/Handwriting
+
+  ↳ Keyboard Shortcuts  (iOS 17.2 and later)
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands#KeyboardShortcuts
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands/KeyboardShortcuts
+
+  ↳ Reset VoiceOver Commands  (iOS 17.2 and later)
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands#ResetVoiceOverCommands
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands/ResetVoiceOverCommands
+
+  ↳ Touch Gestures  (iOS 17.2 and later)
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands#TouchGestures
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CustomizeCommands/TouchGestures
+
+↳ Commands  (iOS 17.1.1 and earlier)
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#CUSTOMIZE_COMMANDS
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/CUSTOMIZE_COMMANDS
+
+  ↳ All Commands  (iOS 17.1.1 and earlier)
+    highlight | ?
+    open      | ?
+
+  ↳ Braille Screen Input  (iOS 17.1.1 and earlier)
+    highlight | ?
+    open      | ?
+
+  ↳ Handwriting  (iOS 17.1.1 and earlier)
+    highlight | ?
+    open      | ?
+
+  ↳ Keyboard Shortcuts  (iOS 17.1.1 and earlier)
+    highlight | ?
+    open      | ?
+
+  ↳ Reset VoiceOver Commands  (iOS 17.1.1 and earlier)
+    highlight | ?
+    open      | ?
+
+  ↳ Touch Gestures  (iOS 17.1.1 and earlier)
+    highlight | ?
+    open      | ?
+
+↳ Double-tap Timeout
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#DOUBLE_TAP_INTERVAL_TITLE
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/DOUBLE_TAP_INTERVAL_TITLE
+
+  ↳ Double-tap Timeout
+    section | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/DOUBLE_TAP_INTERVAL_TITLE#NumericalPreferencePickerGroupIdentifier
+
+↳ Large Cursor
+  toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#CursorStyle
+
+↳ Navigate Images
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#IncludeUnlabeledImages
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/IncludeUnlabeledImages
+
+  ↳ Always
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/IncludeUnlabeledImages#NAV_IMG_ALWAYS
+
+  ↳ Never
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/IncludeUnlabeledImages#NAV_IMG_NEVER
+
+  ↳ With descriptions
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/IncludeUnlabeledImages#NAV_IMG_W_DESCRIPTIONS
+
+↳ Rotor  (iOS 17 and later)
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#RotorActions
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/RotorActions
+
+  ↳ Change Rotor with Item  (iOS 17 and later)
+    toggle | ?
+
+  ↳ Direct Touch Apps  (iOS 17 and later)
+    highlight | ?
+    open      | ?
+
+  ↳ Edit Apps on Home Screen  (iOS 17 and later)
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/RotorActions#editApps
+
+  ↳ Rotor Items  (iOS 17 and later)
+    highlight | ?
+    open      | ?
+
+↳ Rotor  (iOS 16.7.2 and earlier)
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#WebRotor
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/WebRotor
+
+↳ Rotor Actions  (iOS 15 to iOS 16.7.2)
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#RotorActions
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/RotorActions
+
+  ↳ Edit Apps on Home Screen  (iOS 15 to iOS 16.7.2)
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/RotorActions#editApps
+
+↳ Rotor Actions  (iOS 14.8.1 and earlier)
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#ROTOR_ACTIONS
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/ROTOR_ACTIONS
+
+  ↳ Edit Apps on Home Screen  (iOS 14.8.1 and earlier)
+    toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/ROTOR_ACTIONS#EDIT_APPS_ACTION
+
+↳ Typing
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#TypingOptions
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions
+
+  ↳ Keyboard Interaction Time
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions#KEYBOARD_TIMING_TIMEOUT
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/KEYBOARD_TIMING_TIMEOUT
+
+  ↳ Modifier Keys
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions#MODIFIER_KEYS
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/MODIFIER_KEYS
+
+    ↳ Caps Lock
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/MODIFIER_KEYS#VO_MODIFIER_KEY_CAPS_LOCK
+
+    ↳ Control + Option
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/MODIFIER_KEYS#VO_MODIFIER_KEY_CONTROL_OPTIONS
+
+  ↳ Phonetic Feedback
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions#PHONETICS_TITLE
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions#PHONETICS_TITLE
+
+    ↳ Character and Phonetics
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/PHONETICS_TITLE#PHONETICS_SPEAK_AFTER_DELAY
+
+    ↳ Off
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/PHONETICS_TITLE#PHONETICS_OFF
+
+    ↳ Phonetics Only
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/PHONETICS_TITLE#PHONETICS_SPEAK_EXCLUSIVELY
+
+  ↳ Typing Feedback
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions#TYPING_FEEDBACK
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/TYPING_FEEDBACK
+
+    ↳ Hardware Keyboards
+      section | ?
+
+    ↳ Software Keyboards
+      section | ?
+
+  ↳ Typing Style
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions#TYPING_MODE_TITLE
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/TYPING_MODE_TITLE
+
+    ↳ Direct Touch Typing
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/Typing%20Style#TYPING_MODE_DIRECT_TOUCH
+
+    ↳ Standard Typing
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/TYPING_MODE_TITLE#TYPING_MODE_STANDARD
+
+    ↳ Touch Typing
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/TypingOptions/Typing%20Style#TYPING_MODE_TOUCH_TYPING
+
+↳ Verbosity
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#Verbosity
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity
+
+  ↳ Actions
+    highlight | ?
+    open      | ?
+
+    ↳ Braille
+      highlight | ?
+
+    ↳ Change Pitch
+      highlight | ?
+
+    ↳ Do Nothing
+      highlight | ?
+
+    ↳ First Item Only
+      toggle | ?
+
+    ↳ Play Sound
+      highlight | ?
+
+    ↳ Speak
+      highlight | ?
+
+  ↳ Capital Letters
+    highlight | ?
+    open      | ?
+
+    ↳ Change Pitch
+      highlight | ?
+
+    ↳ Do Nothing
+      highlight | ?
+
+    ↳ Play Sound
+      highlight | ?
+
+    ↳ Speak Cap
+      highlight | ?
+
+  ↳ Container Descriptions
+    highlight | ?
+    open      | ?
+
+    ↳ Braille
+      highlight | ?
+
+    ↳ Change Pitch
+      highlight | ?
+
+    ↳ Do Nothing
+      highlight | ?
+
+    ↳ Play Sound
+      highlight | ?
+
+    ↳ Speak
+      highlight | ?
+
+  ↳ Deleting Text
+    highlight | ?
+    open      | ?
+
+    ↳ Change Pitch
+      highlight | ?
+
+    ↳ Do Nothing
+      highlight | ?
+
+    ↳ Play Sound
+      highlight | ?
+
+    ↳ Speak
+      highlight | ?
+
+  ↳ Emoji
+    highlight | ?
+    open      | ?
+
+    ↳ Braille
+      highlight | ?
+
+    ↳ Do Nothing
+      highlight | ?
+
+    ↳ Speak
+      highlight | ?
+
+  ↳ Emoji Suffix
+    toggle | ?
+
+  ↳ Flashlight Notifications
+    highlight | ?
+    open      | ?
+
+    ↳ Flashlight Notifications
+      toggle | ?
+
+  ↳ Links
+    highlight | ?
+    open      | ?
+
+    ↳ Braille
+      highlight | ?
+
+    ↳ Change Pitch
+      highlight | ?
+
+    ↳ Do Nothing
+      highlight | ?
+
+    ↳ Play Sound
+      highlight | ?
+
+    ↳ Speak
+      highlight | ?
+
+  ↳ More Content
+    highlight | ?
+    open      | ?
+
+    ↳ Change Pitch
+      highlight | ?
+
+    ↳ Do Nothing
+      highlight | ?
+
+    ↳ Play Sound
+      highlight | ?
+
+    ↳ Speak
+      highlight | ?
+
+  ↳ Numbers
+    highlight | ?
+    open      | ?
+
+    ↳ Digits
+      highlight | ?
+
+    ↳ Words
+      highlight | ?
+
+  ↳ Predictive Text Feedback
+    highlight | ?
+    open      | ?
+
+    ↳ When Predictive Text Appears
+      highlight | ?
+      open      | ?
+
+      ↳ Braille
+        highlight | ?
+
+      ↳ Change Pitch
+        highlight | ?
+
+      ↳ Do Nothing
+        highlight | ?
+
+      ↳ Play Sound
+        highlight | ?
+
+      ↳ Speak
+        highlight | ?
+
+    ↳ When Predictive Text Feedback is Entered
+      highlight | ?
+      open      | ?
+
+      ↳ Braille
+        highlight | ?
+
+      ↳ Change Pitch
+        highlight | ?
+
+      ↳ Do Nothing
+        highlight | ?
+
+      ↳ Play Sound
+        highlight | ?
+
+      ↳ Speak
+        highlight | ?
+
+  ↳ Punctuation
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity#voiceOverPunctuationGroup
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity/voiceOverPunctuationGroup
+
+    ↳ Active Punctuation Group
+      highlight | ?
+      open      | ?
+
+    ↳ System Groups
+      section | ?
+
+      ↳ All
+        highlight | ?
+        open      | ?
+
+      ↳ Some
+        highlight | ?
+        open      | ?
+
+      ↳ None
+        highlight | ?
+        open      | ?
+
+    ↳ Add Punctuation Group
+      open | ?
+
+    ↳ Import
+      open | ?
+
+  ↳ QuickNav Announcements
+    highlight | ?
+    open      | ?
+
+    ↳ Braille
+      highlight | ?
+
+    ↳ Change Pitch
+      highlight | ?
+
+    ↳ Do Nothing
+      highlight | ?
+
+    ↳ Play Sound
+      highlight | ?
+
+    ↳ Speak
+      highlight | ?
+
+  ↳ Rotor Actions
+    section | ?
+
+    ↳ Speak Confirmation
+      toggle | ?
+
+    ↳ Web Rotor Summary
+      highlight | ?
+      open      | ?
+
+      ↳ Braille
+        highlight | ?
+
+      ↳ Do Nothing
+        highlight | ?
+
+      ↳ Speak
+        highlight | ?
+
+  ↳ Speak Hints
+    toggle | ?
+
+  ↳ System Notifications
+    highlight | ?
+    open      | ?
+
+    ↳ Banner Notifications
+      section | ?
+
+      ↳ Braille
+        highlight | ?
+
+      ↳ Do Nothing
+        highlight | ?
+
+      ↳ Play Haptic
+        highlight | ?
+
+      ↳ Speak
+        highlight | ?
+
+    ↳ Notifications When Locked
+      section | ?
+
+      ↳ Braille
+        highlight | ?
+
+      ↳ Do Nothing
+        highlight | ?
+
+      ↳ Speak
+        highlight | ?
+
+      ↳ Speak Count
+        highlight | ?
+
+    ↳ Use Ring Switch
+      toggle | ?
+
+  ↳ Table Output
+    section | ?
+
+    ↳ Row & Column Numbers
+      toggle | ?
+
+    ↳ Table Headers
+      toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity#speakTableHeader
+
+  ↳ Media Descriptions
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity#voiceOverMediaDescriptions
+
+    ↳ Off
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity/voiceOverMediaDescriptions#mdOff
+
+    ↳ Speech
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity/voiceOverMediaDescriptions#mdSpeech
+
+    ↳ Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity/voiceOverMediaDescriptions#mdBraille
+
+    ↳ Speech and Braille
+      highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Verbosity/voiceOverMediaDescriptions#mdSpeechAndBraille
+  
+↳ Speaking Rate
+  slider | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#SpeakingRate
+
+↳ Speech
+  highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#Speech
+  open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Speech
+
+  ↳ Voice
+    highlight | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Speech#DialectCell
+    open      | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE/Speech#DialectCell
+
+↳ VoiceOver
+  toggle | prefs:root=ACCESSIBILITY&path=VOICEOVER_TITLE#VoiceOverTouchEnabled
+Settings ⇾ Accessibility ⇾ Zoom
+Zoom (open menu)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE
+Zoom ⇾ Zoom (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE#ZoomTouchEnabled
+Zoom ⇾ Follow Focus (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE#ZoomShouldFollowFocus
+Zoom ⇾ Smart Typing (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE#ZoomAlwaysUseWindowZoomForTyping
+Zoom ⇾ Keybord Shortcuts (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE#ZoomKeyboardShortcuts
+Zoom ⇾ Keybord Shortcuts ⇾ Keybord Shortcuts (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomKeyboardShortcuts#ZoomEnableKeyboardShortcuts
+Zoom ⇾ Keybord Shortcuts ⇾ Adjust Zoom Level (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomKeyboardShortcuts#ZoomKeyboardShortcutAdjustZoomLevel
+Zoom ⇾ Keybord Shortcuts ⇾ Toggle Zoom (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomKeyboardShortcuts#ZoomKeyboardShortcutToggleZoom
+Zoom ⇾ Keybord Shortcuts ⇾ Move Zoom Window (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomKeyboardShortcuts#ZoomKeyboardShortcutPanZoom
+Zoom ⇾ Keybord Shortcuts ⇾ Resize Zoom Window (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomKeyboardShortcuts#ZoomKeyboardShortcutResizeZoomWindow
+Zoom ⇾ Keybord Shortcuts ⇾ Switch Zoom Region (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomKeyboardShortcuts#ZoomKeyboardShortcutSwitchZoomMode
+Zoom ⇾ Keybord Shortcuts ⇾ Temporarily Toggle Zoom (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomKeyboardShortcuts#ZoomKeyboardShortcutTempToggleZoom
+Zoom ⇾ Keybord Shortcuts ⇾ Zoom with Scroll Wheel (jump to toggle)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomKeyboardShortcuts#ZoomKeyboardShortcutScrollWheel
+Zoom ⇾ Zoom Controller (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE#ZoomSlug
+Zoom ⇾ Zoom Region (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE#ZoomLensMode
+Zoom ⇾ Zoom Controller ⇾ Full Screen Zoom (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomLensMode#Fullscreen
+Zoom ⇾ Zoom Controller ⇾ Window Zoom (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomLensMode#Window
+Zoom ⇾ Zoom Filter (open menu)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomFilter
+Zoom ⇾ Zoom Filter ⇾ None (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomFilter#None
+Zoom ⇾ Zoom Filter ⇾ Inverted (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomFilter#Inverted
+Zoom ⇾ Zoom Filter ⇾ Grayscale (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomFilter#Grayscale
+Zoom ⇾ Zoom Filter ⇾ Grayscale (highlight menu item)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE/ZoomFilter#Grayscale
+Zoom ⇾ Maximum Zoom Level (jump to slider)
+prefs:root=ACCESSIBILITY&path=ZOOM_TITLE#ZoomFactorGroup
+Settings ⇾ Accessibility ⇾ Magnifier
+Magnifier (open menu)
+prefs:root=ACCESSIBILITY&path=MAGNIFIER_TITLE
+Magnifier ⇾ Magnifier (jump to toggle)
+prefs:root=ACCESSIBILITY&path=MAGNIFIER_TITLE#MagnifierEnabled
+Magnifier ⇾ Auto Brightness (jump to toggle)
+prefs:root=ACCESSIBILITY&path=MAGNIFIER_TITLE#AutoBrightness
+Settings ⇾ Accessibility ⇾ Display & Text Size
+Display & Text Size (open menu)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT
+Display & Text Size ⇾ Bold Text (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#ENHANCE_TEXT_LEGIBILITY
+Display & Text Size ⇾ Larger Text (highlight menu item)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#LARGER_TEXT
+Display & Text Size ⇾ Button Shapes (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#BUTTON_SHAPES
+Display & Text Size ⇾ On/Off Labels (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#OnOffLabels
+Display & Text Size ⇾ Reduce Transparency (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#REDUCE_TRANSPARENCY
+Display & Text Size ⇾ Increase Contrast (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#TEXT_COLORS_DARKEN
+Display & Text Size ⇾ Differentiate Without Color (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#DIFFERENTIATE_WITHOUT_COLOR
+Display & Text Size ⇾ Smart Invert (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#SMART_INVERT
+Display & Text Size ⇾ Classic Invert (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#CLASSIC_INVERT
+Display & Text Size ⇾ Color Filters (highlight menu item)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#DISPLAY_FILTER_COLOR
+Display & Text Size ⇾ Color Filters ⇾ Color Filters (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT/DISPLAY_FILTER_COLOR#FILTER_COLOR_ENABLED
+Display & Text Size ⇾ Reduce White Point (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#WHITE_POINT
+Display & Text Size ⇾ Auto Brightness (jump to toggle)
+prefs:root=ACCESSIBILITY&path=DISPLAY_AND_TEXT#AUTO_BRIGHTNESS
+Settings ⇾ Accessibility ⇾ Motion
+Motion (open menu)
+prefs:root=ACCESSIBILITY&path=MOTION_TITLE
+Motion ⇾ Reduce Motion (jump to toggle)
+prefs:root=ACCESSIBILITY&path=MOTION_TITLE#REDUCE_MOTION_ID
+Motion ⇾ Auto-Play Message Effects (jump to toggle)
+prefs:root=ACCESSIBILITY&path=MOTION_TITLE#ReduceMotionAutoplayMessagesEffects
+Motion ⇾ Auto-Play Video Previews (jump to toggle)
+prefs:root=ACCESSIBILITY&path=MOTION_TITLE#ReduceMotionAutoplayVideoPreviews
+Settings ⇾ Accessibility ⇾ Spoken Content
+Spoken Content (open menu)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE
+Spoken Content ⇾ Speak Selection (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE#QUICK_SPEAK_TITLE
+Spoken Content ⇾ Speak Screen (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE#SpeakThisEnabled
+Spoken Content ⇾ Speech Controller (highlight menu item)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE#SpeechController
+Spoken Content ⇾ Speech Controller ⇾ Show Controller (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/SpeechController#CustomizeMouseButtons
+Spoken Content ⇾ Speech Controller ⇾ Long Press (open menu item)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/SpeechController/SpeechControllerLongPressAction#SpeechControllerLongPressAction
+Spoken Content ⇾ Speech Controller ⇾ Double Tap (open menu item)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/SpeechController/SpeechControllerDoubleTapAction#SpeechControllerDoubleTapAction
+Spoken Content ⇾ Speech Controller ⇾ Idle Opacity (open menu item)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/SpeechController/SpeechControllerIdleOpacity#SpeechControllerIdleOpacity
+Spoken Content ⇾ Highlight Content (highlight menu item)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE#QuickSpeakHighlight
+Spoken Content ⇾ Highlight Content ⇾ Sentence Highlight Style (jump to section)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/QuickSpeakHighlight#SENTENCE_HIGHLIGHT_STYLE
+
+Spoken Content ⇾ Highlight Content ⇾ Highlight Colors (jump to section)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/QuickSpeakHighlight#COLOR_CHOICE
+Spoken Content ⇾ Typing Feedback (highlight menu item)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE#TypingFeedback
+Spoken Content ⇾ Typing Feedback ⇾ Character Feedback (jump to section)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/TypingFeedback#TYPING_FEEDBACK_HEADER
+Spoken Content ⇾ Typing Feedback ⇾ Characters (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/TypingFeedback#LETTER
+Spoken Content ⇾ Typing Feedback ⇾ Character Hints (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/TypingFeedback#PhoneticFeedback
+Spoken Content ⇾ Typing Feedback ⇾ Speak Words (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/TypingFeedback#WORD_FEEDBACK
+Spoken Content ⇾ Typing Feedback ⇾ Speak Auto-text (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/TypingFeedback#SPEAK_AUTOCORRECTIONS
+Spoken Content ⇾ Typing Feedback ⇾ Hold to Speak Predictions (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE/TypingFeedback#QUICKTYPE_WORD_FEEDBACK
+Spoken Content ⇾ Voices (highlight menu item)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE#QuickSpeakAccents
+Spoken Content ⇾ Voices (jump to slider)
+prefs:root=ACCESSIBILITY&path=SPEECH_TITLE#QuickSpeakRateGroup
+Settings ⇾ Accessibility ⇾ Audio Descriptions
+Audio Descriptions (open menu)
+prefs:root=ACCESSIBILITY&path=DESCRIPTIVE_VIDEO
+Audio Descriptions ⇾ Audio Descriptions (jump to slider)
+prefs:root=ACCESSIBILITY&path=DESCRIPTIVE_VIDEO#DESCRIPTIVE_VIDEO_SETTING
+Physical and Motor Accessibility Settings
+Settings ⇾ Accessibility ⇾ Touch
+Touch (open menu)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE
+Touch ⇾ AssistiveTouch (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE#AIR_TOUCH_TITLE
+Touch ⇾ AssistiveTouch ⇾ AssistiveTouch (jump to slider)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#EnableAssistiveTouchSpecifier
+Touch ⇾ AssistiveTouch ⇾ Customize Top Level Menu (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#AssistiveTouchCustomize
+Touch ⇾ AssistiveTouch ⇾ Customize Top Level Menu ⇾ Icons (highlight buttons)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/AssistiveTouchCustomize#ASTStepperCell
+Touch ⇾ AssistiveTouch ⇾ Customize Top Level Menu ⇾ Reset (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/AssistiveTouchCustomize#Reset
+Touch ⇾ AssistiveTouch ⇾ Custom Actions (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#ActionsGroupSpecifier
+Touch ⇾ AssistiveTouch ⇾ Single-Tap (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#TapSpecifier
+Touch ⇾ AssistiveTouch ⇾ Double-Tap (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#DoubleTapSpecifier
+Touch ⇾ AssistiveTouch ⇾ Double-Tap ⇾ Double-Tap Timeout (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/DoubleTapSpecifier#ASTDoubleTapTimeoutSpecifier
+Touch ⇾ AssistiveTouch ⇾ Long Press (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#LongPressSpecifier
+Touch ⇾ AssistiveTouch ⇾ Long Press ⇾ Long Press Duration (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/LongPressSpecifier#ASTLongPressDurationSpecifier
+Touch ⇾ AssistiveTouch ⇾ Custom Gestures (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#CustomGestureHeading
+Touch ⇾ AssistiveTouch ⇾ Create New Gesture (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#CreateCustomGesture
+Touch ⇾ AssistiveTouch ⇾ Idle Opacity (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#IdleOpacity
+Touch ⇾ AssistiveTouch ⇾ Pointer Devices (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#MouseDevicesHeaderTitle
+Touch ⇾ AssistiveTouch ⇾ Devices (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#AssistiveTouchMouseDevices
+Touch ⇾ AssistiveTouch ⇾ Devices ⇾ Bluetooth Devices (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/AssistiveTouchMouseDevices#BluetoothDevicesScanning
+Touch ⇾ AssistiveTouch ⇾ Mouse Keys (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#AssistiveTouchMouseKeys
+Touch ⇾ AssistiveTouch ⇾ Pointer Style (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/ASTMousePointerCustomization
+Touch ⇾ AssistiveTouch ⇾ Pointer Style ⇾ Size (jump to slider)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/ASTMousePointerCustomization#MOUSE_POINTER_SIZE_TITLE
+Touch ⇾ AssistiveTouch ⇾ Pointer Style ⇾ Visual (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/ASTMousePointerCustomization#MOUSE_POINTER_VISUAL_APPEARANCE
+Touch ⇾ AssistiveTouch ⇾ Pointer Style ⇾ Color (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/ASTMousePointerCustomization#MOUSE_POINTER_COLOR
+Touch ⇾ AssistiveTouch ⇾ Pointer Style ⇾ Color (open menu)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/ASTMousePointerCustomization/MOUSE_POINTER_COLOR#CustomizeMouseButtons
+Touch ⇾ AssistiveTouch ⇾ Pointer Style ⇾ Auto-Hide (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/ASTMousePointerCustomization#MOUSE_POINTER_TIMEOUT
+Touch ⇾ AssistiveTouch ⇾ Pointer Style ⇾ Auto-Hide ⇾ Auto-Hide (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE/ASTMousePointerCustomization/AMOUSE_POINTER_TIMEOUT#Auto-Hide
+Touch ⇾ AssistiveTouch ⇾ Show Onscreen Keyboard (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#AlwaysShowSoftwareKeyboard
+Touch ⇾ AssistiveTouch ⇾ Always Show Menu (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#AlwaysShowMenu
+Touch ⇾ AssistiveTouch ⇾ Dwell Control (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#DwellEnabledSpecifier
+Touch ⇾ AssistiveTouch ⇾ Movement Tolerance (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/AIR_TOUCH_TITLE#DwellToleranceSpecifier
+Touch ⇾ AssistiveTouch ⇾ Top/Side Button Confirmation (jump to section)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE/APPLE_PAY_CONFIRM_WITH_AST
+Touch ⇾ Haptic Touch [or 3D & Haptic Touch] (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE#ForceTouch
+Touch ⇾ Haptic Touch [or 3D & Haptic Touch] (open menu)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/ForceTouch#FORCE_TOUCH
+Touch ⇾ 3D & Haptic Touch ⇾ 3D Touch (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/ForceTouch#ForceTouchAccessibilityMasterSwitch
+Touch ⇾ 3D & Haptic Touch ⇾ 3D Touch Sensitivity (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/ForceTouch#FourceTouchSensitivityGroupIdentifier
+Touch ⇾ Haptic Touch [or 3D & Haptic Touch] ⇾ Touch Duration (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/ForceTouch#timingGroup
+Touch ⇾ Haptic Touch [or 3D & Haptic Touch] ⇾ Fast (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/ForceTouch#HapticTouchFastIdentifier
+Touch ⇾ Haptic Touch [or 3D & Haptic Touch] ⇾ Slow (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/ForceTouch#HapticTouchSlowIdentifier
+Touch ⇾ Haptic Touch [or 3D & Haptic Touch] ⇾ Touch Duration Test [or 3D Touch Sensitivity and Touch Duration Test (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/ForceTouch#FourceTouchSensitivityTestGroupIdentifier
+Touch ⇾ Touch Accommodations (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE#TOUCH_ACCOMMODATIONS
+Touch ⇾ Touch Accommodations ⇾ Touch Accommodations (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#TOUCH_ACCOMMODATIONS_SWITCHER
+Touch ⇾ Touch Accommodations ⇾ Hold Duration (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#HoldDurationGroup
+Touch ⇾ Touch Accommodations ⇾ Hold Duration (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#HoldDuration
+Touch ⇾ Touch Accommodations ⇾ Ignore Repeat (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#IgnoreRepeatGroup
+Touch ⇾ Touch Accommodations ⇾ Ignore Repeat (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#IgnoreRepeat
+Touch ⇾ Touch Accommodations ⇾ Tap Assistance (jump to section)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#Tap%20Assistance
+Touch ⇾ Touch Accommodations ⇾ Off (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#OFF
+Touch ⇾ Touch Accommodations ⇾ Use Initial Touch Location (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#ACTIVATE_ON_TOUCH
+Touch ⇾ Touch Accommodations ⇾ Use Final Touch Location (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/TOUCH_ACCOMMODATIONS#ACTIVATE_ON_RELEASE
+Touch ⇾ Tap to Wake (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE#TAP_TO_WAKE_TITLE
+Touch ⇾ Shake to Undo (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE#SHAKE_TO_UNDO
+Touch ⇾ Vibration (jump to toggle)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE#VIBRATION
+Touch ⇾ Call Audio Routing (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE#CALL_AUDIO_ROUTING
+Touch ⇾ Call Audio Routing ⇾ Automatic (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/CALL_AUDIO_ROUTING#CALL_AUDIO_ROUTING_AUTOMATIC
+Touch ⇾ Call Audio Routing ⇾ Bluetooth Headset (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/CALL_AUDIO_ROUTING#CALL_AUDIO_ROUTING_HEADSET
+Touch ⇾ Call Audio Routing ⇾ Speaker (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/CALL_AUDIO_ROUTING#CALL_AUDIO_ROUTING_SPEAKER
+Touch ⇾ AssistiveTouch ⇾ Call Audio Routing ⇾ Auto-Answer Calls (highlight menu item)
+prefs:root=ACCESSIBILITY&path=TOUCH_REACHABILITY_TITLE/CALL_AUDIO_ROUTING#callAudioRoutingAutoAnswer
+Settings ⇾ Accessibility ⇾ Face ID & Attention
+Face ID & Attention (open menu)
+prefs:root=ACCESSIBILITY&path=FACE_ID
+Face ID & Attention ⇾ Require Attention for Face ID (jump to toggle)
+prefs:root=ACCESSIBILITY&path=FACE_ID#PearlUnlockAttention
+Face ID & Attention ⇾ Attention Aware Features (jump to toggle)
+prefs:root=ACCESSIBILITY&path=FACE_ID#AttentionAware
+Face ID & Attention ⇾ Haptics (jump to section)
+prefs:root=ACCESSIBILITY&path=FACE_ID#PearlSuccessHapticGroup
+Face ID & Attention ⇾ Haptic on Successful Authentication (jump to toggle)
+prefs:root=ACCESSIBILITY&path=FACE_ID#PearlSuccessHaptic
+Settings ⇾ Accessibility ⇾ Switch Control
+Switch Control
+open | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle
+
+↳ Audio
+  section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#AudioGroupIdentifier
+
+  ↳ Sound Effects
+    toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#SoundIdentifier
+
+  ↳ Speech
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#SpeechIdentifier
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/SpeechIdentifier
+
+    ↳ Speaking Rate
+      slider | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/SpeechIdentifier#SpeechRateIdentifier
+
+    ↳ Speech
+      toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/SpeechIdentifier#VoicesIdentifier
+
+↳ Focused Item After Tap
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#ScanLocationIdentifier
+
+  ↳ Current Item
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ScanLocationIdentifier#ScanAfterTapCurrent
+
+  ↳ First Item
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ScanLocationIdentifier#ScanAfterTapFirst
+
+↳ Group Items
+  toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#ItemGroupingIdentifier
+
+↳ Keyboard
+  section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#SwitchKeyboardIdentifier
+
+  ↳ Always Tap Keyboard Keys
+    toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#AlwaysTapKeyboardIdentifier
+
+  ↳ Extended Predictions
+    toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#UseExtendedKeyboardPredictionsIdentifier
+
+  ↳ Scan Same Key After Tap
+    toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#RestartScanAtCurrentIdentifier
+
+↳ Menu Items
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#CustomizeMenuIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier
+
+  ↳ Device
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier#Device
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier/Device
+
+  ↳ Gestures
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier#Gestures
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier/Gestures
+
+  ↳ Media Controls  (iOS 17.2 and later)
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier#MediaControls
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier/MediaControls
+
+  ↳ Settings
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier#Settings
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier/Settings
+
+  ↳ Top Level  (iOS 17.2 and later)
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier#TopLevel
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomizeMenuIdentifier/TopLevel
+
+↳ Point Scanning
+  section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#AxisSelectionGroupIdentifier
+
+  ↳ Gliding Cursor
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#AxisSweepIdentifier
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/AxisSweepIdentifier
+
+    ↳ Selection Mode
+      section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/AxisSweepIdentifier#SelectionStyleGroup
+
+      ↳ Precise
+        highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/AxisSweepIdentifier#SelectionStylePrecise
+
+      ↳ Refined
+        highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/AxisSweepIdentifier#SelectionStyleRefined
+
+      ↳ Single
+        highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/AxisSweepIdentifier#SelectionStyleSingle
+
+    ↳ Gliding Cursor Speed
+      section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/AxisSweepIdentifier#AxisSweepSpeed
+
+  ↳ Head Tracking
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#CameraPointPickerSwitch
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CameraPointPickerSwitch
+
+    ↳ Head Tracking
+      toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CameraPointPickerSwitch#CameraPointPickerSwitcher
+
+↳ Recipes
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#RecipesIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/RecipesIdentifier
+
+  ↳ Launch Recipe  (first appeared on iOS 17.3)
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/RecipesIdentifier/LaunchRecipe#LaunchRecipe
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/RecipesIdentifier/LaunchRecipe/LaunchRecipe
+
+↳ Saved Gestures
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#CustomGesturesIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomGesturesIdentifier
+
+  ↳ Create New Gestures
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomGesturesIdentifier#CreateCustomGesture
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/CustomGesturesIdentifier/CreateCustomGesture
+
+↳ Scanning Style
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#ScanningStyleIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ScanningStyleIdentifier
+
+  ↳ Auto Scanning
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ScanningStyleIdentifier#AUTO_SCANNING_LABEL
+
+  ↳ Manual Scanning
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ScanningStyleIdentifier#MANUAL_SCANNING_LABEL
+
+  ↳ Single Switch Step Scanning
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ScanningStyleIdentifier#DWELL_SCANNING_LABEL
+
+↳ Side Button Confirmation
+  section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#APPLE_PAY_SWITCH
+  section | prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE/APPLE_PAY_CONFIRM_WITH_SC
+
+↳ Switch Control
+  toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#EnablingCell
+
+↳ Switch Control Mode  (first appeared on iOS 17.3)
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#FirstLaunchScanningModeIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/FirstLaunchScanningModeIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/FirstLaunchScanningModeIdentifier#FirstLaunchScanningModeIdentifier
+
+↳ Switches
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#SwitchesIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/SwitchesIdentifier
+
+  ↳ Add New Switch
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/SwitchesIdentifier#AddSwitchIdentifier
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/SwitchesIdentifier/AddSwitchIdentifier
+
+  ↳ Bluetooth Devices
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/SwitchesIdentifier#BluetoothDevicesIdentifier
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/SwitchesIdentifier/BluetoothDevicesIdentifier
+
+↳ Switch Stabilization
+  section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#SwitchStabilityIdentifier
+
+  ↳ Hold Duration
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#HoldDurationIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/HoldDurationIdentifier
+
+    ↳ Hold Duration
+      toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/HoldDurationIdentifier#NumericalPreferenceSwitcherIdentifier
+
+  ↳ Ignore Repeat
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#IgnoreRepeatIdentifier
+  open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/IgnoreRepeatIdentifier
+
+    ↳ Ignore Repeat
+      toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/IgnoreRepeatIdentifier#NumericalPreferenceSwitcherIdentifier
+
+↳ Tap Behavior
+  highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#TapBehaviorIdentifier
+
+  ↳ Always Tap
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/TapBehaviorIdentifier#AlwaysTap
+
+  ↳ Auto Tap
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/TapBehaviorIdentifier#TapBehaviorAuto
+
+  ↳ Default
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/TapBehaviorIdentifier#TapBehaviorDefault
+
+↳ Timing
+  section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#TimingIdentifier
+
+  ↳ Auto Scanning Time
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#ScanningSpeedIdentifier
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ScanningSpeedIdentifier
+
+    ↳ Auto Scanning Time
+      section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ScanningSpeedIdentifier#NumericalPreferencePickerGroupIdentifier
+
+  ↳ Long Press
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#LongPressIdentifier 
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/LongPressIdentifier
+
+    ↳ Long Press
+      toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/LongPressIdentifier#NumericalPreferenceSwitcherIdentifier
+
+  ↳ Move Repeat
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#ActionRepeatIdentifier
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ActionRepeatIdentifier
+
+    ↳ Move Repeat
+      toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/ActionRepeatIdentifier#NumericalPreferenceSwitcherIdentifier
+
+  ↳ Pause on First Item
+    highlight | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#DelayAfterInputIdentifier
+    open      | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/DelayAfterInputIdentifier
+
+    ↳ Pause on First Item
+      toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle/DelayAfterInputIdentifier#NumericalPreferenceSwitcherIdentifier
+
+↳ Top Button Confirmation
+  section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#APPLE_PAY_SWITCH
+  section | prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE/APPLE_PAY_CONFIRM_WITH_SC
+
+↳ Visual
+  section | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#VisualGroupIdentifier
+
+  ↳ Large Cursor
+    toggle | prefs:root=ACCESSIBILITY&path=ScannerSwitchTitle#CursorVisibilityIdentifier
+Settings ⇾ Accessibility ⇾ Voice Control
+Voice Control (open menu)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle
+Voice Control ⇾ Voice Control (jump to toggle)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#SETUP_COMMAND_AND_CONTROL
+Voice Control ⇾ Language (highlight menu item)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#COMMAND_AND_CONTROL_LANGUAGE
+Voice Control ⇾ Language (open menu)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle/COMMAND_AND_CONTROL_LANGUAGE#English%20(United%20States)
+Voice Control ⇾ Customize Commands (highlight menu item)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#CUSTOMIZE_COMMANDS
+Voice Control ⇾ Customize Commands (open menu)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle/CUSTOMIZE_COMMANDS
+Voice Control ⇾ Vocabulary (highlight menu item)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#VOCABULARY
+Voice Control ⇾ Vocabulary (open menu)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle/VOCABULARY
+Voice Control ⇾ Command Feedback (jump to section)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#UPON_COMMAND_RECOGNITION_TITLE
+Voice Control ⇾ Show Confirmation (jump to toggle)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#SHOW_TEXT_RESPONSE_TITLE
+Voice Control ⇾ Play Sound (jump to toggle)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#PLAY_SOUND_RESPONSE_TITLE
+Voice Control ⇾ Show Hints (jump to toggle)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#USER_HINTS_SHOW_HINTS_TITLE
+Voice Control ⇾ Continuous Overlay (jump to section)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#ALWAYS_SHOW_OVERLAY_GROUP_TITLE
+Voice Control ⇾ Overlay (highlight menu item)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#ALWAYS_SHOW_OVERLAY
+Voice Control ⇾ Overlay (open menu)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle/ALWAYS_SHOW_OVERLAY
+Voice Control ⇾ Overlay ⇾ None (highlight menu item)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle/ALWAYS_SHOW_OVERLAY#OVERLAY_NONE
+Voice Control ⇾ Overlay ⇾ Item Numbers (highlight menu item)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle/ALWAYS_SHOW_OVERLAY#OVERLAY_NUMBERS
+Voice Control ⇾ Overlay ⇾ Item Names (highlight menu item)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle/ALWAYS_SHOW_OVERLAY#OVERLAY_NAMES
+Voice Control ⇾ Overlay ⇾ Numbered Grid (highlight menu item)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle/ALWAYS_SHOW_OVERLAY#OVERLAY_GRID
+Voice Control ⇾ Attention Aware (jump to toggle)
+prefs:root=ACCESSIBILITY&path=CommandAndControlTitle#ATTENTION_AWARE_ACTION
+Settings ⇾ Accessibility ⇾ Side Button (or Home Button)
+Side Button [or Home Button] (open menu)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE
+Side Button [or Home Button] ⇾ Click Speed (jump to section)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE#HOME_SPEED_HEADER
+Side Button [or Home Button] ⇾ Default (highlight menu item)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE#HOME_CLICK_SPEED_DEFAULT
+Side Button [or Home Button] ⇾ Slow (highlight menu item)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE#HOME_CLICK_SPEED_SLOW
+Side Button [or Home Button] ⇾ Slowest (highlight menu item)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE#HOME_CLICK_SPEED_SLOWEST
+Side Button [or Home Button] ⇾ Press and Hold to Speak (jump to section)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE#HomeButtonAssistantTitle
+Side Button [or Home Button] ⇾ Siri (highlight menu item)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE#HomeButtonAssistantSiri
+Side Button [or Home Button] ⇾ Classic Voice Control (highlight menu item)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE#HomeButtonAssistantVoiceControl
+Side Button [or Home Button] ⇾ Off (highlight menu item)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE#HomeButtonAssistantOff
+Home Button ⇾ Rest Finger to Open (jump to toggle)
+prefs:root=ACCESSIBILITY&path=HOME_CLICK_TITLE/HomeButtonAssistantTitle#RestingUnlockSetting
+Settings ⇾ Accessibility ⇾ Apple Watch Mirroring (iOS 16 and later)
+Apple Watch Mirroring  (open)
+prefs:root=ACCESSIBILITY&path=APPLE_WATCH_REMOTE_SCREEN
+Settings ⇾ Accessibility ⇾ Control Nearby Devices (iOS 16 and later)
+Control Nearby Devices  (open)
+prefs:root=ACCESSIBILITY&path=CONTROL_NEARBY_DEVICES
+Settings ⇾ Accessibility ⇾ Apple TV Remote
+Apple TV Remote (open menu)
+prefs:root=ACCESSIBILITY&path=APPLE_TV_REMOTE
+Apple TV Remote ⇾ Directional Buttons (jump to toggle)
+prefs:root=ACCESSIBILITY&path=APPLE_TV_REMOTE#AppleTVSimpleGestures
+Settings ⇾ Accessibility ⇾ Keyboards
+Keyboards (open menu)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS
+Keyboards ⇾ Full Keyboard Access (highlight menu item)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS#FULL_KEYBOARD_ACCESS
+Keyboards ⇾ Full Keyboard Access ⇾ Full Keyboard Access (jump to toggle)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/FULL_KEYBOARD_ACCESS#FKAEnabledSwitch
+Keyboards ⇾ Full Keyboard Access ⇾ Appearance (jump to section)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/FULL_KEYBOARD_ACCESS#APPEARANCE
+Keyboards ⇾ Full Keyboard Access ⇾ Auto-Hide (highlight menu item)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/FULL_KEYBOARD_ACCESS#FKAFocusRingTimeout
+Keyboards ⇾ Full Keyboard Access ⇾ High Contrast (jump to toggle)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/FULL_KEYBOARD_ACCESS#FKAFocusRingHighVisibilityEnabled
+Keyboards ⇾ Full Keyboard Access ⇾ Color (highlight menu item)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/FULL_KEYBOARD_ACCESS#FKAFocusRingColor
+Keyboards ⇾ Key Repeat (highlight menu item)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS#KEY_REPEAT
+Keyboards ⇾ Key Repeat ⇾ Key Repeat (jump to toggle)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/KEY_REPEAT#KeyRepeatEnabled
+Keyboards ⇾ Key Repeat ⇾ Key Repeat Interval (jump to section)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/KEY_REPEAT#KeyRepeatInterval
+Keyboards ⇾ Key Repeat ⇾ Delay Until Repeat (jump to section)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/KEY_REPEAT#KeyRepeatDelay
+Keyboards ⇾ Sticky Keys (highlight menu item)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS#STICKY_KEYS
+Keyboards ⇾ Sticky Keys ⇾ Sticky Keys (jump to toggle)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/STICKY_KEYS#StickyKeysEnabled
+Keyboards ⇾ Sticky Keys ⇾ Toggle with Shift Key (jump to toggle)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/STICKY_KEYS#StickyKeysShiftToggle
+Keyboards ⇾ Sticky Keys ⇾ Sound (jump to toggle)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/STICKY_KEYS#StickyKeysSound
+Keyboards ⇾ Slow Keys (highlight menu item)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS#SLOW_KEYS
+Keyboards ⇾ Slow Keys ⇾ Slow Keys (jump to toggle)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS/SLOW_KEYS#NumericalPreferenceSwitcherIdentifier
+Keyboards ⇾ Software Keyboards (jump to section)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS#SOFTWARE_KEYBOARDS
+Keyboards ⇾ Show Lowercase Keys (jump to toggle)
+prefs:root=ACCESSIBILITY&path=KEYBOARDS#LOWERCASE_KEYBOARD
+Settings ⇾ Accessibility ⇾ AirPods (iOS 15 and later)
+AirPods  (open)
+prefs:root=ACCESSIBILITY&path=AIRPODS
+Hearing Accessibility Settings
+Settings ⇾ Accessibility ⇾ Hearing Devices
+Hearing Devices (open menu)
+prefs:root=ACCESSIBILITY&path=HEARING_AID_TITLE
+Hearing Devices ⇾ MFI Hearding Devices (jump to section)
+prefs:root=ACCESSIBILITY&path=HEARING_AID_TITLE#AvailableAidsHeading
+Hearing Devices ⇾ Hearing Aid Compatibility (jump to section)
+prefs:root=ACCESSIBILITY&path=HEARING_AID_TITLE#HEARING_AID_BLUETOOTH
+Hearing Devices ⇾ Hearing Aid Compatibility (jump to toggle)
+prefs:root=ACCESSIBILITY&path=HEARING_AID_TITLE#HEARING_AID_COMPLIANCE
+Settings ⇾ Accessibility ⇾ Sound Recognition
+Sound Recognition (open menu)
+prefs:root=ACCESSIBILITY&path=SOUND_RECOGNITION_TITLE
+Sound Recognition ⇾ Sounds (highlight menu item)
+prefs:root=ACCESSIBILITY&path=SOUND_RECOGNITION_TITLE#Sounds
+Settings ⇾ Accessibility ⇾ RTT/TTY
+RTT/TTY (open menu)
+prefs:root=ACCESSIBILITY&path=RTT
+RTT/TTY ⇾ Software RTT (jump to toggle)
+prefs:root=ACCESSIBILITY&path=RTT#SW_TTY
+RTT/TTY ⇾ Hardware TTY (jump to toggle)
+prefs:root=ACCESSIBILITY&path=RTT#HW_TTY
+RTT/TTY ⇾ [Cell Line Name] ⇾ Software RTT (jump to toggle)
+prefs:root=ACCESSIBILITY&path=RTT/YourCellLineName#SW_TTY
+RTT/TTY ⇾ [Cell Line Name] ⇾ Hardware TTY (jump to toggle)
+prefs:root=ACCESSIBILITY&path=RTT/YourCellLineName#HW_TTY
+Settings ⇾ Accessibility ⇾ Audio/Visual
+Audio/Visual
+open | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE
+
+↳ Audio
+  section | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#AXPAAudioGroupSpecID
+
+  ↳ Headphone Accommodations
+    highlight | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#AXPAEnableSpecID
+    open      | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE/AXPAEnableSpecID
+
+    ↳ Headphone Accommodations
+      toggle | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE/AXPAEnableSpecID#AXPAEnableSpecID
+
+    ↳ Custom Audio Setup
+      highlight | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE/AXPAEnableSpecID#AXPAPersonalAudioSetupSpecID
+      open      | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE/AXPAEnableSpecID/AXPAPersonalAudioSetupSpecID
+
+  ↳ Headphone Notifications  (first appeared on iOS 17.3)
+    toggle | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#AXHeadphoneNotificationsSpecID
+
+  ↳ Mono Audio
+    toggle | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#AXPAMonoSpecID
+
+  ↳ Phone Noise Cancellation
+    toggle | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#AXPANoiseSpecID
+
+↳ Balance
+  section | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#AXPABalanceSpecID
+
+↳ Visual
+  section | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#VISUAL_HEADING
+
+  ↳ LED Flash for Alerts  (iOS 15 and earlier)
+    toggle | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#LED_FLASH
+
+  ↳ LED Flash for Alerts  (iOS 16 and later)
+    highlight | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE#LED_FLASH
+    open      | prefs:root=ACCESSIBILITY&path=AUDIO_VISUAL_TITLE/LED_FLASH
+Settings ⇾ Accessibility ⇾ Subtitles & Captioning
+Subtitles & Captioning  (open)
+prefs:root=ACCESSIBILITY&path=SUBTITLES_CAPTIONING
+
+Subtitles & Captioning ⇾ Style  (highlight)
+prefs:root=ACCESSIBILITY&path=SUBTITLES_CAPTIONING#currentTheme
+Settings ⇾ Accessibility ⇾ Live Captions
+Live Captions
+open | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION
+
+↳ Appearance  (first appeared on iOS 17.2)
+  highlight | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION#LIVE_TRANSCRIPTION_APPEARANCE
+  open      | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE
+  open      | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE#LIVE_TRANSCRIPTION_APPEARANCE
+
+  ↳ Bold Text  (first appeared on iOS 17.2)
+    highlight | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE#ENHANCE_TEXT_LEGIBILITY
+    open      | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE/ENHANCE_TEXT_LEGIBILITY
+    open      | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE/ENHANCE_TEXT_LEGIBILITY#ENHANCE_TEXT_LEGIBILITY
+
+  ↳ Color Options  (first appeared on iOS 17.2)
+    section | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE#LIVE_TRANSCRIPTION_COLOR_OPTIONS
+
+    ↳ Background Color  (first appeared on iOS 17.3)
+      highlight | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE#LIVE_TRANSCRIPTION_BACKGROUND_COLOR
+
+    ↳ Reset Colors  (first appeared on iOS 17.3)
+      highlight | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE#LIVE_TRANSCRIPTION_RESET_COLORS
+
+    ↳ Text Color  (first appeared on iOS 17.3)
+      highlight | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE#LIVE_TRANSCRIPTION_TEXT_COLOR
+
+  ↳ Idle Opacity  (first appeared on iOS 17.2)
+    section | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE#LIVE_CAPTIONS_IDLE_OPACITY_TITLE
+
+  ↳ Text Size  (first appeared on iOS 17.2)
+    highlight | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE#LARGER_TEXT
+    open      | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE/LARGER_TEXT
+    open      | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION/LIVE_TRANSCRIPTION_APPEARANCE/LARGER_TEXT#LARGER_TEXT
+
+↳ Live Captions
+  toggle | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION#LIVE_TRANSCRIPTION_TITLE
+
+↳ Live Captions in FaceTime
+  toggle | prefs:root=ACCESSIBILITY&path=LIVE_TRANSCRIPTION#FACE_TIME_CAPTIONS
+General Accessibility Settings
+Settings ⇾ Accessibility ⇾ Guided Access
+Guided Access (open menu)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE
+Guided Access ⇾ Guided Access (jump to toggle)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE#EnableGuidedAccess
+Guided Access ⇾ Passcode Settings (highlight menu item)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE#GuidedAccessSecurityLinkList
+Guided Access ⇾ Passcode Settings ⇾ Set Guided Access Passcode (highlight menu item)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE/GuidedAccessSecurityLinkList#GAXPinButton
+Guided Access ⇾ Time Limits (highlight menu item)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE#GuidedAccessTimeRestrictionsLinkList
+Guided Access ⇾ Time Limits ⇾ Alarm (jump to section)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE/GuidedAccessTimeRestrictionsLinkList#GUIDED_ACCESS_TIME_RESTRICTIONS_HEADING
+Guided Access ⇾ Time Limits ⇾ Sound (highlight menu item)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE/GuidedAccessTimeRestrictionsLinkList#GUIDED_ACCESS_TIME_RESTRICTIONS_SOUND_TITLE
+Guided Access ⇾ Time Limits ⇾ Speak (jump to toggle)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE/GuidedAccessTimeRestrictionsLinkList#GUIDED_ACCESS_TIME_RESTRICTIONS_SPEAK_TITLE
+Guided Access ⇾ Accessibility Shortcut (jump to toggle)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE#GuidedAccessEnableAXFeatures
+Guided Access ⇾ Display Auto-Lock (highlight menu item)
+prefs:root=ACCESSIBILITY&path=GUIDED_ACCESS_TITLE#GuidedAccessAutoLockTime
+Settings ⇾ Accessibility ⇾ Siri
+Siri (open menu)
+prefs:root=ACCESSIBILITY&path=SIRI_SETTINGS_TITLE
+Siri ⇾ Type to Siri (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SIRI_SETTINGS_TITLE#SIRI_SETTINGS_TYPE_TO_SIRI
+Siri ⇾ Voice Feedback (jump to section)
+prefs:root=ACCESSIBILITY&path=SIRI_SETTINGS_TITLE#VOICE_FEEDBACK_GROUP_ID
+Siri ⇾ Always Speak Responses (highlight menu item)
+prefs:root=ACCESSIBILITY&path=SIRI_SETTINGS_TITLE#VOICE_FEEDBACK_ALWAYS_ID
+Siri ⇾ With Silent Mode off (highlight menu item)
+prefs:root=ACCESSIBILITY&path=SIRI_SETTINGS_TITLE#VOICE_FEEDBACK_WITH_SWITCH_ID
+Siri ⇾ Only with "Hey Siri" (highlight menu item)
+prefs:root=ACCESSIBILITY&path=SIRI_SETTINGS_TITLE#VOICE_FEEDBACK_HANDSFREE_ID
+Siri ⇾ Always Listen for "Hey Siri" (jump to toggle)
+prefs:root=ACCESSIBILITY&path=SIRI_SETTINGS_TITLE#SIRI_SETTINGS_VOICE_ACTIVATION_ALWAYS_ALLOW
+Settings ⇾ Accessibility ⇾ Accessibility Shortcut
+Accessibility Shortcut  (open)
+prefs:root=ACCESSIBILITY&path=TRIPLE_CLICK_TITLE
+Settings ⇾ Accessibility ⇾ Per-App Settings
+Per-App Settings  (open)
+prefs:root=ACCESSIBILITY&path=APP_AX_SETTINGS_TITLE
+You Can Help Make This List Even Better!
+Again, Apple may change the URL schemes and URLs for its apps at any time.
+
+If you see anything different in any of the schemes above, let me know, and I’ll look into it. Even if you notice that one thing works in one version of iOS and not the other, that’s helpful information I could use.
